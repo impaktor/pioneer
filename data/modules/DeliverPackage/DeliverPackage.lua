@@ -26,14 +26,17 @@ local ui = Engine.ui
 
 -- don't produce missions for further than this many light years away
 local max_delivery_dist = 30
+
 -- typical time for travel to a system max_delivery_dist away
 --	Irigi: ~ 4 days for in-system travel, the rest is FTL travel time
 local typical_travel_time = (1.6 * max_delivery_dist + 4) * 24 * 60 * 60
+
 -- typical reward for delivery to a system max_delivery_dist away
 local typical_reward = 25 * max_delivery_dist
 
 local num_pirate_taunts = 10
 
+-- parameter for each flavour to match in data/lang/module-deliverpackage/
 local flavours = {
 	{
 		urgency = 0,
@@ -78,7 +81,7 @@ local flavours = {
 	}
 }
 
--- add strings to flavours
+-- add strings to flavours,
 for i = 1,#flavours do
 	local f = flavours[i]
 	f.adtext        = l["FLAVOUR_" .. i-1 .. "_ADTEXT"]
@@ -88,12 +91,22 @@ for i = 1,#flavours do
 	f.failuremsg    = l["FLAVOUR_" .. i-1 .. "_FAILUREMSG"]
 end
 
+-- store ads on the BBS and missions player is playing. Will be used
+-- for saving and loading.
 local ads = {}
 local missions = {}
 
+-- function will run when an advert is chosen, or rerun if any of the
+-- options of the form clicked. ref is a unique identifier of the chosen
+-- advert
 local onChat = function (form, ref, option)
+
+    -- get the advert that was clicked. ref is the unique number
+    -- associated with the clicked ad.
 	local ad = ads[ref]
 
+    -- todo: have not understood this yet, but probably related to the
+    -- fact that we run this function for each option we click.
 	form:Clear()
 
 	if option == -1 then
@@ -104,6 +117,7 @@ local onChat = function (form, ref, option)
 	if option == 0 then
 		form:SetFace(ad.client)
 
+        -- destination of mission
 		local sys   = ad.location:GetStarSystem()
 		local sbody = ad.location:GetSystemBody()
 
@@ -168,11 +182,21 @@ local onChat = function (form, ref, option)
 	form:AddOption(l.OK_AGREED, 3)
 end
 
+-- when the advert is removed, whether explicitly (RemoveAdvert), or
+-- implicit by the player hyperspacing away.
 local onDelete = function (ref)
 	ads[ref] = nil
 end
 
+-- This will have a list of all the nearby systems from our current
+-- one. Reset it if we change system. By defining it outside of
+-- makeAdvert we don't have to recreate it for every advert in the
+-- system.
 local nearbysystems
+
+-- create the actual mission specs and flavour, destination, etc.
+-- will be called each time we want to place an advert on the BBS,
+-- whether on onCreateBB or onUpdateBB.
 local makeAdvert = function (station)
 	local reward, due, location, nearbysystem, dist
 	local client = Character.New()
@@ -181,22 +205,52 @@ local makeAdvert = function (station)
 	local risk = flavours[flavour].risk
 
 	if flavours[flavour].localdelivery == 1 then
+        -- get the system player is currently in
 		nearbysystem = Game.system
+
+        -- contains X,Y,Z of sector, system number in that sector, and
+        -- an index to a SystemBody (space stations) in the system.
 		local nearbystations = Game.system:GetStationPaths()
+
+        -- randomly choose a destination target for the mission
 		location = nearbystations[Engine.rand:Integer(1,#nearbystations)]
-		if location ==  station.path then return end
+
+        -- scrap mission if destination is same as origin (current station)
+        -- todo what happens when the funciton is aborted? no advert created?
+		if location == station.path then
+            return
+        end
+
+        -- get the distance to the mission target
 		local locdist = Space.GetBody(location.bodyIndex)
 		dist = station:DistanceTo(locdist)
-		if dist < 1000 then return end
+
+		--scrap the mission if too close
+        if dist < 1000 then
+            return
+        end
+
 		reward = 25 + (math.sqrt(dist) / 15000) * (1+urgency)
 		due = Game.time + ((4*24*60*60) * (Engine.rand:Number(1.5,3.5) - urgency))
 	else
+        -- if it's the first advert we're making in this system then we
+        -- need to check which worlds are close
 		if nearbysystems == nil then
+            -- use an optional filter, to only include systems with more
+            -- than zero (paths to) space stations.
 			nearbysystems = Game.system:GetNearbySystems(max_delivery_dist, function (s) return #s:GetStationPaths() > 0 end)
 		end
-		if #nearbysystems == 0 then return end
+
+        -- scrap mission if no populated ones can be found
+		if #nearbysystems == 0 then
+            return
+        end
+
+        -- pick one of the systems fulfilling the requirements, get distance.
 		nearbysystem = nearbysystems[Engine.rand:Integer(1,#nearbysystems)]
 		dist = nearbysystem:DistanceTo(Game.system)
+
+        -- get station in that system
 		local nearbystations = nearbysystem:GetStationPaths()
 		location = nearbystations[Engine.rand:Integer(1,#nearbystations)]
 		reward = ((dist / max_delivery_dist) * typical_reward * (1+risk) * (1.5+urgency) * Engine.rand:Number(0.8,1.2))
@@ -208,8 +262,8 @@ local makeAdvert = function (station)
 		flavour		= flavour,
 		client		= client,
 		location	= location,
-		dist            = dist,
-		due		= due,
+		dist        = dist,
+		due	    	= due,
 		risk		= risk,
 		urgency		= urgency,
 		reward		= reward,
@@ -225,17 +279,22 @@ local makeAdvert = function (station)
 		starport = sbody.name,
 	})
 
+    -- create the advert, and save it for saving/loading game restore
 	local ref = station:AddAdvert(ad.desc, onChat, onDelete)
 	ads[ref] = ad
 end
 
+-- when we enter system, create all ads we need on all BBS
 local onCreateBB = function (station)
+    -- number of _attempts_ to create an advert.
 	local num = Engine.rand:Integer(0, math.ceil(Game.system.population))
+
 	for i = 1,num do
 		makeAdvert(station)
 	end
 end
 
+-- continuously remove old and place new ads, as they expire.
 local onUpdateBB = function (station)
 	for ref,ad in pairs(ads) do
 		if flavours[ad.flavour].localdelivery == 0
@@ -251,11 +310,13 @@ local onUpdateBB = function (station)
 	end
 end
 
+-- set up enemy ships to attack player
 local onEnterSystem = function (player)
 	if (not player:IsPlayer()) then return end
 
 	local syspath = Game.system.path
 
+    -- for all active? (todo) delivery mission in system, spawn necessary ships.
 	for ref,mission in pairs(missions) do
 		if mission.status == "ACTIVE" and mission.location:IsSameSystem(syspath) then
 			local risk = flavours[mission.flavour].risk
@@ -271,11 +332,15 @@ local onEnterSystem = function (player)
 			if ships < 1 and risk >= 0.2 and Engine.rand:Integer(2) == 1 then ships = 1 end
 
 			-- XXX hull mass is a bad way to determine suitability for role
-			local shipdefs = utils.build_array(utils.filter(function (k,def) return def.tag == 'SHIP' and def.hullMass <= 400 end, pairs(ShipDef)))
+			local shipdefs = utils.build_array(utils.filter(function (k,def)
+                                                                return def.tag == 'SHIP' and def.hullMass <= 400
+                                                            end,
+                                                            pairs(ShipDef)))
 			if #shipdefs == 0 then return end
 
 			local ship
 
+            -- each enemy ship is equipped with engine, weapons, and a temper
 			while ships > 0 do
 				ships = ships-1
 
@@ -298,6 +363,7 @@ local onEnterSystem = function (player)
 				end
 			end
 
+            -- unless ship==nil, send a taunting message, depending on flavour.
 			if ship then
 				local pirate_greeting = string.interp(l["PIRATE_TAUNTS_"..Engine.rand:Integer(1,num_pirate_taunts)-1], {
 					client = mission.client.name, location = mission.location,})
@@ -305,18 +371,23 @@ local onEnterSystem = function (player)
 			end
 		end
 
+        -- if mission expired, set it as failed.
 		if mission.status == "ACTIVE" and Game.time > mission.due then
 			mission.status = 'FAILED'
 		end
 	end
 end
 
+-- If we leave the system we must reset the nearbysystems list, since
+-- that is now outdated.
 local onLeaveSystem = function (ship)
 	if ship:IsPlayer() then
 		nearbysystems = nil
 	end
 end
 
+-- if the docked ship is the player, check which missions are relevant
+-- to the station, and remove (either failed or completed)
 local onShipDocked = function (player, station)
 	if not player:IsPlayer() then return end
 
@@ -324,6 +395,7 @@ local onShipDocked = function (player, station)
 
 		if mission.location == station.path then
 
+            -- which message to send to player
 			if Game.time > mission.due then
 				Comms.ImportantMessage(flavours[mission.flavour].failuremsg, mission.client.name)
 			else
@@ -334,6 +406,7 @@ local onShipDocked = function (player, station)
 			mission:Remove()
 			missions[ref] = nil
 
+            -- we're out of time, at the wrong station, mark mission as failed
 		elseif mission.status == "ACTIVE" and Game.time > mission.due then
 			mission.status = 'FAILED'
 		end
@@ -341,8 +414,11 @@ local onShipDocked = function (player, station)
 	end
 end
 
+-- variable to put the table of data into when player loads a game.
 local loaded_data
 
+-- restore necessary data if anything saved, restore ads on the BBS and
+-- restore player missions
 local onGameStart = function ()
 	ads = {}
 	missions = {}
@@ -359,6 +435,8 @@ local onGameStart = function ()
 	loaded_data = nil
 end
 
+-- Display mission details when we click the "More info..." button in
+-- the mission roster.
 local onClick = function (mission)
 	local dist = Game.system and string.format("%.2f", Game.system:DistanceTo(mission.location)) or "???"
 
@@ -448,14 +526,22 @@ local onClick = function (mission)
 		})
 end
 
+-- remove list of nearbysystems, since the Lua virtual machine is not
+-- reset between games we must clean up after us. (Note: this will
+-- certainly change in the future.)
 local onGameEnd = function ()
 	nearbysystems = nil
 end
 
+-- function to run when player saves the game.
 local serialize = function ()
+    -- must return a table, that contains all that is needed for a
+    -- reload.
 	return { ads = ads, missions = missions }
 end
 
+-- Is run after game is loaded, immediately before the onGameStart event
+-- is triggered.  take the table that was saved by serialize as input
 local unserialize = function (data)
 	loaded_data = data
 end
