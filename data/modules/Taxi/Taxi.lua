@@ -107,9 +107,9 @@ local flavours = {
 		risk = 0.17,
 		longrange = false,
 	}, {
-		single = true
-		urgency = 0.9
-		risk = 0.9
+		single = true,
+		urgency = 0.9,
+		risk = 0.9,
 		longrange = true,
 	   }
 }
@@ -269,11 +269,17 @@ local makeAdvert = function (station)
 
 	if longrange then
 		location = distantsystems[Engine.rand:Integer(1,#distantsystems)]
-		reward = ((dist / max_longrange_taxi_dist) * typical_reward * (group / 2) * (1+risk) * (1+3*urgency) * Engine.rand:Number(0.8,1.2))
-		due = Game.time + ((dist / max_longrange_taxi_dist) * typical_travel_time * (1.5-urgency) * Engine.rand:Number(0.9,1.1))
 	else
 		location = nearbysystems[Engine.rand:Integer(1,#nearbysystems)]
-		local dist = location:DistanceTo(Game.system)
+	end
+
+	local dist = location:DistanceTo(Game.system)
+
+	if longrange then
+		fudge_factor = 4; --todo
+		reward = fudge_factor*((dist / max_longrange_taxi_dist) * typical_reward * (group / 2) * (1+risk) * (1+3*urgency) * Engine.rand:Number(0.8,1.2))
+		due = Game.time + fudge_factor*((dist / max_longrange_taxi_dist) * typical_travel_time * (1.5-urgency) * Engine.rand:Number(0.9,1.1))
+	else
 		reward = ((dist / max_taxi_dist) * typical_reward * (group / 2) * (1+risk) * (1+3*urgency) * Engine.rand:Number(0.8,1.2))
 		due = Game.time + ((dist / max_taxi_dist) * typical_travel_time * (1.5-urgency) * Engine.rand:Number(0.9,1.1))
 	end
