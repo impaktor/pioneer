@@ -26,6 +26,9 @@ local ui = Engine.ui
 
 -- don't produce missions for further than this many light years away
 local max_taxi_dist = 40
+-- ... unless it's a long range mission
+local max_longrange_taxi_dist = 120
+local min_longrange_taxi_dist = 80
 -- typical time for travel to a system max_taxi_dist away
 --	Irigi: ~ 4 days for in-system travel, the rest is FTL travel time
 local typical_travel_time = (2.0 * max_taxi_dist + 4) * 24 * 60 * 60
@@ -42,55 +45,73 @@ local flavours = {
 		single = 0,
 		urgency = 0,
 		risk = 0.001,
+		longrange = false,
 	}, {
 		single = false,
 		urgency = 0,
 		risk = 0,
+		longrange = false,
 	}, {
 		single = false,
 		urgency = 0,
 		risk = 0,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.13,
 		risk = 0.73,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.3,
 		risk = 0.02,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.1,
 		risk = 0.05,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.02,
 		risk = 0.07,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.15,
 		risk = 1,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.5,
 		risk = 0.001,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.85,
 		risk = 0.20,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0.9,
 		risk = 0.40,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 1,
 		risk = 0.31,
+		longrange = false,
 	}, {
 		single = true,
 		urgency = 0,
 		risk = 0.17,
-	}
+		longrange = false,
+	}, {
+		single = true
+		urgency = 0.9
+		risk = 0.9
+		longrange = true,
+	   }
 }
 
 -- add strings to flavours
@@ -218,25 +239,44 @@ local onDelete = function (ref)
 end
 
 local nearbysystems
+local distantsystems  --only use if longrange mission
 local makeAdvert = function (station)
 	local reward, due, location
 	local client = Character.New()
 	local flavour = Engine.rand:Integer(1,#flavours)
 	local urgency = flavours[flavour].urgency
+	local longrange = flavours[flavour].longrange
 	local risk = flavours[flavour].risk
 	local group = 1
 	if flavours[flavour].single == 0 then
 		group = Engine.rand:Integer(2,max_group)
 	end
 
+	if longrange then
+		if distantsystems == nil then
+			filter = function (s)
+				return #s:GetStationPaths() > 0 and s:DistanceTo(Game.system) > min_longrange_taxi_dist
+			end
+			distantsystems = Game.system:GetNearbySystems(max_longrange_taxi_dist, filter)
+		end
+		if #distantsystems == 0 then return end -- scrap mission
+	end
+
 	if nearbysystems == nil then
 		nearbysystems = Game.system:GetNearbySystems(max_taxi_dist, function (s) return #s:GetStationPaths() > 0 end)
 	end
 	if #nearbysystems == 0 then return end
-	location = nearbysystems[Engine.rand:Integer(1,#nearbysystems)]
-	local dist = location:DistanceTo(Game.system)
-	reward = ((dist / max_taxi_dist) * typical_reward * (group / 2) * (1+risk) * (1+3*urgency) * Engine.rand:Number(0.8,1.2))
-	due = Game.time + ((dist / max_taxi_dist) * typical_travel_time * (1.5-urgency) * Engine.rand:Number(0.9,1.1))
+
+	if longrange then
+		location = distantsystems[Engine.rand:Integer(1,#distantsystems)]
+		reward = ((dist / max_longrange_taxi_dist) * typical_reward * (group / 2) * (1+risk) * (1+3*urgency) * Engine.rand:Number(0.8,1.2))
+		due = Game.time + ((dist / max_longrange_taxi_dist) * typical_travel_time * (1.5-urgency) * Engine.rand:Number(0.9,1.1))
+	else
+		location = nearbysystems[Engine.rand:Integer(1,#nearbysystems)]
+		local dist = location:DistanceTo(Game.system)
+		reward = ((dist / max_taxi_dist) * typical_reward * (group / 2) * (1+risk) * (1+3*urgency) * Engine.rand:Number(0.8,1.2))
+		due = Game.time + ((dist / max_taxi_dist) * typical_travel_time * (1.5-urgency) * Engine.rand:Number(0.9,1.1))
+	end
 
 	local ad = {
 		station		= station,
@@ -349,6 +389,7 @@ end
 local onLeaveSystem = function (ship)
 	if ship:IsPlayer() then
 		nearbysystems = nil
+		distantsystems = nil
 	end
 end
 
@@ -408,6 +449,7 @@ end
 
 local onGameEnd = function ()
 	nearbysystems = nil
+	distantsystems = nil
 end
 
 local onClick = function (mission)

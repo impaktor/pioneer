@@ -195,6 +195,38 @@
       "description" : "",
       "message" : "I owe someone some money, and they're after me."
    },
+   "FLAVOUR_13_ADTEXT" : {
+      "description" : "",
+      "message" : "LONG DISTANCE SHIP WANTED: Passage on a fast ship to {system} system."
+   },
+   "FLAVOUR_13_DANGER" : {
+      "description" : "",
+      "message" : "Some people will do everything to try to stop me. Pray they won't find us."
+   },
+   "FLAVOUR_13_FAILUREMSG" : {
+      "description" : "",
+      "message" : "You signed my death warrant. My blood will be on your hands."
+   },
+   "FLAVOUR_13_HOWMANY" : {
+      "description" : "",
+      "message" : "Just me, but please keep a low profile."
+   },
+   "FLAVOUR_13_INTROTEXT" : {
+      "description" : "",
+      "message" : "You may call me {name}. I'm in urgent need to go a long way from here and I need fast and discrete passage to {system} ({sectorx}, {sectory}, {sectorz}) system, a distance of {dist} ly. I'll reward you with {cash}."
+   },
+   "FLAVOUR_13_SUCCESSMSG" : {
+      "description" : "",
+      "message" : "Thank you for helping me, you've saved my life. I have transferred the funds."
+   },
+   "FLAVOUR_13_WHEREAREWE" : {
+      "description" : "",
+      "message" : "I've given up on you, I have to seek refuge at the next station."
+   },
+   "FLAVOUR_13_WHYSOMUCH" : {
+      "description" : "",
+      "message" : "I have to urgently get as far away from here as possible, or else I'll end up dead."
+   },
    "FLAVOUR_1_ADTEXT" : {
       "description" : "",
       "message" : "WANTED: Passage for a small group to {system} system. Will pay {cash}."
