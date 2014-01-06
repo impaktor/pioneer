@@ -36,7 +36,8 @@ local typical_reward = 25 * max_delivery_dist
 
 local num_pirate_taunts = 10
 
--- parameter for each flavour to match in data/lang/module-deliverpackage/
+-- parameters for each flavour to match in data/lang/module-deliverpackage/
+-- in a table of tables
 local flavours = {
 	{
 		urgency = 0,
@@ -81,7 +82,7 @@ local flavours = {
 	}
 }
 
--- add strings to flavours,
+-- add strings to flavours, and give keys to flavours? todo
 for i = 1,#flavours do
 	local f = flavours[i]
 	f.adtext        = l["FLAVOUR_" .. i-1 .. "_ADTEXT"]
@@ -91,8 +92,8 @@ for i = 1,#flavours do
 	f.failuremsg    = l["FLAVOUR_" .. i-1 .. "_FAILUREMSG"]
 end
 
--- store ads on the BBS and missions player is playing. Will be used
--- for saving and loading.
+-- store ads on the BBS and missions player is playing. Will be used for
+-- saving and loading.
 local ads = {}
 local missions = {}
 
@@ -101,8 +102,8 @@ local missions = {}
 -- advert
 local onChat = function (form, ref, option)
 
-    -- get the advert that was clicked. ref is the unique number
-    -- associated with the clicked ad.
+    -- get the advert that was clicked. ref is the unique number associated
+    -- with the clicked ad.
 	local ad = ads[ref]
 
     -- todo: have not understood this yet, but probably related to the
@@ -189,14 +190,13 @@ local onDelete = function (ref)
 end
 
 -- This will have a list of all the nearby systems from our current
--- one. Reset it if we change system. By defining it outside of
--- makeAdvert we don't have to recreate it for every advert in the
--- system.
+-- one. Reset it if we change system. By defining it outside of makeAdvert
+-- we don't have to recreate it for every advert in the system.
 local nearbysystems
 
--- create the actual mission specs and flavour, destination, etc.
--- will be called each time we want to place an advert on the BBS,
--- whether on onCreateBB or onUpdateBB.
+-- create the actual mission specs and flavour, destination, etc. will be
+-- called each time we want to place an advert on the BBS, whether on
+-- onCreateBB or onUpdateBB.
 local makeAdvert = function (station)
 	local reward, due, location, nearbysystem, dist
 	local client = Character.New()
