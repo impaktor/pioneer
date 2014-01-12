@@ -353,11 +353,13 @@ local spawnInitialShips = function (game_start)
 			-- values from SystemInfoView::UpdateEconomyTab
 			if		v > 10	then
 				import_score = import_score + 2
+				table.insert(imports, k)   --- xxx by me
 			elseif	v > 2	then
 				import_score = import_score + 1
 				table.insert(imports, k)
 			elseif	v < -10	then
 				export_score = export_score + 2
+				table.insert(exports, k)   --- xxx by me
 			elseif	v < -2	then
 				export_score = export_score + 1
 				table.insert(exports, k)
@@ -376,12 +378,13 @@ local spawnInitialShips = function (game_start)
 	-- reduce based on lawlessness
 	num_trade_ships = num_trade_ships * (1 - lawlessness)
 	-- vary by up to twice as many with a bell curve probability
+	--- --- xxx pyramid is a bad approximation for bell shape, and it's peaked at 1.25,
 	num_trade_ships = num_trade_ships * (Engine.rand:Number(0.25, 1) + Engine.rand:Number(0.25, 1))
 	-- compute distance and interval between ships
 	-- the base number of AU between ships spawned in space
 	local range = (9 / (num_trade_ships * 0.75))
 	if game_start then
-		range = range * 1.5
+		range = range * 1.5    --- xxx why on gamestart?
 	end
 	-- the base number of seconds between ships spawned in hyperspace
 	trade_ships['interval'] = (864000 / (num_trade_ships / 4))
@@ -389,7 +392,7 @@ local spawnInitialShips = function (game_start)
 	local from_systems, dist = {}, 10
 	while #from_systems < 10 do
 		dist = dist + 5
-		from_systems = Game.system:GetNearbySystems(dist)
+		from_systems = Game.system:GetNearbySystems(dist)  --- xxx each ship comes from "5 ly" futher away?
 	end
 	from_paths = {}
 	for _, system in ipairs(from_systems) do
@@ -402,7 +405,7 @@ local spawnInitialShips = function (game_start)
 		local ship_name = ship_names[Engine.rand:Integer(1, #ship_names)]
 		local ship = nil
 
-		if game_start and i < num_trade_ships / 4 then
+		if game_start and i < num_trade_ships * 0.25 then
 			-- spawn the first quarter in port if at game start
 			local starport = starports[Engine.rand:Integer(1, #starports)]
 
@@ -429,11 +432,11 @@ local spawnInitialShips = function (game_start)
 		elseif i < num_trade_ships * 0.75 then
 			-- spawn the first three quarters in space, or middle half if game start
 			local min_dist = range * i + 1
-			if game_start then
+			if game_start then  --- xxx why is player's game start special for the trader ships?
 				min_dist = min_dist - (range * (num_trade_ships / 4))
 			end
 
-			ship = Space.SpawnShip(ship_name, min_dist, min_dist + range)
+			ship = Space.SpawnShip(ship_name, min_dist, min_dist + range) --- xxx min/max dist from system centre
 			ship:SetLabel(Ship.MakeRandomLabel())
 			trade_ships[ship] = {
 				status		= 'inbound',
@@ -445,12 +448,12 @@ local spawnInitialShips = function (game_start)
 			trade_ships[ship].starport	= getNearestStarport(ship)
 		else
 			-- spawn the last quarter in hyperspace
-			local min_time = trade_ships.interval * (i - num_trade_ships * 0.75)
+			local min_time = trade_ships.interval * (i - num_trade_ships * 0.75)  --- xxx can this be neg?
 			local max_time = min_time + trade_ships.interval
 			local dest_time = Game.time + Engine.rand:Integer(min_time, max_time)
 			local from = from_paths[Engine.rand:Integer(1, #from_paths)]
 
-			ship = Space.SpawnShip(ship_name, 9, 11, {from, dest_time})
+			ship = Space.SpawnShip(ship_name, 9, 11, {from, dest_time})  --- xxx betwee 9-11 AU from system centre
 			ship:SetLabel(Ship.MakeRandomLabel())
 			trade_ships[ship] = {
 				status		= 'hyperspace',
@@ -470,14 +473,14 @@ local spawnInitialShips = function (game_start)
 			-- have ship wait 30-45 seconds per unit of cargo
 			if delay > 0 then
 				trader['delay'] = Game.time + (delay * Engine.rand:Number(30, 45))
-			else
+			else  --- xxx when do we enter this clause? can addFuel or addShipCargo return nil?
 				trader['delay'] = Game.time + Engine.rand:Number(600, 3600)
 			end
 			Timer:CallAt(trader.delay, function () doUndock(ship) end)
 		else
 			addShipCargo(ship, 'import')
 			-- remove fuel used to get here
-			if fuel_added and fuel_added > 0 then
+			if fuel_added and fuel_added > 0 then  --- so addFule can be nil? and neg? why rand?
 				ship:RemoveEquip('HYDROGEN', Engine.rand:Integer(1, fuel_added))
 			end
 			if trader.status == 'inbound' then
