@@ -115,7 +115,7 @@ local addShipEquip = function (ship)
 		end
 	end
 
-	-- we can't use these yet
+	-- we can't use these yet  -- xxx
 	if ship_type.equipSlotCapacity.ECM > 0 then
 		if Engine.rand:Number(1) + 0.2 < lawlessness then
 			ship:AddEquip('ECM_ADVANCED')
@@ -214,7 +214,7 @@ local getNearestStarport = function (ship, current)
 	local trader = trade_ships[ship]
 
 	-- Find the nearest starport that we can land at (other than current)
-	local starport, distance
+	local starport, distance = nil, nil
 	for i = 1, #starports do
 		local next_starport = starports[i]
 		if next_starport ~= current then
@@ -223,18 +223,21 @@ local getNearestStarport = function (ship, current)
 				(next_starport.type == 'STARPORT_ORBITAL') or
 				(not next_starport.path:GetSystemBody().parent.hasAtmosphere))
 
+			-- new destination if the first starport investigated, or closer
 			if next_canland and ((starport == nil) or (next_distance < distance)) then
 				starport, distance = next_starport, next_distance
 			end
 		end
 	end
-	return starport or current
+	return starport or current -- xxx current?
 end
 
 local getSystem = function (ship)
-	local systems_in_range = Game.system:GetNearbySystems(ship.hyperspaceRange)
+	local systems_in_range = Game.system:GetNearbySystems(ship.hyperspaceRange) --xxx always jump max range? xxx what if empty?
+			            --- = Game.system:GetNearbySystems(max_delivery_dist, function (s) return #s:GetStationPaths() > 0 end)
+
 	if #systems_in_range == 0 then return nil end
-	if #systems_in_range == 1 then
+	if #systems_in_range == 1 then        -- xxx what if distance is outisde range? GetNearbySystems is "fuzzy"
 		return systems_in_range[1].path
 	end
 
@@ -255,15 +258,15 @@ local getSystem = function (ship)
 		end
 	end
 
+	-- pick a random system as fallback
 	if target_system == nil then
-		-- pick a random system as fallback
-		target_system = systems_in_range[Engine.rand:Integer(1, #systems_in_range)]
-
 		-- get closer systems
 		local systems_half_range = Game.system:GetNearbySystems(ship.hyperspaceRange / 2)
 
-		if #systems_half_range > 1 then
+		if #systems_half_range > 1 then  -- xxx always choose half jump if available xxx what if empty system?
 			target_system = systems_half_range[Engine.rand:Integer(1, #systems_half_range)]
+		else
+			target_system = systems_in_range[Engine.rand:Integer(1, #systems_in_range)]
 		end
 	end
 
@@ -280,6 +283,7 @@ end
 local jumpToSystem = function (ship, target_path)
 	if target_path == nil then return nil end
 
+	-- all three are set by function
 	local status, fuel, duration = ship:HyperspaceTo(target_path)
 
 	if status ~= 'OK' then
@@ -302,6 +306,9 @@ end
 
 local getAcceptableShips = function ()
     -- only accept ships with enough capacity that are capable of landing in atmospheres
+	-- xxx what should minimum cargo capacity be? need:
+	-- capacity	The maximum space available for cargo and equipment, in tonnes
+	-- hullMass	The total mass of the ship’s hull, independent of any equipment or cargo inside it, in tonnes.
 	local filter_function
 	if #vacuum_starports == 0 then
 		filter_function = function(k,def)
@@ -313,7 +320,7 @@ local getAcceptableShips = function ()
 		filter_function = function(k,def)
 			-- XXX should limit to ships large enough to carry significant
 			--     cargo, but we don't have enough ships yet
-			return def.tag == 'SHIP' and def.defaultHyperdrive ~= 'NONE'
+			return def.tag == 'SHIP' and def.defaultHyperdrive ~= 'NONE'     -- xxx no interpaletary trading?
 		end
 	end
 	return utils.build_array(
@@ -322,7 +329,7 @@ local getAcceptableShips = function ()
 		end,
 		utils.filter(filter_function,
 		pairs(ShipDef)
-	)))
+	)))  -- xxx return table of ships with sensible defaults from shipyard
 end
 
 local spawnInitialShips = function (game_start)
@@ -473,8 +480,8 @@ local spawnInitialShips = function (game_start)
 			if fuel_added and fuel_added > 0 then
 				ship:RemoveEquip('HYDROGEN', Engine.rand:Integer(1, fuel_added))
 			end
-			if trader.status == 'inbound' then 
-				ship:AIDockWith(trader.starport) 
+			if trader.status == 'inbound' then
+				ship:AIDockWith(trader.starport)
 			end
 		end
 	end
