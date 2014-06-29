@@ -426,6 +426,22 @@ local function updateShipsOnSale (station)
 		end
 	end
 
+	-- toAdd needs fixing? leftover from rebase
+	if toAdd > 0 then
+		local avail = station.type == "STARPORT_SURFACE" and groundShips or spaceShips
+		for i=1,toAdd do
+			local def = avail[Engine.rand:Integer(1,#avail)]
+			local model = Engine.GetModel(def.modelName)
+			local pattern = model.numPatterns ~= 0 and Engine.rand:Integer(1,model.numPatterns) or nil
+			addShipOnSale(station, {
+				def     = def,
+				skin    = ModelSkin.New():SetRandomColors(Engine.rand):SetDecal(string.lower(def.manufacturer)),
+				pattern = pattern,
+				label   = Ship.MakeRandomLabel(),
+			})
+		end
+	end
+
 	-- spawn a new ship adverts, call for each station
 	if Engine.rand:Number(0,1) <= prod then
 		addRandomShipAdvert(station, 1)
