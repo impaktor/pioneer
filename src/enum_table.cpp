@@ -139,6 +139,7 @@ const struct EnumItem ENUM_ShipManufacturer[] = {
    { "KALURI", Polit::MAN_KALURI },
    { "MANDARAVA", Polit::MAN_MANDARAVA },
    { "OPLI",Polit::MAN_OPLI },
+   { "unknown",Polit::MAN_UNKNOWN },
    { 0, 0 },
 };
 
@@ -156,7 +157,6 @@ const struct EnumItem ENUM_FileSystemRoot[] = {
    { "DATA", LuaFileSystem::ROOT_DATA },
    { 0, 0 },
 };
->>>>>>> 3584f6fe7 (added ship manufacturer constants)
 
 const struct EnumItem ENUM_PhysicsObjectType[] = {
    { "BODY", int(ObjectType::BODY) },
@@ -443,14 +443,11 @@ const struct EnumItem ENUM_ShipControllerFlightControlState[] = {
 };
 
 const struct EnumTable ENUM_TABLES[] = {
-<<<<<<< HEAD
-=======
    { "EquipSlot", ENUM_EquipSlot },
    { "EquipType", ENUM_EquipType },
    { "ShipManufacturer", ENUM_ShipManufacturer},
    { "DetailLevel", ENUM_DetailLevel },
    { "FileSystemRoot", ENUM_FileSystemRoot },
->>>>>>> 3584f6fe7 (added ship manufacturer constants)
    { "PhysicsObjectType", ENUM_PhysicsObjectType },
    { "ShipAIError", ENUM_ShipAIError },
    { "ShipFlightState", ENUM_ShipFlightState },
