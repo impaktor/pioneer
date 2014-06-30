@@ -23,4 +23,11 @@ f:illegal_goods_probability('battle_weapons',		50)
 f:illegal_goods_probability('nerve_gas',		100)
 f:illegal_goods_probability('narcotics',		100)
 
+f:shipmanufacturer_weight('ALBR', 0.1)    --test
+f:shipmanufacturer_weight('AURONOX', 0.1) --test
+f:shipmanufacturer_weight('HABER', 0.1)   --test
+f:shipmanufacturer_weight('MANDARAVA', 1) --test
+f:shipmanufacturer_weight('KALURI', 1.1)  --test
+f:shipmanufacturer_weight('OPLI', 0)      --test
+
 f:add_to_factions('Solar Federation')
