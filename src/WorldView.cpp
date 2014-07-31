@@ -1048,7 +1048,7 @@ void WorldView::AddCommsNavOption(const std::string &msg, Body *target)
 {
 	Gui::HBox *hbox = new Gui::HBox();
 	hbox->SetSpacing(5);
-	
+
 	std::string type = "";
 	std::string typetip = "Unknown";
 	if (target->GetType() == Object::SPACESTATION) {
@@ -1064,7 +1064,7 @@ void WorldView::AddCommsNavOption(const std::string &msg, Body *target)
 
 	Gui::Label *l = new Gui::Label(msg + " (" + format_distance(Pi::player->GetPositionRelTo(target).Length()) + ")");
 	hbox->PackStart(l);
-	
+
 	Gui::LabelButton *b = new Gui::LabelButton(new Gui::Label(type));
 	b->SetToolTip(typetip);
 	b->onClick.connect(sigc::bind(sigc::mem_fun(this, &WorldView::OnClickCommsNavOption), target));
