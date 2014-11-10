@@ -1,14 +1,17 @@
 -- Copyright © 2008-2014 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local f = Faction:new('Solar Federation')
-	:description_short('The historical birthplace of humankind')
-	:description([[Sol is a fine joint]])
+local Lang = import("Lang")
+local l = Lang.GetResource("factions")
+
+local f = Faction:new(l.SOLFED_NAME)
+	:description_short(l.SOLFED_DECRIPTION_SHORT)
+	:description(l.SOLFED_DESCRIPTION)
 	:homeworld(0,0,0,0,4)
 	:foundingDate(3050.0)
 	:expansionRate(1.0)
-	:military_name('SolFed Military')
-	:police_name('SolFed Police Force')
+	:military_name(l.SOLFED_MILITARY_NAME)
+	:police_name(l.SOLFED_POLICE_NAME)
 	:colour(0.4,0.4,1.0)
 
 f:govtype_weight('EARTHDEMOC',    60)

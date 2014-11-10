@@ -1,0 +1,22 @@
+{
+   "SOLFED_NAME" : {
+      "description" : "Name of faction",
+      "message" : "Solar Federation"
+   },
+   "SOLFED_DECRIPTION_SHORT" : {
+      "description" : "A short decription of the faction",
+      "message" : "The historical birthplace of humankind"
+   },
+    "SOLFED_DESCRIPTION" : {
+      "description" : "",
+      "message" : [[Sol is a fine joint]]
+   },
+   "SOLFED_MILITARY_NAME" : {
+      "description" : "Name used for this faction's military",
+      "message" : "SolFed Military"
+   },
+   "SOLFED_POLICE_NAME" : {
+      "description" : "Name used for this faction's police",
+      "message" : "SolFed Police Force"
+   }
+}
