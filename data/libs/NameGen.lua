@@ -129,7 +129,11 @@ NameGen = {
 		if not rand then rand = Engine.rand end
 
 		if body.type == "STARPORT_ORBITAL" then
-			return string.interp(r(NameGen.orbitalStarportFormats, rand), { name = NameGen.Surname(rand) })
+			local name = NameGen.Surname(rand)
+			--if rand.Number() < 0.1 then
+			name = body.parent.name
+			--end
+			return string.interp(r(NameGen.orbitalStarportFormats, rand), { name = name })
 		end
 
 		if body.type == "STARPORT_SURFACE" then
