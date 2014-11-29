@@ -1,0 +1,50 @@
+{
+"Explored":{
+"description":"",
+"message":" - esplorato"
+},
+"AutoCombatON":{
+"description":"",
+"message":"Auto Combattente ATTIVO"
+},
+"AutoCombatOFF":{
+"description":"",
+"message":"Auto Combattente NON ATTIVO"
+},
+"Damage_Control_Propellant":{
+"description":"",
+"message":"Controllo di danno: Attenzione!\nHa perso il 50% di Propellente!"
+},
+"Damage_Control_Autopilot":{
+"description":"",
+"message":"Controllo di danno: Attenzione!\nPilota Automatico distrutta!"
+},
+"Damage_Control_Radar":{
+"description":"",
+"message":"Controllo di danno: Attenzione!\nIl Radar è stata distrutta!"
+},
+"IS_REGISTERED_IN_OUR_DOMAIN":{
+"description":"",
+"message":"  è registrata nel nostro dominio."
+},
+"POLICE_SHIP_LABEL":{
+"description":"",
+"message":"POLIZIA"
+},
+"System_uninhabited":{
+"description":"",
+"message":"Sistema disabitato"
+},
+"Unexplored":{
+"description":"",
+"message":" - inesplorato"
+},
+"YOUR_SHIP":{
+"description":"",
+"message":"La sua nave "
+},
+"You_are_in_space_controlled_by":{
+"description":"",
+"message":"Lei è nello spazio controllato da "
+}
+}
