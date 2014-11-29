@@ -1,0 +1,218 @@
+{
+"ACTIVE":{
+"description":"",
+"message":"Activa"
+},
+"Attention_This_can_prove_costly_Your_life_is_not_worth":{
+"description":"",
+"message":"¡Atención! Esto puede costarle caro. Su vida no vale "
+},
+"BUY":{
+"description":"Commodities and equipment prices",
+"message":"COMPRA"
+},
+"CAPACITY":{
+"description":"",
+"message":"Capacidad"
+},
+"COMPLETED":{
+"description":"",
+"message":"Completa"
+},
+"Check_with_the_police":{
+"description":"",
+"message":"Consulte con la policía"
+},
+"CREW_VACANCIES":{
+"description":"",
+"message":"Vacantes tripulación"
+},
+"Current_Faction":{
+"description":"",
+"message":"Facción actual:"
+},
+"Current_Position":{
+"description":"",
+"message":"Posición actual:"
+},
+"ENTER_HIGH_ORBIT_AT_CURRENT_TARGET":{
+"description":"",
+"message":"Establecer Órbita Alta"
+},
+"ENTER_LOW_ORBIT_AT_CURRENT_TARGET":{
+"description":"",
+"message":"Establecer Órbita Baja"
+},
+"ENTER_MEDIUM_ORBIT_AT_CURRENT_TARGET":{
+"description":"",
+"message":"Establecer Órbita Media"
+},
+"ENVIRONMENTAL_DAMAGE":{
+"description":"",
+"message":"Daño ambiental"
+},
+"Experience":{
+"description":"",
+"message":"Experiencia"
+},
+"FAILED":{
+"description":"",
+"message":"Fallida"
+},
+"Failed_Missions":{
+"description":"",
+"message":"Misiones Fallidas:"
+},
+"HEAVY_SCOUT":{
+"description":"",
+"message":"Explorador pesado"
+},
+"Hyperspace":{
+"description":"",
+"message":"Hiperespacio"
+},
+"ILLEGAL_JUMP":{
+"description":"",
+"message":"Salto ilegal"
+},
+"INACTIVE":{
+"description":"",
+"message":"Inactiva"
+},
+"In_space_of":{
+"description":"",
+"message":"En espacio de "
+},
+"LIGHT_SCOUT":{
+"description":"",
+"message":"Explorador liviano"
+},
+"Landed_in":{
+"description":"",
+"message":"Posado en "
+},
+"Local":{
+"description":"",
+"message":"Local"
+},
+"MAPPING":{
+"description":"",
+"message":"Mapeando"
+},
+"MAPPING_interrupted":{
+"description":"",
+"message":"MAPEADO INTERRUMPIDO. ¡Muy lejos del objetivo! Corrija órbita"
+},
+"MEDIUM_SCOUT":{
+"description":"",
+"message":"Explorador mediano"
+},
+"New_Ships_without_stock":{
+"description":"",
+"message":"Mercado de Naves Nuevas sin stock\nen todo el sistema: "
+},
+"Origin":{
+"description":"",
+"message":"Origen:"
+},
+"Previous_Faction":{
+"description":"",
+"message":"Facción previa:"
+},
+"Previous_Position":{
+"description":"",
+"message":"Posición previa:"
+},
+"Registration":{
+"description":"",
+"message":"Registro:"
+},
+"Risk_Area":{
+"description":"",
+"message":"Riesgo Zonal"
+},
+"SELL":{
+"description":"Commodities and equipment prices",
+"message":"VENTA"
+},
+"START_AT_ACHERNAR":{
+"description":"",
+"message":"Comenzar en Achernar"
+},
+"START_AT_LAVE":{
+"description":"",
+"message":"Comenzar en Lave"
+},
+"SUSPENDED":{
+"description":"",
+"message":"Suspendida"
+},
+"Shots_received":{
+"description":"",
+"message":"Disparos Recibidos:"
+},
+"Shots_successful":{
+"description":"",
+"message":"Disparos Acertados:"
+},
+"Successful_Missions":{
+"description":"",
+"message":"Misiones Cumplidas:"
+},
+"UNDOCK_AND_ENTER_LOW_ORBIT":{
+"description":"",
+"message":"Despegar y Establecer Órbita Baja"
+},
+"YOU_DESERVE_TO_BE_IMMORTAL":{
+"description":"",
+"message":"¡Tú mereces ser inmortal!"
+},
+"You_has_been_fined":{
+"description":"",
+"message":"Usted ha sido multado con  "
+},
+"You_have_committed_a_crime_and_must_pay":{
+"description":"",
+"message":"Usted ha cometido un delito y debe pagar "
+},
+"You_must_install_the_Life_Support_for_Cargo_Bay":{
+"description":"",
+"message":"Usted debe instalar el Soporte Vital para Carga"
+},
+"port_or_vecinity":{
+"description":"",
+"message":" en puerto o cercanías."
+},
+"for_jettison":{
+"description":"",
+"message":" por arrojar "
+},
+"have_enough_experience":{
+"description":"",
+"message":"Usted no tiene suficiente experiencia para esta misión."
+},
+"MISSILE_BAYS":{
+"description":"",
+"message":"Bahías de Misiles"
+},
+"FEATURES":{
+"description":"",
+"message":"Características"
+},
+"CREW":{
+"description":"",
+"message":"Tripulación"
+},
+"Warning_You_must_go_back_to_the_Station_now_or_you_will_die_soon":{
+"description":"",
+"message":"¡Advertencia! Debes volver a la estación ahora o morirás."
+},
+"WEAPONS":{
+"description":"",
+"message":"Armamento"
+},
+"light_year":{
+"description":"",
+"message":" años luz"
+}
+}
