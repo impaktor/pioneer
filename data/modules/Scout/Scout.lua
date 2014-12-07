@@ -89,10 +89,11 @@ local flavours = {
 for i = 1,#flavours do
 	local f = flavours[i]
 	f.adtext     = l["ADTEXT_"..i]
-	f.introtext  = l["INTROTEXT_"..i]
-	f.introtext2 = l["INTROTEXT_COMPLETED_"..i]
-	f.whysomuch	 = l["WHYSOMUCH_"..i]
-	f.successmsg = l["SUCCESSMSG_"..i]
+	f.introtext  = l["ADTEXT_"..i.."_INTRO"]
+	f.introtext2 = l["INTROTEXT_COMPLETED_"..i]   -- xxx
+	f.whysomuch	 = l["ADTEXT_"..i.."_WHYSOMUCH"]
+	f.successmsg = l["ADTEXT_"..i.."_SUCCESSMSG"]
+	f.failmsg	 = l["ADTEXT_"..i.."_FAILMSG"]
 end
 
 local ads      = {}
@@ -160,7 +161,7 @@ local onChat = function (form, ref, option)
 
 		table.insert(missions,Mission.New(mission))
 		Game.player:SetHyperspaceTarget(mission.location:GetStarSystem().path)
-		form:SetMessage(l.Excellent_I_await_your_report)
+		form:SetMessage(l.EXCELLENT_I_AWAIT_YOUR_REPORT)
 		return
 	end
 
@@ -176,50 +177,59 @@ local onDelete = function (ref)
 	ads[ref] = nil
 end
 
+-- store once for the system player is in
+local nearbysystems
 
 local makeAdvert = function (station)
-	local reward, due, location, nearbysystem
+	local reward, due, nearbysystem
+	local location				          -- mission body
 	local client = Character.New()
 	local flavour = Engine.rand:Integer(1,#flavours)
 	local urgency = flavours[flavour].urgency
 	local difficulty = flavours[flavour].difficulty
-	local faction = Game.system.faction
+	local faction = Game.system.faction   -- xxx
+
 	if flavours[flavour].localscout then  -- local system
-		nearbysystem = Game.system
-		local nearbystations = nearbysystem:GetBodyPaths()
-		local HasPop = 1
-		while HasPop > 0 do
-			if HasPop > #nearbystations then return end
-			location = nearbystations[Engine.rand:Integer(1,#nearbystations)]
-			local CurBody = location:GetSystemBody()
-			if CurBody.superType == "ROCKY_PLANET"
-				and CurBody.type ~= "PLANET_ASTEROID"
-			then break end
-			HasPop = HasPop + 1
+
+		nearbysystem = Game.system        -- i.e. this system
+		local nearbybodies = nearbysystem:GetBodyPaths()
+		local checkedBodies = 0
+		while checkedBodies <= #nearbybodies do -- check, at most, all nearbybodies
+			location = nearbybodies[Engine.rand:Integer(1,#nearbybodies)]
+			local currentBody = location:GetSystemBody()   -- go from syspath to sysbody
+			if currentBody.superType == "ROCKY_PLANET" and currentBody.type ~= "PLANET_ASTEROID" then
+				break  --- xxx why SUPER type? only allow satelites?
+			end
+			checkedBodies = checkedBodies + 1
 		end
+
+		-- no missions in the backyard please
 		local dist = station:DistanceTo(Space.GetBody(location.bodyIndex))
 		if dist < 1000 then return end
+
 		reward = local_reward + (math.sqrt(dist) / 15000) * (1.5+urgency) * (1+Game.system.lawlessness)
 		due = Game.time + ((4*24*60*60) * (Engine.rand:Number(1.5,3.5) - urgency))
-	else                                       -- remote system
-		local nearbysystems =	Game.system:GetNearbySystems(max_scout_dist,
-			function (s) return #s:GetBodyPaths() > 0 and s.population == 0 end)
+	else                                   -- remote system
+		if nearbysystems == nil then       -- only uninhabited systems
+			nearbysystems =	Game.system:GetNearbySystems(max_scout_dist,
+				function (s) return #s:GetBodyPaths() > 0 and s.population == 0 end)
+		end
 		if #nearbysystems == 0 then return end
 		nearbysystem = nearbysystems[Engine.rand:Integer(1,#nearbysystems)]
 		local dist = nearbysystem:DistanceTo(Game.system)
-		local nearbybodys = nearbysystem:GetBodyPaths()
+		local nearbybodies = nearbysystem:GetBodyPaths()
 
-		local HasPop = 1
-		while HasPop > 0 do
-			if HasPop > #nearbybodys then return end
-			location = nearbybodys[Engine.rand:Integer(1,#nearbybodys)]
-			local CurBody = location:GetSystemBody()
-			if CurBody.superType == "ROCKY_PLANET"
-				and CurBody.type ~= "PLANET_ASTEROID"
-			then break end
-			HasPop = HasPop + 1
+		local checkedBodies = 0
+		while checkedBodies <= #nearbybodies do -- check, at most, all nearbybodies
+			location = nearbybodies[Engine.rand:Integer(1,#nearbybodies)]
+			local currentBody = location:GetSystemBody()
+			if currentBody.superType == "ROCKY_PLANET" and currentBody.type ~= "PLANET_ASTEROID" then
+				break
+			end
+			checkedBodies = checkedBodies + 1
 		end
 
+		-- Compute reward for mission
 		local multiplier = Engine.rand:Number(1.5,1.6)
 		if Game.system.faction ~= location:GetStarSystem().faction then
 			multiplier = multiplier * Engine.rand:Number(1.3,1.5)
@@ -231,27 +241,24 @@ local makeAdvert = function (station)
 	end
 
 	local ad = {
-		station  = station,
-		flavour  = flavour,
-		client   = client,
-		location = location,
-		dist     = Game.system:DistanceTo(location),
-		due      = due,
-		difficulty     = difficulty,
-		urgency  = urgency,
-		reward   = reward,
-		isfemale = isfemale,
-		faceseed = Engine.rand:Integer(),
+		station    = station,
+		flavour    = flavour,
+		client     = client,
+		location   = location,
+		dist       = Game.system:DistanceTo(location),
+		due        = due,
+		difficulty = difficulty,
+		urgency    = urgency,
+		reward     = reward,
+		isfemale   = isfemale,
+		faceseed   = Engine.rand:Integer(),
 	}
 
-	local sbody = ad.location:GetSystemBody()
-
 	ad.desc = string.interp(flavours[flavour].adtext, {
-		police     = faction.policeName,
 		system     = nearbysystem.name,
 		cash       = Format.Money(ad.reward),
 		dist       = string.format("%.2f", ad.dist),
-		systembody = sbody.name,
+		systembody = ad.location:GetSystemBody().name
 	})
 
 	local ref = station:AddAdvert({
@@ -259,12 +266,13 @@ local makeAdvert = function (station)
 		icon        = "scout",
 		onChat      = onChat,
 		onDelete    = onDelete})
-	ads[ref] = ad
 
+	ads[ref] = ad
 end
 
+
 local onCreateBB = function (station)
-	local num = Engine.rand:Integer(math.ceil(Game.system.population))
+	local num = Engine.rand:Integer(math.ceil(Game.system.population)) / 2
 	for i = 1,num do
 		makeAdvert(station)
 	end
@@ -281,8 +289,20 @@ local onUpdateBB = function (station)
 			ad.station:RemoveAdvert(ref)
 		end
 	end
-	if Engine.rand:Integer(43200) < 3600 then -- 12 h < 1 h
+	if Engine.rand:Integer(43200) < 3600 then    -- 12 h < 1 h
 		makeAdvert(station)
+	end
+end
+
+
+local onEnterSystem = function (playership)
+	if not playership:IsPlayer() then return end
+	nearbysystems = nil
+
+	for ref,mission in pairs(missions) do
+		if mission.status == "ACTIVE" and Game.time > mission.due then
+			mission.status = 'FAILED'
+		end
 	end
 end
 
@@ -290,7 +310,7 @@ end
 local mapped = function(body)
 	local CurBody = Game.player.frameBody or body
 	if not CurBody then return end
-	local faction = Game.system.faction
+	local faction = Game.system.faction -- xxx
 	local mission
 	for ref,mission in pairs(missions) do
 		if Game.time > mission.due then mission.status = "FAILED" end
@@ -380,35 +400,24 @@ end
 
 local onShipDocked = function (player, station)
 	if not player:IsPlayer() then return end
+
 	local mission
 	local faction = Game.system.faction
 	for ref, mission in pairs(missions) do
 
-		if Game.time > mission.due then
---			mission.status == "FAILED"
-				mission:Remove()
-				missions[ref] = nil
---			return
-		end
-
-		if mission.status == "COMPLETED" then
-			if mission.faction == faction.name then
-				if station.path == mission.location then
-					Comms.ImportantMessage((flavours[mission.flavour].successmsg), mission.client.name)
-					player:AddMoney(mission.reward)
-					Character.persistent.player.reputation = Character.persistent.player.reputation + 1
-					mission:Remove()
-					missions[ref] = nil
-				end
-			else
-				local multiplier = 1 + Game.system.lawlessness
-				local money = math.floor((Game.player:GetMoney()/2) * multiplier)
-				Game.player:AddCrime("TRADING_ILLEGAL_GOODS", money)
-				Comms.ImportantMessage(l.You_have_been_fined .. Format.Money(money), faction.policeName)
+		if station.path == mission.location then
+			if Game.time > mission.due then
+				Comms.ImportantMessage((flavours[mission.flavour].failmesg), mission.client.name)
 				Character.persistent.player.reputation = Character.persistent.player.reputation - 1
-				mission:Remove()
-				missions[ref] = nil
+			else
+				Comms.ImportantMessage((flavours[mission.flavour].successmsg), mission.client.name)
+				Character.persistent.player.reputation = Character.persistent.player.reputation + 1
+				player:AddMoney(mission.reward)
 			end
+			mission:Remove()
+			missions[ref] = nil
+		elseif mission.status == "ACTIVE" and Game.time > mission.due then -- or not COPMLEATED? is ACTIVE a state?
+			mission.status = "FAILED"
 		end
 	end
 end
@@ -432,18 +441,17 @@ local onGameStart = function ()
 		loaded_data = nil
 	end
 
-	local CurBody = Game.player.frameBody
+	local currentBody = Game.player.frameBody
 	local mission
 	for ref,mission in pairs(missions) do
-		if CurBody and CurBody.path ~= mission.location then return end
+		if currentBody and currentBody.path ~= mission.location then return end
 		if Game.time > mission.due then
 			mission.status = "FAILED"
---			_G.MissionsFailures = MissionsFailures + 1
 			mission:Remove()
 			missions[ref] = nil
 			return
 		end
-		mapped(CurBody)
+		mapped(currentBody)
 	end
 end
 
@@ -453,11 +461,7 @@ local onClick = function (mission)
 
 	local danger
 	if mission.difficulty == 0 then
-
-		--- xxx
  		---danger = (l["MessageRisk3_" .. Engine.rand:Integer(1,2)])
-
-
 	end
 
 	if mission.status =="ACTIVE" or mission.status =="MAPPING" then
@@ -635,8 +639,15 @@ local unserialize = function (data)
 	loaded_data = data
 end
 
+local onGameEnd = function ()
+	nearbysystems = nil
+end
+
+Event.Register("onGameEnd", onGameEnd)
 Event.Register("onCreateBB", onCreateBB)
 Event.Register("onUpdateBB", onUpdateBB)
+--Event.Register("onLeaveSystem", onLeaveSystem)
+Event.Register("onEnterSystem", onEnterSystem)
 Event.Register("onFrameChanged", onFrameChanged)
 Event.Register("onShipDocked", onShipDocked)
 Event.Register("onGameStart", onGameStart)
