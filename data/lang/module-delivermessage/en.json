@@ -1,0 +1,398 @@
+{
+   "ADTEXT_1" : {
+      "description" : "",
+      "message" : "MESSAGE. Pilot bound for {system} is needed to carry message for {cash}"
+   },
+   "ADTEXT_2" : {
+      "description" : "",
+      "message" : "MESSAGE. Need someone to bring an important message to {system} for {cash}"
+   },
+   "ADTEXT_3" : {
+      "description" : "",
+      "message" : "MESSAGE. Feeling keen on delivering a message to {system}? Will pay {cash}"
+   },
+   "ADTEXT_4" : {
+      "description" : "",
+      "message" : "MESSAGE. Going to {system}? There's {cash} to be earned"
+   },
+   "ADTEXT_5" : {
+      "description" : "",
+      "message" : "MESSAGE. Deliver private message to {system}. Will pay {cash}"
+   },
+   "ADTEXT_6" : {
+      "description" : "",
+      "message" : "MESSAGE. Important communication to {system}, for {cash}"
+   },
+   "ADTEXT_7" : {
+      "description" : "",
+      "message" : "MESSAGE. Bound for {system}? Bring a message and earn {cash}"
+   },
+   "AGREED" : {
+      "description" : "Said by the contract giver when accepting a mission",
+      "message" : "Agreed"
+   },
+   "COULD_YOU_REPEAT_THE_ORIGINAL_REQUEST" : {
+      "description" : "",
+      "message" : "Could you please repeat the original request?"
+   },
+   "DEADLINE" : {
+      "description" : "",
+      "message" : "Deadline:"
+   },
+   "DELIVERY" : {
+      "description" : "",
+      "message" : "Delivery"
+   },
+   "DISTANCE" : {
+      "description" : "",
+      "message" : "Distance:"
+   },
+   "FAILUREMSG_1" : {
+      "description" : "",
+      "message" : "What good is this message now?"
+   },
+   "FAILUREMSG_2" : {
+      "description" : "",
+      "message" : "Now this information is useless."
+   },
+   "FAILUREMSG_3" : {
+      "description" : "",
+      "message" : "Message delivered too late."
+   },
+   "FINALMESSAGE" : {
+      "description" : "",
+      "message" : "Message from {client} to {recipient}: \"{message}\""
+   },
+   "FLAVOUR_1_MISSIONTXT" : {
+      "description" : "",
+      "message" : "I need you to go to {starport} in the {system} system ({sectorx}, {sectory}, {sectorz}) and tell {recipient} \n\t\"{message}\"\nI'll pay {cash}."
+   },
+   "FLAVOUR_2_MISSIONTXT" : {
+      "description" : "",
+      "message" : "Hi! My name is {client} and I need you to, in person, tell {recipient} at {starport} in the {system} system ({sectorx}, {sectory}, {sectorz}) \n\"{message}\"\n You'll receive {cash} for your trouble."
+   },
+   "FLAVOUR_3_MISSIONTXT" : {
+      "description" : "",
+      "message" : "For {cash}, could you please tell {recipient} at {starport} in system {system} ({sectorx}, {sectory}, {sectorz}) that {client} says \n\"{message}\"\n"
+   },
+   "FLAVOUR_4_MISSIONTXT" : {
+      "description" : "Note: no space after the line break: \"\n\"",
+      "message" : "Please deliver this message: \n\"{message}\"\nto {recipient} of {starport} in {system} system ({sectorx}, {sectory}, {sectorz}) and tell them {client} says hi. You will get {cash}."
+   },
+   "FLAVOUR_5_MISSIONTXT" : {
+      "description" : "",
+      "message" : "Hi! I need you to tell {recipient} at {starport} ({sectorx}, {sectory}, {sectorz}) \n\"{message}\"\nI will pay {cash}."
+   },
+   "FLAVOUR_6_MISSIONTXT" : {
+      "description" : "",
+      "message" : "Hi! I'm {client}. I need to convey a message to {starport} ({sectorx}, {sectory}, {sectorz}). Please tell {recipient} \n\"{message}\"\nand you will have {cash} coming your way."
+   },
+   "HOW_SOON_MUST_IT_BE_DELIVERED" : {
+      "description" : "",
+      "message" : "How soon must it be delivered?"
+   },
+   "IT_MUST_BE_DELIVERED_BY" : {
+      "description" : "",
+      "message" : "It must be delivered by "
+   },
+   "LY" : {
+      "description" : "",
+      "message" : "ly"
+   },
+   "MESSAGE_1" : {
+      "description" : "",
+      "message" : "All is forgiven"
+   },
+   "MESSAGE_2" : {
+      "description" : "",
+      "message" : "They live, we sleep"
+   },
+   "MESSAGE_3" : {
+      "description" : "",
+      "message" : "The fat lady sings no more"
+   },
+   "MESSAGE_4" : {
+      "description" : "",
+      "message" : "Soon our time will come"
+   },
+   "MESSAGE_5" : {
+      "description" : "",
+      "message" : "You pay what you owe"
+   },
+   "MESSAGE_6" : {
+      "description" : "",
+      "message" : "Just one more month"
+   },
+   "MESSAGE_7" : {
+      "description" : "",
+      "message" : "The blue star will rise"
+   },
+   "MESSAGE_8" : {
+      "description" : "",
+      "message" : "The golden chariot will ride the sky"
+   },
+   "MESSAGE_9" : {
+      "description" : "",
+      "message" : "Look out for the sign of the black mark"
+   },
+   "MESSAGE_10" : {
+      "description" : "",
+      "message" : "You've bought yourself one more week"
+   },
+   "MESSAGE_11" : {
+      "description" : "",
+      "message" : "Not even you will live forever"
+   },
+   "MESSAGE_12" : {
+      "description" : "",
+      "message" : "Happy birthday"
+   },
+   "MESSAGE_13" : {
+      "description" : "",
+      "message" : "It's a trap!"
+   },
+   "MESSAGE_14" : {
+      "description" : "",
+      "message" : "Everything is on schedule"
+   },
+   "MESSAGE_15" : {
+      "description" : "",
+      "message" : "You have let us down"
+   },
+   "MESSAGE_16" : {
+      "description" : "",
+      "message" : "The terms have changed"
+   },
+   "MESSAGE_17" : {
+      "description" : "",
+      "message" : "From now on, you're on your own"
+   },
+   "MESSAGE_18" : {
+      "description" : "",
+      "message" : "Get yourself here immediately"
+   },
+   "MESSAGE_19" : {
+      "description" : "",
+      "message" : "You have been served"
+   },
+   "MESSAGE_20" : {
+      "description" : "",
+      "message" : "Abort mission"
+   },
+   "MESSAGE_21" : {
+      "description" : "",
+      "message" : "No more excuses"
+   },
+   "MESSAGE_22" : {
+      "description" : "",
+      "message" : "It's a boy"
+   },
+   "MESSAGE_23" : {
+      "description" : "",
+      "message" : "It's a girl"
+   },
+   "MESSAGE_24" : {
+      "description" : "",
+      "message" : "Maintain surveillance"
+   },
+   "MESSAGE_25" : {
+      "description" : "",
+      "message" : "Pay with cash now, or your life later"
+   },
+   "MESSAGE_26" : {
+      "description" : "",
+      "message" : "You will not testify at the trial"
+   },
+   "MESSAGE_27" : {
+      "description" : "",
+      "message" : "You are running out of options"
+   },
+   "MESSAGE_28" : {
+      "description" : "",
+      "message" : "No more Mr. Nice Guy"
+   },
+   "MESSAGE_29" : {
+      "description" : "",
+      "message" : "Hold the next shipment"
+   },
+   "MESSAGE_30" : {
+      "description" : "Sic semper tyrannis = Thus always to tyrants",
+      "message" : "Sic semper tyrannis"
+   },
+   "MESSAGE_31" : {
+      "description" : "A line from the movie Wall Street, 1987",
+      "message" : "Blue Horseshoe loves Anacott Steel"
+   },
+   "MESSAGE_32" : {
+      "description" : "",
+      "message" : "The eggs are in the basket"
+   },
+   "MESSAGE_33" : {
+      "description" : "",
+      "message" : "Go all in"
+   },
+   "MESSAGE_34" : {
+      "description" : "",
+      "message" : "Business is good"
+   },
+   "MESSAGE_35" : {
+      "description" : "",
+      "message" : "I'm drawing a line in the sand, don't cross it"
+   },
+   "MESSAGE_36" : {
+      "description" : "",
+      "message" : "I'm in need of another delivery"
+   },
+   "MESSAGE_37" : {
+      "description" : "",
+      "message" : "I have payed my dues"
+   },
+   "MESSAGE_38" : {
+      "description" : "",
+      "message" : "This is the last shipment"
+   },
+   "MESSAGE_39" : {
+      "description" : "",
+      "message" : "The well is dry"
+   },
+   "MESSAGE_40" : {
+      "description" : "",
+      "message" : "Out mutual friend is no more"
+   },
+   "MESSAGE_41" : {
+      "description" : "",
+      "message" : "I have another situation for you to solve"
+   },
+   "MESSAGE_42" : {
+      "description" : "",
+      "message" : "Storms are brewing"
+   },
+   "MESSAGE_43" : {
+      "description" : "",
+      "message" : "The moon is full"
+   },
+   "MESSAGE_44" : {
+      "description" : "",
+      "message" : "Delivery expected next month"
+   },
+   "MESSAGE_45" : {
+      "description" : "",
+      "message" : "Contact lady in red"
+   },
+   "MESSAGE_46" : {
+      "description" : "",
+      "message" : "See you at the funeral"
+   },
+   "MESSAGE_47" : {
+      "description" : "",
+      "message" : "You got the contract"
+   },
+   "MESSAGE_48" : {
+      "description" : "Fun fact: said by Lord Darth Vader",
+      "message" : "Your lack of faith is disturbing"
+   },
+   "MESSAGE_49" : {
+      "description" : "",
+      "message" : "I am the walrus"
+   },
+   "MESSAGE_50" : {
+      "description" : "",
+      "message" : "You're nothing without me"
+   },
+   "MESSAGE_51" : {
+      "description" : "",
+      "message" : "I'm not going to make it"
+   },
+   "MESSAGE_52" : {
+      "description" : "",
+      "message" : "Tick tock, time is running out"
+   },
+   "MESSAGE_53" : {
+      "description" : "",
+      "message" : "You just moved to the top of my list"
+   },
+   "MESSAGE_54" : {
+      "description" : "The Celestial Flying Spaghetti Monster is also mentioned in DonateToCranks-module",
+      "message" : "The Celestial Flying Spaghetti Monster requires more donations"
+   },
+   "MESSAGE_55" : {
+      "description" : "",
+      "message" : "There will be no next time"
+   },
+   "MESSAGE_56" : {
+      "description" : "",
+      "message" : "Burn everything, leave no traces"
+   },
+   "MESSAGE_57" : {
+      "description" : "",
+      "message" : "Check for monsters under the bed"
+   },
+   "MESSAGE_58" : {
+      "description" : "",
+      "message" : "You're treading on thin ice"
+   },
+   "MESSAGE_59" : {
+      "description" : "Fun fact: Common occurrence in roman culture, can also refer to manic depression.",
+      "message" : "Beware of the black dog"
+   },
+   "MESSAGE_60" : {
+      "description" : "",
+      "message" : "The circle must stay unbroken"
+   },
+   "MESSAGE_61" : {
+      "description" : "",
+      "message" : "Open wide the gates"
+   },
+   "MESSAGE_62" : {
+      "description" : "",
+      "message" : "I love you, please come back"
+   },
+   "MESSAGE_63" : {
+      "description" : "A little wink to Hitch hikers guide to the galaxy",
+      "message" : "Bring a towel"
+   },
+   "MESSAGE_64" : {
+      "description" : "A little wink to Hitch hikers guide to the galaxy",
+      "message" : "Don't panic!"
+   },
+   "MESSAGE_65" : {
+      "description" : "A little wink to Hitch hikers guide to the galaxy",
+      "message" : "We apologize for the inconvenience"
+   },
+   "MESSAGE_66" : {
+      "description" : "Someones diplomatic immunity?",
+      "message" : "It's just been revoked"
+   },
+   "MESSAGE_67" : {
+      "description" : "",
+      "message" : "Everything is lost"
+   },
+   "OK_AGREED" : {
+      "description" : "",
+      "message" : "Ok, agreed."
+   },
+   "SPACEPORT" : {
+      "description" : "",
+      "message" : "Spaceport:"
+   },
+   "SUCCESSMSG_1" : {
+      "description" : "",
+      "message" : "Thank you for the message."
+   },
+   "SUCCESSMSG_2" : {
+      "description" : "",
+      "message" : "Message recieved."
+   },
+   "SUCCESSMSG_3" : {
+      "description" : "",
+      "message" : "Thank's for the information."
+   },
+   "SUCCESSMSG_4" : {
+      "description" : "",
+      "message" : "I hear you."
+   },
+   "SYSTEM" : {
+      "description" : "",
+      "message" : "System:"
+   }
+}
