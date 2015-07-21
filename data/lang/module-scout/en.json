@@ -300,8 +300,8 @@
       "message" : "You will be paid on my behalf at the NEW DESTINATION"
    },
    "ADDITIONAL_INFORMATION" : {
-      "description" : "",
-      "message" : "you will program your mapper with what I'm looking for. This program will make decisions for me and report back to your computer. If you should come here, or bring the data to another system, depends on what you find. It may occur that I'll change the delivery destination to another more convenient system. You must be alert and assured of enough fuel and time.\nThis does not apply to local missions."
+      "description" : "Note. 'surface scanner' is the name of an equipment, that should be translated the same",
+      "message" : "You will need a surface scanner fitted to your ship. Once you're at the body in question, activate the scanner, and fly at low altitude, until scan is complete. Then deliver the data to me."
    },
    "COMPUTER" : {
       "description" : "The ship on board computer",
@@ -317,6 +317,6 @@
    },
    "suspended_mission" : {
       "description" : "",
-      "message" : "The mapping process has been interrupted. You are far from the target. To continue, you must properly correct the orbit to restart the process."
+      "message" : "Mapping process interrupted, too far from target."
    }
 }

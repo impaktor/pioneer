@@ -23,10 +23,10 @@ local l = Lang.GetResource("module-scout")
 local max_scout_dist = 30
 
 -- scanning time 600 = 10 minutes
-local scan_time = 600
+local scan_time = 600  -- uuu
 
 -- CallEvery(xTimeUp,....
-local xTimeUp = 10
+local xTimeUp = 10     -- uuu
 local radius_min = 1.5
 local radius_max = 1.6
 
@@ -139,6 +139,7 @@ local onChat = function (form, ref, option)
 
 	elseif option == 3 then
 
+		-- använd något annat!
 		if Game.player:CountEquip(Eq.misc.radar_mapper) == 0 then
 			form:SetMessage(l.YOU_NEED_RADAR_MAPPER)
 			return
@@ -148,7 +149,7 @@ local onChat = function (form, ref, option)
 		local mission = {
 			type        = "Scout",
 			faction     = faction.name,
-			police      = faction.policeName,
+			police      = faction.policeName,  -- bortkommenterad tidigare?
 			backstation = backstation,
 			client      = ad.client,
 			location    = ad.location,
@@ -182,7 +183,7 @@ local nearbysystems
 
 local makeAdvert = function (station)
 	local reward, due, nearbysystem
-	local location				          -- mission body
+	local location						  -- mission body
 	local client = Character.New()
 	local flavour = Engine.rand:Integer(1,#flavours)
 	local urgency = flavours[flavour].urgency
@@ -316,7 +317,7 @@ local mapped = function(body)
 		if Game.time > mission.due then mission.status = "FAILED" end
 		if Game.system == mission.location:GetStarSystem() then
 
-			if mission.status == "COMPLETED" then return end
+			if mission.status == "COMPLETED" then return end -- borde det inte vara continue? uuu
 
 			local PhysBody = CurBody.path:GetSystemBody()
 			if PhysBody and CurBody.path == mission.location then
@@ -357,6 +358,10 @@ local mapped = function(body)
 							Comms.ImportantMessage(l.MAPPING_COMPLETED, l.COMPUTER)
 
 							-- decide delivery location:
+
+							--- uuu if we're changing location, that's silly -> remove
+							--- or is it a "hack" that a delivery location might not be there?
+							--- I know I can always return to the same station, as where I picked up the mission, right.
 							local newlocation = mission.backstation
 							if not flavours[mission.flavour].localscout
 								and (((mission.faction == faction.name)
@@ -402,7 +407,6 @@ local onShipDocked = function (player, station)
 	if not player:IsPlayer() then return end
 
 	local mission
-	local faction = Game.system.faction
 	for ref, mission in pairs(missions) do
 
 		if station.path == mission.location then
@@ -461,7 +465,7 @@ local onClick = function (mission)
 
 	local danger
 	if mission.difficulty == 0 then
- 		---danger = (l["MessageRisk3_" .. Engine.rand:Integer(1,2)])
+		---danger = (l["MessageRisk3_" .. Engine.rand:Integer(1,2)])
 	end
 
 	if mission.status =="ACTIVE" or mission.status =="MAPPING" then
