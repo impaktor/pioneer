@@ -327,6 +327,7 @@ static const luaL_Reg STANDARD_LIBS[] = {
 	{ LUA_BITLIBNAME, luaopen_bit32 },
 	{ LUA_MATHLIBNAME, luaopen_math },
 	{ LUA_DBLIBNAME, luaopen_debug },
+	{ LUA_IOLIBNAME, luaopen_io},
 #ifdef ENABLE_LDB
 	{ LUA_LDBCORELIBNAME, luaopen_ldbcore},
 #endif //ENABLE_LDB
