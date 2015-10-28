@@ -44,7 +44,8 @@ CustomSystem:new('Gliese 145',{'STAR_M'}):add_to_sector(2,-2,-4,v(0.522,0.115,0.
 CustomSystem:new('Gliese 268',{'STAR_M'}):add_to_sector(1,0,1,v(0.934,0.61,0.615))
 CustomSystem:new('Gliese 142',{'STAR_K'}):add_to_sector(3,-3,-2,v(0.812,0.018,0.257))
 CustomSystem:new('NN 3079',{'WHITE_DWARF'}):add_to_sector(1,-4,-1,v(0.280,0.087,0.867))
-CustomSystem:new('Gliese 339.1',{'WHITE_DWARF'}):add_to_sector(1,1,3,v(0.647,0.896,0.387))
+-- CustomSystem:new('Gliese 339.1',{'WHITE_DWARF'}):add_to_sector(1,1,3,v(0.647,0.896,0.387))
+-- Use as custom pirate system
 CustomSystem:new('NN 4285',{'STAR_M'}):add_to_sector(-1,-2,-3,v(0.602,0.936,0.470))
 CustomSystem:new('Gliese 480.1',{'STAR_M'}):add_to_sector(-1,2,-3,v(0.599,0.227,0.847))
 CustomSystem:new('NN 4281',{'STAR_M'}):add_to_sector(-2,-4,-2,v(0.330,0.021,0.971))
