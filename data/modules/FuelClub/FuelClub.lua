@@ -69,7 +69,7 @@ local flavours = {
 		nonmember_intro = l.FLAVOUR_0_NONMEMBER_INTRO,
 		member_intro = l.FLAVOUR_0_MEMBER_INTRO,
 		annual_fee = 400,
-		availability = {FED = 0.1, CIW = 0.1, HABER = 0, IND = 0.4} -- probability for these factions
+		availability = {FED = 0.1, CIW = 0.1, HABER = 0, IND = 0.4, PIRATE = 0} -- probability for these factions
 	},
 	{   -- SolFed club (reuse some messages)
 		title    = l.FLAVOUR_1_TITLE,
@@ -79,7 +79,7 @@ local flavours = {
 		nonmember_intro = l.FLAVOUR_1_NONMEMBER_INTRO,
 		member_intro = l.FLAVOUR_0_MEMBER_INTRO,
 		annual_fee = 400,
-		availability = {FED = 0.4, CIW = 0, HABER = 0, IND = 0}
+		availability = {FED = 0.4, CIW = 0, HABER = 0, IND = 0, PIRATE = 0}
 	},
 	{   -- Confederation club
 		title    = l.FLAVOUR_2_TITLE,
@@ -89,7 +89,7 @@ local flavours = {
 		nonmember_intro = l.FLAVOUR_2_NONMEMBER_INTRO,
 		member_intro = l.FLAVOUR_0_MEMBER_INTRO,
 		annual_fee = 300,
-		availability = {FED = 0, CIW = 0.4, HABER = 0, IND = 0}
+		availability = {FED = 0, CIW = 0.4, HABER = 0, IND = 0, PIRATE = 0}
 	},
 	{   -- Haber fuel division
 		title    = l.FLAVOUR_3_TITLE,
@@ -99,7 +99,15 @@ local flavours = {
 		nonmember_intro = l.FLAVOUR_3_NONMEMBER_INTRO,
 		member_intro = l.FLAVOUR_3_MEMBER_INTRO,
 		annual_fee = 600,
-		availability = {FED = 0, CIW = 0, HABER=1, IND = 0}
+		availability = {FED = 0, CIW = 0, HABER = 1, IND = 0, PIRATE = 0}
+	},
+	{   -- Pirate system
+		clubname = l.FLAVOUR_4_CLUBNAME,
+		welcome = l.FLAVOUR_0_WELCOME,
+		nonmember_intro = l.FLAVOUR_4_NONMEMBER_INTRO,
+		member_intro = l.FLAVOUR_4_MEMBER_INTRO,
+		annual_fee = 200,
+		availability = {FED = 0, CIW = 0, HABER = 0, IND = 0, PIRATE = 1}
 	}
 }
 
@@ -276,6 +284,9 @@ local onCreateBB = function (station)
 
 	-- For convenes, map long faction name to shorter table key
 	local faction_key
+
+	-- TODO if lawess: pirate faction!
+
 	if faction == "Solar Federation" then
 		faction_key = "FED"
 	elseif faction == "Commonwealth of Independent Worlds" then
