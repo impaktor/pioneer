@@ -477,6 +477,7 @@ void SystemInfoView::SystemChanged(const SystemPath &path)
 
 		col1->Add((new Gui::Label(Lang::ALLEGIANCE))->Color(255,255,0), 0, 4*YSEP);
 		col2->Add(new Gui::Label(m_system->GetFaction()->name.c_str()), 0, 4*YSEP);
+
 		col1->Add((new Gui::Label(Lang::POPULATION))->Color(255,255,0), 0, 5*YSEP);
 		std::string popmsg;
 		fixed pop = m_system->GetTotalPop();
@@ -491,6 +492,9 @@ void SystemInfoView::SystemChanged(const SystemPath &path)
 
 		col1->Add((new Gui::Label(Lang::SYSTEM_NUMBER))->Color(255,255,0), 0, 7*YSEP);
 		col2->Add(new Gui::Label(stringf("%0", path.systemIndex)), 0, 7*YSEP);
+
+		col1->Add((new Gui::Label(Lang::CULTURE))->Color(255,255,0), 0, 8*YSEP);
+		col2->Add(new Gui::Label(m_system->GetCulture()->name.c_str()), 0, 8*YSEP);
 	}
 
 	UpdateIconSelections();
@@ -578,7 +582,7 @@ void SystemInfoView::Update()
 		case REFRESH_NONE:
 			break;
 	}
-    UIView::Update();
+	UIView::Update();
 }
 
 void SystemInfoView::OnSwitchTo()
@@ -588,7 +592,7 @@ void SystemInfoView::OnSwitchTo()
 		if (needsRefresh != REFRESH_NONE)
 			m_refresh = needsRefresh;
 	}
-    UIView::OnSwitchTo();
+	UIView::OnSwitchTo();
 }
 
 void SystemInfoView::NextPage()
