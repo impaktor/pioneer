@@ -5,6 +5,8 @@
 #define _STARSYSTEM_H
 
 #include "libs.h"
+#include "Culture.h"
+#include "Factions.h"
 #include "galaxy/Economy.h"
 #include "Polit.h"
 #include "Serializer.h"
@@ -340,6 +342,7 @@ public:
 	}
 
 	const Faction* GetFaction() const  { return m_faction; }
+	const Culture* GetCulture() const  { return m_culture; }
 	bool GetUnexplored() const { return m_explored == eUNEXPLORED; }
 	ExplorationState GetExplored() const { return m_explored; }
 	double GetExploredTime() const { return m_exploredTime; }
@@ -387,6 +390,7 @@ private:
 	bool m_hasCustomBodies;
 
 	const Faction* m_faction;
+	const Culture* m_culture;
 	ExplorationState m_explored;
 	double m_exploredTime;
 	fixed m_metallicity;
@@ -428,6 +432,7 @@ public:
 	void SetExplored(ExplorationState explored, double time) { m_explored = explored; m_exploredTime = time; }
 	void SetSeed(Uint32 seed) { m_seed = seed; }
 	void SetFaction(const Faction* faction) { m_faction = faction; }
+	void SetCulture(const Culture* culture) { m_culture = culture; }
 	void SetEconType(GalacticEconomy::EconType econType) { m_econType = econType; }
 	void SetSysPolit(SysPolit polit) { m_polit = polit; }
 	void SetMetallicity(fixed metallicity) { m_metallicity = metallicity; }

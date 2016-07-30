@@ -660,7 +660,7 @@ SystemBody::AtmosphereParameters SystemBody::CalcAtmosphereParams() const
  */
 StarSystem::StarSystem(const SystemPath &path, RefCountedPtr<Galaxy> galaxy, StarSystemCache* cache, Random& rand)
 	: m_galaxy(galaxy), m_path(path.SystemOnly()), m_numStars(0), m_isCustom(false),
-	  m_faction(nullptr), m_explored(eEXPLORED_AT_START), m_exploredTime(0.0), m_econType(GalacticEconomy::ECON_MINING), m_seed(0),
+	  m_faction(nullptr), m_culture(nullptr), m_explored(eEXPLORED_AT_START), m_exploredTime(0.0), m_econType(GalacticEconomy::ECON_MINING), m_seed(0),
 	  m_commodityLegal(unsigned(GalacticEconomy::Commodity::COMMODITY_COUNT), true), m_cache(cache)
 {
 	PROFILE_SCOPED()
@@ -1036,6 +1036,7 @@ void StarSystem::Dump(FILE* file, const char* indent, bool suppressSectorData) c
 		fprintf(file, "%s\t\"%s\"\n", indent, m_name.c_str());
 		fprintf(file, "%s\t%sEXPLORED%s\n", indent, GetUnexplored() ? "UN" : "", m_hasCustomBodies ? ", CUSTOM-ONLY" : m_isCustom ? ", CUSTOM" : "");
 		fprintf(file, "%s\tfaction %s%s%s\n", indent, m_faction ? "\"" : "NONE", m_faction ? m_faction->name.c_str() : "", m_faction ? "\"" : "");
+		fprintf(file, "%s\tculture %s%s%s\n", indent, m_culture ? "\"" : "NONE", m_culture ? m_culture->name.c_str() : "", m_culture ? "\"" : "");
 		fprintf(file, "%s\tseed %u\n", indent, static_cast<Uint32>(m_seed));
 		fprintf(file, "%s\t%u stars%s\n", indent, m_numStars, m_numStars > 0 ? " {" : "");
 		assert(m_numStars == m_stars.size());
