@@ -27,6 +27,7 @@ noinst_HEADERS = \
 	CargoBody.h \
 	CityOnPlanet.h \
 	Color.h \
+	Culture.h \
 	Cutscene.h \
 	CRC32.h \
 	DateTime.h \
@@ -168,6 +169,7 @@ pioneer_SOURCES	= \
 	CargoBody.cpp \
 	Color.cpp \
 	CollMesh.cpp \
+	Culture.cpp \
 	CityOnPlanet.cpp \
 	CRC32.cpp \
 	DateTime.cpp \
