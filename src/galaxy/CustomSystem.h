@@ -10,6 +10,7 @@
 #include "fixed.h"
 #include "Color.h"
 
+class Culture;
 class Faction;
 class Galaxy;
 
@@ -79,9 +80,11 @@ public:
 	Uint32                 seed;
 	bool                   want_rand_explored;
 	bool                   explored;
+	const Culture*			  culture;
 	const Faction*         faction;
 	Polit::GovType         govType;
 	bool                   want_rand_lawlessness;
+	bool                   want_rand_culture;
 	fixed                  lawlessness; // 0.0 = lawful, 1.0 = totally lawless
 	std::string            shortDesc;
 	std::string            longDesc;
