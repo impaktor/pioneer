@@ -291,6 +291,10 @@
       "description" : "Ctrl key on keyboard",
       "message" : "Ctrl"
    },
+   "CULTURE" : {
+      "description" : "Culture/language/origin",
+      "message" : "Cultural heritage:"
+   },
    "CURRENT_SYSTEM" : {
       "description" : "selected current star system",
       "message" : "Current system"
