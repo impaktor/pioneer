@@ -6,6 +6,7 @@
 #include "AmbientSounds.h"
 #include "CargoBody.h"
 #include "CityOnPlanet.h"
+#include "Culture.h"
 #include "DeathView.h"
 #include "FaceParts.h"
 #include "Factions.h"
@@ -285,6 +286,7 @@ static void LuaInit()
 	LuaObject<SystemBody>::RegisterClass();
 	LuaObject<Random>::RegisterClass();
 	LuaObject<Faction>::RegisterClass();
+	LuaObject<Culture>::RegisterClass();
 
 	Pi::luaSerializer = new LuaSerializer();
 	Pi::luaTimer = new LuaTimer();
