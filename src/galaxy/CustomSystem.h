@@ -30,6 +30,8 @@ public:
 	fixed orbitalOffset;
 	fixed orbitalPhaseAtStart; // mean anomaly at start 0 to 2 pi
 	bool want_rand_offset;
+	bool want_rand_techlevel; // for stations
+
 	// for orbiting things, latitude = inclination
 	float latitude, longitude; // radians
 	fixed rotationPeriod; // in days
@@ -74,6 +76,7 @@ public:
 	CustomSystem();
 	~CustomSystem();
 
+<<<<<<< HEAD
 	std::string name;
 	std::vector<std::string> other_names;
 	CustomSystemBody *sBody;
@@ -92,6 +95,23 @@ public:
 	std::string longDesc;
 
 	void SanityChecks();
+=======
+	std::string            name;
+	CustomSystemBody*      sBody;
+	SystemBody::BodyType   primaryType[4];
+	unsigned               numStars;
+	int                    sectorX, sectorY, sectorZ;
+	vector3f               pos;
+	Uint32                 seed;
+	bool                   want_rand_explored;
+	bool                   explored;
+	const Faction*         faction;
+	Polit::GovType         govType;
+	bool                   want_rand_lawlessness;
+	fixed                  lawlessness; // 0.0 = lawful, 1.0 = totally lawless
+	std::string            shortDesc;
+	std::string            longDesc;
+>>>>>>> WIP, initial
 
 	bool IsRandom() const { return !sBody; }
 };

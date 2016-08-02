@@ -200,6 +200,20 @@ static int l_csb_rotational_phase_at_start(lua_State *L)
 	return 1;
 }
 
+static int l_csb_tech_level(lua_State *L)
+{
+	CustomSystemBody *csb = l_csb_check(L, 1);
+	const fixed *value = LuaFixed::CheckFromLua(L, 2);
+
+	csb->techLevel = *value; // now .h-file, and StarSystem.h need this property.
+	// 1. But will this be set by calling out to lua?
+	// 2. how will we know if it has been set manually in custom systemj?
+	cs->want_rand_techlevel = false;
+	lua_settop(L, 1);
+	return 1;
+}
+
+
 static int l_csb_height_map(lua_State *L)
 {
 	CustomSystemBody *csb = l_csb_check(L, 1);
@@ -297,6 +311,7 @@ static luaL_Reg LuaCustomSystemBody_meta[] = {
 	{ "rotation_period", &l_csb_rotation_period },
 	{ "rotational_phase_at_start", &l_csb_rotational_phase_at_start }, // 0 to 2 pi
 	{ "axial_tilt", &l_csb_axial_tilt },
+	{ "techlevel", &l_csb_tech_level },
 	{ "height_map", &l_csb_height_map },
 	{ "metallicity", &l_csb_metallicity },
 	{ "volcanicity", &l_csb_volcanicity },
@@ -718,6 +733,7 @@ CustomSystemBody::CustomSystemBody() :
 	aspectRatio(fixed(1, 1)),
 	averageTemp(1),
 	want_rand_offset(true),
+	want_rand_techlevel(true); // actually, only makes sense if a station!
 	latitude(0.0),
 	longitude(0.0),
 	volatileGas(0),
