@@ -1,6 +1,9 @@
+-- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
+
 -- source http://www.studentsoftheworld.info/penpals/stats.php3?Pays=ESP
 
-male={
+local male={
 	"Adrian",
 	"Aitor",
 	"Albert",
@@ -103,7 +106,7 @@ male={
 	"Óscar"
 }
 
-female={
+local female={
 	"Aida",
 	"Aina",
 	"Ainhoa",
@@ -205,7 +208,7 @@ female={
 	"Yaiza"
 }
 
-surname={
+local surname={
 	"Aguilar",
 	"Alonso",
 	"Alvarez",

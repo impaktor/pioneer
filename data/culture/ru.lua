@@ -1,4 +1,7 @@
-male={
+-- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
+
+local male={
 	'Afanasy',
 	'Alexander',
 	'Alexey',
@@ -51,7 +54,7 @@ male={
 	'Yaroslav'
 }
 
-female={
+local female={
 	'Alexandra',
 	'Alina',
 	'Alla',
@@ -104,7 +107,7 @@ female={
 	'Zoya'
 }
 
-surname={
+local surname={
 	'Abramtsev',
 	'Aleksandrov',
 	'Baranov',

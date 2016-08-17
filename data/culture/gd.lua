@@ -1,7 +1,9 @@
+-- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- source: http://pioneerspacesim.net/forum/viewtopic.php?f=3&t=466
 
-male={
+local male={
 	'Aaron',
 	'Adaidh',
 	'Àdhamh',
@@ -287,8 +289,7 @@ male={
 	'Ùspaig'
 }
 
-
-female={
+local female={
 	'Aigneas',
 	'Ailean',
 	'Aileas',
@@ -405,7 +406,7 @@ female={
 }
 
 -- male surnames
-surname={
+local surname={
 	'à Monadh Teith',
 	'Abarach',
 	'Achadh Leac',

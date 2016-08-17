@@ -1,4 +1,7 @@
-male={
+-- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
+
+local male={
 	'Adrien',
 	'André',
 	'Anselme',
@@ -122,7 +125,7 @@ male={
 	'Èmerick',
 }
 
-female={
+local female={
 	'Adéle',
 	'Agathe',
 	'Aimée',
@@ -241,7 +244,8 @@ female={
 	'Èléanore',
 	'Èmilie',
 }
-surname={
+
+local surname={
 	'Adam',
 	'Andre',
 	'Arnaud',

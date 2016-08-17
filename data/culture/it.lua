@@ -1,4 +1,7 @@
-male={
+-- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
+
+local male={
 	'Alessandro',
 	'Amerigo',
 	'Andrea',
@@ -69,7 +72,7 @@ male={
 	'Vieri'
 }
 
-female={
+local female={
 	'Agnella',
 	'Agnese',
 	'Agnola',
@@ -140,7 +143,7 @@ female={
 	'Veroncia'
 }
 
-surname={
+local surname={
 	'Alberti',
 	'Albizzi',
 	'Amidei',
