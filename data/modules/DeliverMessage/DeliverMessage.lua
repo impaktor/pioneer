@@ -32,7 +32,7 @@ local typical_reward = 25 * max_delivery_dist
 -- the number of different flavours of text strings to choose from:
 local n_flavour_successmsg = 4
 local n_flavour_failmsg = 3
-local n_flavour_messages = 67
+local n_flavour_messages = 70
 local n_flavour_adtext = 7
 local n_flavour_missiontxt = 6
 
@@ -86,7 +86,7 @@ local onChat = function (form, ref, option)
 			recipient = ad.recipient,
 			location  = ad.location,
 			reward	  = ad.reward,
-			due	      = ad.due,
+			due		  = ad.due,
 			flavour	  = ad.flavour,
 		}
 
@@ -152,7 +152,7 @@ local makeAdvert = function (station)
 		recipient     = Character.New(), -- receiver
 		location	  = location,        -- target station
 		dist          = dist,
-		due	          = due,
+		due			  = due,
 		reward		  = reward,
 		faceseed	  = Engine.rand:Integer(),
 	}
@@ -270,7 +270,7 @@ local onGameStart = function ()
 	for k,ad in pairs(loaded_data.ads) do
 		local ref = ad.station:AddAdvert({
 			description = ad.desc,
-            icon        = "delivery",
+			icon        = "delivery",
 			onChat      = onChat,
 			onDelete    = onDelete })
 		ads[ref] = ad
