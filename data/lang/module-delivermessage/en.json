@@ -367,6 +367,18 @@
       "description" : "",
       "message" : "Everything is lost"
    },
+   "MESSAGE_68" : {
+      "description" : "Mystic message from Twin peaks",
+      "message" : "The owls are not what they seem"
+   },
+   "MESSAGE_69" : {
+      "description" : "Chess move",
+      "message" : "Pawn to knights four"
+   },
+   "MESSAGE_70" : {
+      "description" : "Chess move",
+      "message" : "Bishop to E6"
+   },
    "OK_AGREED" : {
       "description" : "",
       "message" : "Ok, agreed."
