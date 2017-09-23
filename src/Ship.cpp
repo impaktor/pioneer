@@ -485,7 +485,7 @@ void Ship::Explode()
 	ClearThrusterState();
 }
 
-bool Ship::DoCrushDamage(float kgDamage)
+bool Ship::DoCrushDamage(float kgDamage) // edit this to include atmo_shield
 {
 	if (m_invulnerable) {
 		return true;
@@ -915,7 +915,7 @@ double Ship::GetHullTemperature() const
 	int atmo_shield_cap = 0;
 	const_cast<Ship *>(this)->Properties().Get("atmo_shield_cap", atmo_shield_cap);
 	if (atmo_shield_cap && GetWheelState() < 1.0) {
-		return dragGs / 300.0;
+		return dragGs / (300.0 * atmo_shield_cap);
 	} else {
 		return dragGs / 5.0;
 	}
@@ -1054,6 +1054,7 @@ void Ship::StaticUpdate(const float timeStep)
 		Explode();
 
 
+	// check if atmospheric pressure is high
 	if (m_flightState == FLYING) {
 		Body *astro = GetFrame()->GetBody();
 		if (astro && astro->IsType(Object::PLANET)) {
