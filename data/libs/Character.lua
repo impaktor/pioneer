@@ -801,7 +801,7 @@ Character = {
 					if NPC == self then return i end
 				end
 				table.insert(Character.persistent,self)
-        		return #Character.persistent
+				return #Character.persistent
 			end
 		end
 		error('Cannot save character')
@@ -1131,6 +1131,74 @@ Character = {
 		end
 	end,
 
+--
+-- Method: IsReputation
+--
+--   Tests whether a character has at least the tested reputation rating
+--
+-- ch:IsReputaion(rating)
+--
+-- Parameters:
+--
+--   rating - One of the following values, in ascending order,
+--            ('NOBODY' corresponds to 0 rating):
+-- >         'INCOMPETENT', 'UNRELIABLE', 'NOBODY', 'INEXPERIENCED',
+-- >         'EXPERIENCED', 'CREDIBLE', 'RELIABLE', 'TRUSTWORTHY',
+-- >         'PROFESSIONAL', 'EXPERT', 'MASTER'
+--
+-- Return:
+--
+--   true - Character has reached the specified rating
+--
+--   false - Character has not reached the specified rating (or specified
+--          rating was not a valid value)
+--
+-- Example:
+--
+-- Check to see if the player is rated "EXPERIENCED" or higher
+--
+-- > if Character.persistent.player:IsReputation('EXPERIENCED') then
+-- >   DoSomethingExperienced() -- Player is rated "Experienced" or higher
+-- > end
+--
+-- Availability:
+--
+--   2017
+--
+-- Status:
+--
+--   experimental
+--
+	IsReputation = function (self,rating)
+		-- This function is completely agnostic of the values of the ratings.
+		local ratingflag = false
+		local reputationrating = self:GetReputationRating()
+
+		for i,testrating in ipairs {'INCOMPETENT',
+									'UNRELIABLE',
+									'NOBODY',
+									'INEXPERIENCED',
+									'EXPERIENCED',
+									'CREDIBLE',
+									'RELIABLE',
+									'TRUSTWORTHY',
+									'PROFESSIONAL',
+									'EXPERT',
+									'MASTER'} do
+			if testrating == rating then
+				-- We have reached the desired rating
+				ratingflag = true
+			end
+			if testrating == reputationrating and ratingflag then
+				-- The character's rating is equal to the one we've rached, and
+				-- we have either reached or passed the desired rating
+				return true
+			end
+		end --for
+		return false
+	end,
+
+
 	-- Debug function
 	PrintStats = function (self)
 		print('Name: ',self.name)
@@ -1193,11 +1261,11 @@ local onGameStart = function ()
 end
 
 local serialize = function ()
-    return { PersistentCharacters = Character.persistent}
+	return { PersistentCharacters = Character.persistent}
 end
 
 local unserialize = function (data)
-    loaded_data = data
+	loaded_data = data
 end
 
 --
