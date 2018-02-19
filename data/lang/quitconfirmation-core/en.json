@@ -1,7 +1,7 @@
 {
    "MSG_1" : {
       "description" : "",
-      "message" : "Say {yes} to get out of here and go back to your boring programs?"
+      "message" : "Say {yes} to get out of here and go back to your boring programs."
    },
    "MSG_10" : {
       "description" : "",
@@ -13,7 +13,7 @@
    },
    "MSG_12" : {
       "description" : "",
-      "message" : "Choose {no} If you are a tough bounty hunter, if not, click {yes} daintily."
+      "message" : "Choose {no} if you are a tough bounty hunter. If not, click {yes} daintily."
    },
    "MSG_13" : {
       "description" : "\"Seeing\" as in having an affair / being unfaithful",
@@ -37,15 +37,15 @@
    },
    "MSG_18" : {
       "description" : "Catch phrase of 2016?",
-      "message" : "Make Pioneer great again! Only losers quit, sure about this?"
+      "message" : "Make Pioneer Great Again! Only losers quit. Sure about this?"
    },
    "MSG_19" : {
       "description" : "Alluding to / inviting the player to contribute content to the game",
-      "message" : "Done testing, back to contributing?"
+      "message" : "Done testing; back to contributing?"
    },
    "MSG_2" : {
       "description" : "",
-      "message" : "Don't go now, there's a pirate waiting for you in the other program."
+      "message" : "Don't go now! There's a pirate waiting for you in the other program."
    },
    "MSG_3" : {
       "description" : "",
@@ -53,7 +53,7 @@
    },
    "MSG_4" : {
       "description" : "",
-      "message" : "Doest thou wish to leave with such hasty abandon?"
+      "message" : "Dost thou wish to leave with such hasty abandon?"
    },
    "MSG_5" : {
       "description" : "(Inspired by Wolfenstein 3D)",
@@ -61,7 +61,7 @@
    },
    "MSG_6" : {
       "description" : "",
-      "message" : "Click {no} to be brave, click {yes} to cower in shame."
+      "message" : "Click {no} to be brave; click {yes} to cower in shame."
    },
    "MSG_7" : {
       "description" : "Doom 1 anyone? Although it said DOS instead of Command line",
@@ -69,7 +69,7 @@
    },
    "MSG_8" : {
       "description" : "",
-      "message" : "I'm thinking you want to click {no} to play more. You do it."
+      "message" : "I'm thinking you want to click {no} to play more. Do it."
    },
    "MSG_9" : {
       "description" : "",

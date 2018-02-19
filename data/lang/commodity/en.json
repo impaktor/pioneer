@@ -21,7 +21,7 @@
         },
         "BATTLE_WEAPONS_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Heavy military-grade weapons, like armoured hover tanks, and surface-to-space missiles. Trading in them is usually a governmental monopoly. On the black market, however, these can often fetch a hefty sum of money."
+                "message" : "Heavy military-grade weapons, like armoured hover tanks or surface-to-space missiles. Trading in them is usually a governmental monopoly. On the black market, however, these can often fetch a hefty sum of money."
         },
         "CARBON_ORE" : {
                 "description" : "",
@@ -37,7 +37,7 @@
         },
         "COMPUTERS_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "From over a thousand years ago, with the Abacus, PDP-11, and Motorola 68k chip, down to our modern HAL 9001 and Multivac line, computers marked the dawn of the information age. Equally essential for entering hyperspace as for sharing videos of cute quibbles over the UniNet."
+                "message" : "From over a thousand years ago, with the Abacus, PDP-11, and Motorola 68k chip, down to our modern HAL 9001 and Multivac line, computers marked the dawn of the Information Age. Equally as essential for entering hyperspace as they are for sharing videos of cute quibbles over the UniNet."
         },
         "CONSUMER_GOODS" : {
                 "description" : "",
@@ -57,11 +57,11 @@
         },
         "FERTILIZER" : {
                 "description" : "",
-                "message" : "Fertilizer"
+                "message" : "Fertiliser"
         },
         "FERTILIZER_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Fertilizers are crucial for growing crops at an industrial scale, allowing mono-cultures, and yielding higher dividends than possible using plain dirt. This often comes with an ecological cost, not evident at the onset."
+                "message" : "Fertilisers are crucial for growing crops at an industrial scale, allowing mono-cultures, and yielding higher dividends than possible using plain dirt. This often comes with an ecological cost not evident at the onset."
         },
         "FRUIT_AND_VEG" : {
                 "description" : "",
@@ -77,7 +77,7 @@
         },
         "GRAIN_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "The backbone of many peoples' diets. It is used in farming, to feed animals, and as a supplement to synthetic foods. Grain is also used in many other foods, such as oatmeal and baked goods. Most star faring cultures grow and consume at least some grains, that have been adopted to the climate of their habitat."
+                "message" : "The backbone of many people's diets. It is used in farming, to feed animals, and as a supplement to synthetic foods. Grain is also used in many other foods, such as oatmeal and baked goods. Most star-faring cultures grow and consume at least some grains that have been adapted to the climate of their habitat."
         },
         "HAND_WEAPONS" : {
                 "description" : "",
@@ -125,7 +125,7 @@
         },
         "LIVE_ANIMALS_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Partly due to humanistic, economic and ecological reasons, animal rearing and trade is strictly regulated, or even illegal in many core systems. Going outward, livestock becomes a more important part of the livelihood of the people, both as a source of nutrition and a beast of burden. Exotic zoos and wildlife reserves contribute to the trade of animals around the galaxy, usually under strict state regulations, to combat illegal hunting grounds."
+                "message" : "Partly due to humanistic, economic and ecological reasons, animal rearing and trade is strictly regulated, or even illegal in many core systems. Going outward, livestock becomes a more important part of the livelihood of the people, both as a source of nutrition and as beasts of burden. Exotic zoos and wildlife reserves contribute to the trade of animals around the galaxy, usually under strict state regulations, to combat illegal hunting grounds."
         },
         "MEDICINES" : {
                 "description" : "",
@@ -165,7 +165,7 @@
         },
         "MINING_MACHINERY_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "The traditionally back breaking work of mining is alleviated by the use of machines that help miners in locating and retrieving various ores, and transporting them to the closest processing facilities."
+                "message" : "The traditionally back-breaking work of mining is alleviated by the use of machines that help miners in locating and retrieving various ores, and transporting them to the closest processing facilities."
         },
         "NARCOTICS" : {
                 "description" : "",
@@ -189,7 +189,7 @@
         },
         "PLASTICS_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Synthetical and semi-synthetical materials used in everything from everyday items to spaceship construction. They are relatively easy to use in manufacture, versatile and cheap to make, thus an important part of human civilization."
+                "message" : "Synthetic and semi-synthetic materials used in everything from everyday items to spaceship construction. They are relatively easy to use in manufacture, versatile and cheap to make, thus an important part of human civilization."
         },
         "PRECIOUS_METALS" : {
                 "description" : "",
@@ -197,7 +197,7 @@
         },
         "PRECIOUS_METALS_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Precious metals are, generally, less reactive, more difficult to mine, and more scarce, resulting in a considerable economic value. This often includes gold, silver, platinum, and rare earths. Certain elements such as gold and silicon, or rare earths, are crucial for the construction of computers and other electronics."
+                "message" : "Precious metals are generally less reactive, more difficult to mine, and more scarce, resulting in a considerable economic value. This often includes gold, silver, platinum, and rare earths. Certain elements such as gold and silicon, or rare earths, are crucial for the construction of computers and other electronics."
         },
         "RADIOACTIVES" : {
                 "description" : "",
@@ -205,7 +205,7 @@
         },
         "RADIOACTIVES_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Created by nuclear reactors, and military hyperdrives, nuclear waste is the hardest and most dangerous commodity to transport and dispose of. For this reason, most starports will pay to get rid of excess stockpile. Dumping nuclear waste is a severe offence."
+                "message" : "Created by nuclear reactors and military hyperdrives, nuclear waste is the hardest and most dangerous commodity to transport and dispose of. For this reason, most starports will pay to get rid of excess stockpile. Dumping nuclear waste is a severe offence."
         },
         "ROBOTS" : {
                 "description" : "",
@@ -213,7 +213,7 @@
         },
         "ROBOTS_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Robots are often imported into industrial and mining systems, due to their ability to easily perform tasks that would be too difficult, tedious, or unsafe for human workers. They can also serve as politicians and lawyers."
+                "message" : "Robots are often imported into industrial and mining systems due to their ability to easily perform tasks that would be too difficult, tedious, or unsafe for human workers. They can also serve as politicians and lawyers."
         },
         "RUBBISH" : {
                 "description" : "",
@@ -221,7 +221,7 @@
         },
         "RUBBISH_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "The byproduct of civilization, consisting of industrial waste, household garbage, and worn down equipment. Most waste is reprocessed, recycled or sent to starports for transport off-world. Dumping garbage in inhabited systems is almost always illegal. Starports usually charge a fee for waste disposal, but will also pay you to take it away."
+                "message" : "The byproduct of civilization, consisting of industrial waste, household garbage, and worn-down equipment. Most waste is reprocessed, recycled or sent to starports for transport off-world. Dumping garbage in inhabited systems is almost always illegal. Starports usually charge a fee for waste disposal, but will also pay you to take it away."
         },
         "SLAVES" : {
                 "description" : "",
@@ -237,7 +237,7 @@
         },
         "TEXTILES_DESCRIPTION" : {
                 "description" : "This is an artistic description of the commodity. Translate as you deem appropriate or come up with your own description, long or short, its up to you.",
-                "message" : "Textiles are simple fabric, woven from either synthetic, plant or animal derived yarn. Usually produced by robots in large factories, it is still possible to find the occasional weaver who makes their own textiles."
+                "message" : "Textiles are simple fabrics woven from either synthetic, plant- or animal-derived yarn. Usually produced by robots in large factories, it is still possible to find the occasional weaver who makes their own textiles."
         },
         "WATER" : {
                 "description" : "",

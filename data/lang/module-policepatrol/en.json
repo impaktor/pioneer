@@ -33,11 +33,11 @@
    },
    "TAKE_A_HIKE" : {
       "description" : "",
-      "message" : "Ok, you got a second chance. Take a hike!"
+      "message" : "OK, you got a second chance. Take a hike!"
    },
    "POLICE_TAUNT_1" : {
       "description" : "",
-      "message" : "Boy, this was a bad idea!"
+      "message" : "Kid, this was a bad idea!"
    },
    "POLICE_TAUNT_2" : {
       "description" : "",
@@ -45,7 +45,7 @@
    },
    "POLICE_TAUNT_3" : {
       "description" : "",
-      "message" : "Fool, crime doesn't pay off!"
+      "message" : "Fool, crime doesn't pay!"
    },
    "RESPECT_THE_LAW_1" : {
       "description" : "",

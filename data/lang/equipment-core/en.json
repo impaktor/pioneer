@@ -5,7 +5,7 @@
    },
    "ADVANCED_TARGET_SCANNER_DESCRIPTION" : {
       "description" : "",
-      "message" : "Long range target scanner with system wide coverage."
+      "message" : "Long-range target scanner with system-wide coverage."
    },
    "ATMOSPHERIC_SHIELDING" : {
       "description" : "",
@@ -169,7 +169,7 @@
    },
    "MININGCANNON_17MW_DESCRIPTION" : {
       "description" : "",
-      "message" : "Used to blast-mine mineral rich asteroids."
+      "message" : "Used to blast-mine mineral-rich asteroids."
    },
    "MISSILE_GUIDED" : {
       "description" : "",
@@ -193,7 +193,7 @@
    },
    "MULTI_SCOOP_DESCRIPTION" : {
       "description" : "",
-      "message" : "Although less effective than a fuel scoop it permits scooping of both cargo and fuel"
+      "message" : "Although less effective than a fuel scoop, it permits scooping of both cargo and fuel"
    },
    "OUT_OF_SCANRANGE" : {
       "description" : "",
@@ -277,7 +277,7 @@
    },
    "STARTING_SCAN" : {
       "description" : "",
-      "message" : "Starting scan, target distance is"
+      "message" : "Starting scan. Target distance is"
    },
    "TARGET_SCANNER" : {
       "description" : "ship equipment showing target information/stats",
@@ -285,7 +285,7 @@
    },
    "TARGET_SCANNER_DESCRIPTION" : {
       "description" : "",
-      "message" : "Used to remotely inspect the equipment, cargo and state of other ships."
+      "message" : "Used to inspect the equipment, cargo and state of other ships remotely."
    },
    "THRUSTERS_BASIC" : {
       "description" : "",
@@ -293,7 +293,7 @@
    },
    "THRUSTERS_BASIC_DESCRIPTION" : {
       "description" : "",
-      "message" : "A modified type of thrusters approved for your ship."
+      "message" : "A modified type of thruster system approved for your ship."
    },
    "THRUSTERS_MEDIUM" : {
       "description" : "",
@@ -309,7 +309,7 @@
    },
    "THRUSTERS_BEST_DESCRIPTION" : {
       "description" : "",
-      "message" : "Custom made thrusters that provide the best possible output."
+      "message" : "Custom-made thrusters that provide the best possible output."
    },
    "TRADE_COMPUTER" : {
       "description" : "Ship equipment computing profitable commodities to trade between two systems",

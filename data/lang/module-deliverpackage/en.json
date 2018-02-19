@@ -45,7 +45,7 @@
    },
    "DENY_7" : {
       "description" : "",
-      "message" : "I'm not willing to risk this delivery on someone without any qualifications like you."
+      "message" : "I'm not willing to risk this delivery on someone without any qualifications."
    },
    "DISTANCE" : {
       "description" : "",
@@ -129,7 +129,7 @@
    },
    "FLAVOUR_3_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Your timely and discrete service is much appreciated. You have been paid in full."
+      "message" : "Your timely and discreet service is much appreciated. You have been paid in full."
    },
    "FLAVOUR_3_WHYSOMUCHTEXT" : {
       "description" : "",
@@ -141,7 +141,7 @@
    },
    "FLAVOUR_4_FAILUREMSG" : {
       "description" : "",
-      "message" : "Your ship registration has been noted, we will reject all further applications for work from you."
+      "message" : "Your ship registration has been noted. We will reject all further applications for work from you."
    },
    "FLAVOUR_4_INTROTEXT" : {
       "description" : "",
@@ -149,7 +149,7 @@
    },
    "FLAVOUR_4_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Your timely and discrete service is much appreciated. You have been paid in full."
+      "message" : "Your timely and discreet service is much appreciated. You have been paid in full."
    },
    "FLAVOUR_4_WHYSOMUCHTEXT" : {
       "description" : "",
@@ -165,7 +165,7 @@
    },
    "FLAVOUR_5_INTROTEXT" : {
       "description" : "",
-      "message" : "Nice to meet you. I am {name} and I'm willing to pay {cash} for someone with a ship to help me move my belongings to {starport}. No rush, they are just some leftovers from moving house."
+      "message" : "Nice to meet you. I am {name} and I'm willing to pay {cash} for someone with a ship to help me move my belongings to {starport}. No rush; they are just some leftovers from moving house."
    },
    "FLAVOUR_5_SUCCESSMSG" : {
       "description" : "",
@@ -189,7 +189,7 @@
    },
    "FLAVOUR_6_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you for the package, you have been paid in full."
+      "message" : "Thank you for the package. You have been paid in full."
    },
    "FLAVOUR_6_WHYSOMUCHTEXT" : {
       "description" : "",
@@ -209,11 +209,11 @@
    },
    "FLAVOUR_7_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Excellent, we've credited the funds into your account."
+      "message" : "Excellent! We've credited the funds into your account."
    },
    "FLAVOUR_7_WHYSOMUCHTEXT" : {
       "description" : "",
-      "message" : "Standard rates, we work with the market."
+      "message" : "Standard rates; we work with the market."
    },
    "FLAVOUR_8_ADTEXT" : {
       "description" : "",
@@ -225,11 +225,11 @@
    },
    "FLAVOUR_8_INTROTEXT" : {
       "description" : "",
-      "message" : "My name is {name} and I need this item delivered to a friend at {starport} pronto, I'll pay you {cash} credits if you get it there in a reasonable time."
+      "message" : "My name is {name} and I need this item delivered to a friend at {starport} pronto. I'll pay you {cash} credits if you get it there in a reasonable time."
    },
    "FLAVOUR_8_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Your prompt delivery is appreciated, I have credited your account accordingly."
+      "message" : "Your prompt delivery is appreciated. I have credited your account accordingly."
    },
    "FLAVOUR_8_WHYSOMUCHTEXT" : {
       "description" : "",
@@ -241,15 +241,15 @@
    },
    "FLAVOUR_9_FAILUREMSG" : {
       "description" : "",
-      "message" : "It's all spoilt, this is of no use to anyone! We cannot and will not pay you."
+      "message" : "It's all spoilt. This is of no use to anyone! We cannot and will not pay you."
    },
    "FLAVOUR_9_INTROTEXT" : {
       "description" : "",
-      "message" : "Greetings, we're behind with our produce shipment and need it delivered to {starport} urgently. We'll pay you {cash} for your troubles."
+      "message" : "Greetings! We're behind with our produce shipment and need it delivered to {starport} urgently. We'll pay you {cash} for your troubles."
    },
    "FLAVOUR_9_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Grand! We'll start unpacking immediately. I'll have your account updated right away."
+      "message" : "Grand! We'll start unpacking immediately. I'll have your account updated straight away."
    },
    "FLAVOUR_9_WHYSOMUCHTEXT" : {
       "description" : "",
@@ -261,7 +261,7 @@
    },
    "IT_COULD_BE_DANGEROUS_YOU_SHOULD_MAKE_SURE_YOURE_ADEQUATELY_PREPARED" : {
       "description" : "",
-      "message" : "It could be dangerous, you should make sure you're adequately prepared."
+      "message" : "It could be dangerous. You should make sure you're adequately prepared."
    },
    "IT_MUST_BE_DELIVERED_BY" : {
       "description" : "",
@@ -281,7 +281,7 @@
    },
    "OK_AGREED" : {
       "description" : "",
-      "message" : "Ok, agreed."
+      "message" : "OK, agreed."
    },
    "PIRATE_TAUNTS_0" : {
       "description" : "",
@@ -321,7 +321,7 @@
    },
    "PIRATE_TAUNTS_9" : {
       "description" : "",
-      "message" : "You'll pay for that cargo, with your life."
+      "message" : "You'll pay for that cargo... with your life."
    },
    "SET_AS_TARGET" : {
       "description" : "",
@@ -337,11 +337,11 @@
    },
    "THIS_IS_A_VALUABLE_PACKAGE_YOU_SHOULD_KEEP_YOUR_EYES_OPEN" : {
       "description" : "",
-      "message" : "This is a valuable package, you should keep your eyes open."
+      "message" : "This is a valuable package. You should keep your eyes open."
    },
    "THIS_IS_VERY_RISKY_YOU_WILL_ALMOST_CERTAINLY_RUN_INTO_RESISTANCE" : {
       "description" : "",
-      "message" : "This is very risky, you will almost certainly run into resistance."
+      "message" : "This is very risky. You will almost certainly run into resistance."
    },
    "WHY_SO_MUCH_MONEY" : {
       "description" : "",

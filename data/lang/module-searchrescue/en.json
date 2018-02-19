@@ -161,7 +161,7 @@
    },
    "FLAVOUR_1_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you, this is a great relief! We will transmit the money momentarily."
+      "message" : "Thank you. This is a great relief! We will transmit the money in a moment."
    },
    "FLAVOUR_1_TRANSFERMSG" : {
       "description" : "",
@@ -185,7 +185,7 @@
    },
    "FLAVOUR_2_INTROTEXT" : {
       "description" : "",
-      "message" : "{starport} air traffic control just received notice that incoming flight {shiplabel} has run out of fuel and had to emergency land. The pilot is willing to pay {cash} for refueling services."
+      "message" : "{starport} air traffic control just received notice that incoming flight {shiplabel} has run out of fuel and had to emergency land. The pilot is willing to pay {cash} for refuelling services."
    },
    "FLAVOUR_2_LOCATIONTEXT" : {
       "description" : "",
@@ -197,11 +197,11 @@
    },
    "FLAVOUR_2_TRANSFERMSG" : {
       "description" : "",
-      "message" : "{unit} ton of fuel has been transferred."
+      "message" : "{unit} tonne of fuel has been transferred."
    },
    "FLAVOUR_2_TYPEOFHELPTEXT" : {
       "description" : "",
-      "message" : "The pilot is requesting {unit} tons of {cargo}."
+      "message" : "The pilot is requesting {unit} tonnes of {cargo}."
    },
    "FLAVOUR_3_ADTEXT" : {
       "description" : "",
@@ -221,7 +221,7 @@
    },
    "FLAVOUR_3_LOCATIONTEXT" : {
       "description" : "",
-      "message" : "The ship had to emergency land at the coordinates: {lat} / {long}. "
+      "message" : "The ship had to make an emergency landing at coordinates {lat} / {long}."
    },
    "FLAVOUR_3_SUCCESSMSG" : {
       "description" : "",
@@ -261,11 +261,11 @@
    },
    "FLAVOUR_4_TRANSFERMSG" : {
       "description" : "",
-      "message" : "{unit} ton of fuel has been transferred."
+      "message" : "{unit} tonne of fuel has been transferred."
    },
    "FLAVOUR_4_TYPEOFHELPTEXT" : {
       "description" : "",
-      "message" : "The pilot is asking for {unit} tons of {cargo}."
+      "message" : "The pilot is asking for {unit} tonnes of {cargo}."
    },
    "FLAVOUR_5_ADTEXT" : {
       "description" : "",
@@ -277,11 +277,11 @@
    },
    "FLAVOUR_5_HOWMUCHTIMETEXT" : {
       "description" : "",
-      "message" : "Please complete refueling by {due}."
+      "message" : "Please complete refuelling by {due}."
    },
    "FLAVOUR_5_INTROTEXT" : {
       "description" : "",
-      "message" : "{starport} air traffic control has identified a starship with ID {shiplabel} drifting without fuel close-by. We will pay {cash} to anyone who will refuel the ship so they can vacate {starport} vicinity."
+      "message" : "{starport} air traffic control has identified a starship with ID {shiplabel} drifting nearby without fuel. We will pay {cash} to anyone who will refuel the ship so they can vacate {starport} vicinity."
    },
    "FLAVOUR_5_LOCATIONTEXT" : {
       "description" : "",
@@ -289,15 +289,15 @@
    },
    "FLAVOUR_5_SUCCESSMSG" : {
       "description" : "",
-      "message" : "We will make record of your timely completion of the task."
+      "message" : "We will make record of your timely completion of this task."
    },
    "FLAVOUR_5_TRANSFERMSG" : {
       "description" : "",
-      "message" : "{unit} ton of fuel has been transferred."
+      "message" : "{unit} tonne of fuel has been transferred."
    },
    "FLAVOUR_5_TYPEOFHELPTEXT" : {
       "description" : "",
-      "message" : "We request the delivery of {unit} tons of {cargo} to the ship."
+      "message" : "We request the delivery of {unit} tonnes of {cargo} to the ship."
    },
    "FLAVOUR_6_ADTEXT" : {
       "description" : "",
@@ -305,7 +305,7 @@
    },
    "FLAVOUR_6_FAILUREMSG" : {
       "description" : "",
-      "message" : "What a disaster! This is the death sentence to our poor colleagues!"
+      "message" : "What a disaster! This is a death sentence to our poor colleagues!"
    },
    "FLAVOUR_6_HOWMUCHTIMETEXT" : {
       "description" : "",
@@ -353,7 +353,7 @@
    },
    "FLAVOUR_7_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you! I have been authorized to transmit the full payment."
+      "message" : "Thank you! I have been authorised to transmit the full payment."
    },
    "FLAVOUR_7_TRANSFERMSG" : {
       "description" : "",
@@ -369,11 +369,11 @@
    },
    "FULL_CREW" : {
       "description" : "",
-      "message" : "Crew roster full. No more space for more crew."
+      "message" : "Crew roster full. No space for more crew."
    },
    "FULL_PASSENGERS" : {
       "description" : "",
-      "message" : "All cabins full. No more space for more passengers."
+      "message" : "All cabins full. No space for more passengers."
    },
    "HOW_FAR" : {
       "description" : "",
@@ -413,7 +413,7 @@
    },
    "OK_AGREED" : {
       "description" : "",
-      "message" : "Ok, agreed."
+      "message" : "OK, agreed."
    },
    "PARTIAL" : {
       "description" : "",
@@ -441,7 +441,7 @@
    },
    "PROBLEM_CREW_4" : {
       "description" : "",
-      "message" : "what it seems like a {locality} scorpion got into the crew quarters at night"
+      "message" : "what seems like a {locality} scorpion got into the crew quarters at night"
    },
    "PROBLEM_CREW_5" : {
       "description" : "",
@@ -493,7 +493,7 @@
    },
    "PROBLEM_GENERAL_7" : {
       "description" : "",
-      "message" : "contact with an unidentified flight object"
+      "message" : "contact with an unidentified flying object"
    },
    "PROBLEM_GENERAL_8" : {
       "description" : "",
@@ -529,7 +529,7 @@
    },
    "PROBLEM_RESEARCH_6" : {
       "description" : "",
-      "message" : "an experimental recreation of {locality} atmospheric gases"
+      "message" : "an experiment involving {locality} atmospheric gases"
    },
    "PROBLEM_RESEARCH_7" : {
       "description" : "",
@@ -585,7 +585,7 @@
    },
    "TONS_OF_FREE_CARGO_SPACE" : {
       "description" : "",
-      "message" : "tons of free cargo space"
+      "message" : "tonnes of free cargo space"
    },
    "TRANSFER_ABORTED" : {
       "description" : "",

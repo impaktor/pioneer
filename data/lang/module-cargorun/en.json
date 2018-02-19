@@ -1,7 +1,7 @@
 {
    "ACCEPTED_1" : {
       "description" : "",
-      "message" : "Excellent. I'll load the goods on to your ship."
+      "message" : "Excellent. I'll load the goods onto your ship."
    },
    "ACCEPTED_2" : {
       "description" : "",
@@ -9,7 +9,7 @@
    },
    "ACCEPTED_3" : {
       "description" : "",
-      "message" : "Ok, good. I hope I can trust you."
+      "message" : "OK, good. I hope I can trust you."
    },
    "ACCEPTED_4" : {
       "description" : "",
@@ -17,7 +17,7 @@
    },
    "ACCEPTED_PICKUP_1" : {
       "description" : "",
-      "message" : "Ok, I will make sure that the goods are ready for collection."
+      "message" : "OK, I will make sure that the goods are ready for collection."
    },
    "ACCEPTED_PICKUP_2" : {
       "description" : "",
@@ -113,7 +113,7 @@
    },
    "DENY_3" : {
       "description" : "",
-      "message" : "I'm sorry, I'm looking for an experienced pilot."
+      "message" : "I'm sorry; I'm looking for an experienced pilot."
    },
    "DENY_4" : {
       "description" : "",
@@ -173,11 +173,11 @@
    },
    "FAILUREMSG_2" : {
       "description" : "",
-      "message" : "You are too late! What should I do with this now, it's worthless!"
+      "message" : "You are too late! What should I do with this now? It's worthless!"
    },
    "FAILUREMSG_3" : {
       "description" : "",
-      "message" : "Listen, we were clear about the deadline. You can forget about getting payed."
+      "message" : "Listen, we were clear about the deadline. You can forget about getting paid."
    },
    "FAILUREMSG_4" : {
       "description" : "",
@@ -205,7 +205,7 @@
    },
    "HOWMUCH_1" : {
       "description" : "regarding mass, always more than 1t",
-      "message" : "{amount} metric tons."
+      "message" : "{amount} tonnes."
    },
    "HOWMUCH_2" : {
       "description" : "regarding mass, always more than 1t",
@@ -281,7 +281,7 @@
    },
    "INTROTEXT_PICKUP_1" : {
       "description" : "",
-      "message" : "How do you do? My name is {name}, and I need a ship that is able to fly to {starport} in the {system} ({sectorx}, {sectory}, {sectorz}) system, to pickup {cargoname} and return to {dom_starport} in the {dom_system} ({dom_sectorx}, {dom_sectory}, {dom_sectorz}) system for {cash}. The distance to {system} is {dist} ly."
+      "message" : "How do you do? My name is {name}, and I need a ship that is able to fly to {starport} in the {system} ({sectorx}, {sectory}, {sectorz}) system, to pick up {cargoname} and return to {dom_starport} in the {dom_system} ({dom_sectorx}, {dom_sectory}, {dom_sectorz}) system for {cash}. The distance to {system} is {dist} ly."
    },
    "INTROTEXT_PICKUP_2" : {
       "description" : "",
@@ -305,7 +305,7 @@
    },
    "INTROTEXT_WHOLESALER_2" : {
       "description" : "",
-      "message" : "Greetings, my name is {name} and I work for Haber Corp. We pay {cash} for the run to {starport} in the {system} ({sectorx}, {sectory}, {sectorz}) system, a distance of {dist} ly."
+      "message" : "Greetings. My name is {name} and I work for Haber Corp. We pay {cash} for the run to {starport} in the {system} ({sectorx}, {sectory}, {sectorz}) system, a distance of {dist} ly."
    },
    "I_AM_ON_MY_WAY" : {
       "description" : "",
@@ -313,11 +313,11 @@
    },
    "I_HAVE_DEBITED_YOUR_ACCOUNT" : {
       "description" : "",
-      "message" : "I've debited your account with the missing goods."
+      "message" : "I've debited your account for the missing goods."
    },
    "I_NEED_HELP" : {
       "description" : "",
-      "message" : "I'm taking damage. I need help."
+      "message" : "I'm taking damage. I need help!"
    },
    "LY" : {
       "description" : "",
@@ -337,7 +337,7 @@
    },
    "PICKUP_FROM" : {
       "description" : "from a location",
-      "message" : "Pickup cargo from:"
+      "message" : "Pick up cargo from:"
    },
    "PIRATE_GRIPES_1" : {
       "description" : "",
@@ -349,7 +349,7 @@
    },
    "PIRATE_GRIPES_3" : {
       "description" : "said with vengeance",
-      "message" : "Wait, I'll show you."
+      "message" : "Wait... I'll show you!"
    },
    "PIRATE_TAUNTS_1" : {
       "description" : "",
@@ -397,15 +397,15 @@
    },
    "RISK_3" : {
       "description" : "",
-      "message" : "This is valuable cargo, you should keep your eyes open."
+      "message" : "This is valuable cargo. You should keep your eyes open."
    },
    "RISK_4" : {
       "description" : "",
-      "message" : "It could be dangerous, you should make sure you're adequately prepared."
+      "message" : "It could be dangerous. You should make sure you're adequately prepared."
    },
    "RISK_5" : {
       "description" : "",
-      "message" : "This might be very risky, you could run into some significant resistance."
+      "message" : "This might be very risky. You could run into some significant resistance."
    },
    "RISK_6" : {
       "description" : "",
@@ -469,7 +469,7 @@
    },
    "SUCCESSMSG_3" : {
       "description" : "",
-      "message" : "Excellent, it was a pleasure to work with you. I have paid the bill."
+      "message" : "Excellent. Tt was a pleasure to work with you. I have paid the bill."
    },
    "SUCCESSMSG_4" : {
       "description" : "",
@@ -505,7 +505,7 @@
    },
    "URGENCY_2" : {
       "description" : "",
-      "message" : "It must necessarily be delivered by {date}."
+      "message" : "It absolutely must be delivered by {date}."
    },
    "URGENCY_3" : {
       "description" : "",
@@ -517,11 +517,11 @@
    },
    "URGENCY_5" : {
       "description" : "",
-      "message" : "It is essential that the goods have been delivered before {date}."
+      "message" : "It is essential for the goods to have been delivered before {date}."
    },
    "URGENCY_FLUFFY_1" : {
       "description" : "",
-      "message" : "Because of the reproduction rate of the little animals and the limited food in the container, the delivery must be completed until {date}."
+      "message" : "Because of the reproduction rate of the little animals and the limited food in the container, the delivery must be completed by {date}."
    },
    "URGENCY_RADIOACTIVE_1" : {
       "description" : "",
@@ -561,7 +561,7 @@
    },
    "WHYSOMUCH_6" : {
       "description" : "",
-      "message" : "Well, we would be happy to pay you less."
+      "message" : "Well, we would be happy to pay you less..."
    },
    "WHYSOMUCH_CENTRIFUGES_1" : {
       "description" : "",

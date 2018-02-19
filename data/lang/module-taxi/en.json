@@ -125,7 +125,7 @@
    },
    "FLAVOUR_0_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? We've waited enough - take us to the nearest station NOW!"
+      "message" : "Where are we? We've waited enough; take us to the nearest station NOW!"
    },
    "FLAVOUR_0_WHYSOMUCH" : {
       "description" : "",
@@ -141,7 +141,7 @@
    },
    "FLAVOUR_10_FAILUREMSG" : {
       "description" : "",
-      "message" : "You are such an inexperienced pilot. I'm not going to pay for this."
+      "message" : "You are such a terrible pilot. I'm not going to pay for this."
    },
    "FLAVOUR_10_HOWMANY" : {
       "description" : "",
@@ -157,7 +157,7 @@
    },
    "FLAVOUR_10_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "Where are we? This is ridiculous! Take me to the nearest station immediately!"
    },
    "FLAVOUR_10_WHYSOMUCH" : {
       "description" : "",
@@ -185,11 +185,11 @@
    },
    "FLAVOUR_11_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you for the fast ride. You have been paid in full."
+      "message" : "Thanks for the ride. You have been paid in full."
    },
    "FLAVOUR_11_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "This is taking too long. Drop me off at the nearest station, pronto!"
    },
    "FLAVOUR_11_WHYSOMUCH" : {
       "description" : "",
@@ -217,11 +217,11 @@
    },
    "FLAVOUR_12_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you for the ride. You have been paid in full."
+      "message" : "Thank you so much. You have been paid in full."
    },
    "FLAVOUR_12_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "Aren't we there yet? Dock somewhere already!"
    },
    "FLAVOUR_12_WHYSOMUCH" : {
       "description" : "",
@@ -253,7 +253,7 @@
    },
    "FLAVOUR_1_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? We've waited enough - take us to the nearest station NOW!"
+      "message" : "Are you lost? Find a station and dock there, NOW!"
    },
    "FLAVOUR_1_WHYSOMUCH" : {
       "description" : "",
@@ -269,7 +269,7 @@
    },
    "FLAVOUR_2_FAILUREMSG" : {
       "description" : "",
-      "message" : "Unacceptable! You took forever. We are not willing to pay you."
+      "message" : "That took ages! We are not paying you."
    },
    "FLAVOUR_2_HOWMANY" : {
       "description" : "",
@@ -281,15 +281,15 @@
    },
    "FLAVOUR_2_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thanks for bringing us here. We've now paid in full. Good Luck!"
+      "message" : "Thanks for bringing us here. We've now paid in full. Good luck!"
    },
    "FLAVOUR_2_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? We've waited enough - take us to the nearest station NOW!"
+      "message" : "Come on! Just drop us off at the nearest station if you're lost."
    },
    "FLAVOUR_2_WHYSOMUCH" : {
       "description" : "",
-      "message" : "It's normal business trip."
+      "message" : "It's a normal business trip."
    },
    "FLAVOUR_3_ADTEXT" : {
       "description" : "",
@@ -301,7 +301,7 @@
    },
    "FLAVOUR_3_FAILUREMSG" : {
       "description" : "",
-      "message" : "Unacceptable! You took forever. I'm not willing to pay you."
+      "message" : "Ridiculous! You took forever. I'm not willing to pay you."
    },
    "FLAVOUR_3_HOWMANY" : {
       "description" : "",
@@ -313,11 +313,11 @@
    },
    "FLAVOUR_3_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you for the nice trip. You have been paid in full."
+      "message" : "Thanks for the nice trip. You have been paid in full."
    },
    "FLAVOUR_3_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "What's your problem? Take me to the nearest station NOW!"
    },
    "FLAVOUR_3_WHYSOMUCH" : {
       "description" : "",
@@ -345,15 +345,15 @@
    },
    "FLAVOUR_4_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thanks for carrying me here. I've paid in full. Good Luck!"
+      "message" : "Thanks for carrying me here. I've paid in full. Good luck!"
    },
    "FLAVOUR_4_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "This is taking too long. Please just dock at the nearest station!"
    },
    "FLAVOUR_4_WHYSOMUCH" : {
       "description" : "",
-      "message" : "I'm traveling salesman."
+      "message" : "I'm travelling salesman."
    },
    "FLAVOUR_5_ADTEXT" : {
       "description" : "",
@@ -365,7 +365,7 @@
    },
    "FLAVOUR_5_FAILUREMSG" : {
       "description" : "",
-      "message" : "What have you done! My tour is all spoilt and I lost half of my fans."
+      "message" : "What have you done? My tour is ruined and I lost half of my fans!"
    },
    "FLAVOUR_5_HOWMANY" : {
       "description" : "",
@@ -381,11 +381,11 @@
    },
    "FLAVOUR_5_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "You're incompetent! Take me to the nearest station NOW!"
    },
    "FLAVOUR_5_WHYSOMUCH" : {
       "description" : "",
-      "message" : "Didn't you know - I'm a well known dream star."
+      "message" : "Didn't you know? I'm a well-known dream star."
    },
    "FLAVOUR_6_ADTEXT" : {
       "description" : "",
@@ -397,7 +397,7 @@
    },
    "FLAVOUR_6_FAILUREMSG" : {
       "description" : "",
-      "message" : "Unacceptable! You took forever. I'm not willing to pay you."
+      "message" : "Worst trip ever! You're getting nothing from me."
    },
    "FLAVOUR_6_HOWMANY" : {
       "description" : "",
@@ -409,11 +409,11 @@
    },
    "FLAVOUR_6_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you for the nice trip. You have been paid in full."
+      "message" : "Such a nice trip. You have been paid in full."
    },
    "FLAVOUR_6_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "You ever heard of deadlines? Take me to the nearest station NOW!"
    },
    "FLAVOUR_6_WHYSOMUCH" : {
       "description" : "",
@@ -429,7 +429,7 @@
    },
    "FLAVOUR_7_FAILUREMSG" : {
       "description" : "",
-      "message" : "Unacceptable! You took forever. I'm not willing to pay you."
+      "message" : "That took forever! You ain't gettin' paid."
    },
    "FLAVOUR_7_HOWMANY" : {
       "description" : "",
@@ -441,11 +441,11 @@
    },
    "FLAVOUR_7_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thanks for carrying me safely here. I've paid in full. Good Luck!"
+      "message" : "Thanks for carrying me here safely. I've paid in full. Good luck!"
    },
    "FLAVOUR_7_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "Admit it: you're lost. Just take me to the nearest station!"
    },
    "FLAVOUR_7_WHYSOMUCH" : {
       "description" : "",
@@ -461,7 +461,7 @@
    },
    "FLAVOUR_8_FAILUREMSG" : {
       "description" : "",
-      "message" : "Unacceptable! You took forever. I'm not willing to pay you."
+      "message" : "You sure took your sweet time. I'm not paying."
    },
    "FLAVOUR_8_HOWMANY" : {
       "description" : "",
@@ -473,11 +473,11 @@
    },
    "FLAVOUR_8_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you for the fast ride. You have been paid in full."
+      "message" : "Thank you so much. You have been paid in full."
    },
    "FLAVOUR_8_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "Do you even know how to get there? Just find a station and dock, please!"
    },
    "FLAVOUR_8_WHYSOMUCH" : {
       "description" : "",
@@ -493,7 +493,7 @@
    },
    "FLAVOUR_9_FAILUREMSG" : {
       "description" : "",
-      "message" : "Useless! You took forever. I'm not willing to pay you."
+      "message" : "Useless! You took forever. I'm not paying you."
    },
    "FLAVOUR_9_HOWMANY" : {
       "description" : "",
@@ -505,15 +505,15 @@
    },
    "FLAVOUR_9_SUCCESSMSG" : {
       "description" : "",
-      "message" : "Thank you for the fast ride. You have been paid in full."
+      "message" : "Much obliged for the fast ride. You have been paid in full."
    },
    "FLAVOUR_9_WHEREAREWE" : {
       "description" : "",
-      "message" : "Where are we? I've waited enough - take me to the nearest station NOW!"
+      "message" : "I don't know where we are, but it seems neither do you. Drop me off somewhere; I'll hire somebody else!"
    },
    "FLAVOUR_9_WHYSOMUCH" : {
       "description" : "",
-      "message" : "The Police want me to help them with their enquiries."
+      "message" : "The Police want me to help them with their inquiries."
    },
    "FROM" : {
       "description" : "",
@@ -525,7 +525,7 @@
    },
    "HEY_YOU_ARE_GOING_TO_PAY_FOR_THIS" : {
       "description" : "",
-      "message" : "Hey!?! You are going to pay for this!!!"
+      "message" : "What the hell? You are going to pay for this!!!"
    },
    "HOW_MANY_OF_YOU_ARE_THERE" : {
       "description" : "",
@@ -545,7 +545,7 @@
    },
    "OK_AGREED" : {
       "description" : "",
-      "message" : "Ok, agreed."
+      "message" : "OK, agreed."
    },
    "PIRATE_TAUNTS_0" : {
       "description" : "",

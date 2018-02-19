@@ -560,8 +560,8 @@
       "message" : "Distance to the surface of the frame of reference"
    },
    "HUD_SPEED_OF_APPROACH_TO_TARGET" : {
-       "description" : "Tooltip: The speed of approach relative to target.",
-       "message" : "The speed of approach relative to target"
+       "description" : "Tooltip: The speed of approach towards the target.",
+       "message" : "The speed of approach towards the target"
    },
    "HUD_SPEED_OF_APPROACH_TO_FRAME" : {
        "description" : "Tooltip: The speed of approach towards the frame of reference.",
@@ -569,7 +569,7 @@
    },
    "HUD_DURATION_UNTIL_MANEUVER_BURN" : {
        "description" : "Tooltip: The duration until the middle of the maneuver burn.",
-       "message" : "The duration until the middle of the maneuver burn"
+       "message" : "The duration until the middle of the manoeuvre burn"
    },
    "HUD_INDICATOR_AWAY_FROM_FRAME" : {
        "description" : "Indicator: Away from the current frame.",
@@ -621,7 +621,7 @@
    },
    "HUD_DURATION_OF_MANEUVER_BURN" : {
        "description" : "Tooltip: The approximate duration of the maneuver burn with main thrusters.",
-       "message" : "The approximate duration of the maneuver burn with main thrusters"
+       "message" : "The approximate duration of the manoeuvre burn with main thrusters"
    },
    "HUD_CURRENT_NAV_TARGET" : {
        "description" : "Tooltip: The current navigational target.",
@@ -725,7 +725,7 @@
    },
    "HUD_BUTTON_BLASTOFF": {
       "description": "Tooltip: Blastoff",
-      "message": "Blastoff"
+      "message": "Blast off"
    },
    "HUD_BUTTON_UNDOCK": {
       "description": "Tooltip: Undock",
@@ -829,7 +829,7 @@
    },
    "HULL_REPAIRED_BY_NAME_NOW_AT_N_PERCENT" : {
       "description" : "",
-      "message" : "Hull repaired by {name}, now at {repairPercent}%"
+      "message" : "Hull repaired by {name}. Now at {repairPercent}%"
    },
    "HULL_REPAIR_ATTEMPT_FAILED_HULL_SUFFERED_MINOR_DAMAGE" : {
       "description" : "",
@@ -917,15 +917,15 @@
    },
    "LAUNCH_PERMISSION_DENIED_BUSY" : {
       "description" : "",
-      "message" : "Permission to launch denied: docking bay busy."
+      "message" : "Permission to launch denied: Docking bay busy."
    },
    "LAUNCH_PERMISSION_DENIED_CREW" : {
       "description" : "",
-      "message" : "Permission to launch denied: not enough crew to handle this ship."
+      "message" : "Permission to launch denied: Not enough crew to handle this ship."
    },
    "LAUNCH_PERMISSION_DENIED_FINED" : {
       "description" : "",
-      "message" : "Permission to launch denied: you have outstanding fines."
+      "message" : "Permission to launch denied: You have outstanding fines."
    },
    "LEGAL_STATUS" : {
       "description" : "",
@@ -1113,7 +1113,7 @@
    },
    "MULTISAMPLING_DESC" : {
 	  "description" : "",
-	  "message" : "A graphical fine-tuning feature, used to reduce jagged, pixelated contours. It can be quite resource-intensive."
+	  "message" : "A graphical fine-tuning feature used to reduce jagged, pixelated contours. It can be quite resource-intensive."
    },
    "MURDER" : {
       "description" : "",
@@ -1209,7 +1209,7 @@
    },
    "OK" : {
       "description" : "",
-      "message" : "Ok"
+      "message" : "OK"
    },
    "OPEN_USER_FOLDER" : {
       "description" : "",
@@ -1229,7 +1229,7 @@
    },
    "ORBITAL_ANALYSIS_NOTES" : {
       "description" : "",
-      "message" : "Circular orbit speed is given for a tangential velocity. The ship should be moving in a direction at 90° to the ship/{name} axis.\n\nDescent speed is an absolute minimum, and is also tangential. A slower speed or a lower angle will result in a course which intersects with the surface of {name}.\n\nEscape speed will in theory work in any direction, as long as the ship does not collide with {name} on the way.\n\t\t"
+      "message" : "Circular orbit speed is given for a tangential velocity. The ship should be moving in a direction at 90° to the ship/{name} axis.\n\nDescent speed is an absolute minimum, and is also tangential. A slower speed or a lower angle will result in a course which intersects with the surface of {name}.\n\nEscape speed in theory will work in any direction, as long as the ship does not collide with {name} on the way.\n\t\t"
    },
    "OUTER_ARM" : {
       "description" : "Arm of the Milky Way galaxy",
@@ -1293,7 +1293,7 @@
    },
    "PRESS_A_KEY_OR_CONTROLLER_BUTTON" : {
       "description" : "",
-      "message" : "Press a key or controller button or escape to clear"
+      "message" : "Press a key or controller button, or Escape to clear"
    },
    "PRICE" : {
       "description" : "",
@@ -1337,7 +1337,7 @@
    },
    "REFUEL_FULL" : {
       "description" : "",
-      "message" : "Refuel full"
+      "message" : "Fill tank"
    },
    "REGISTRATION_NUMBER" : {
      "description" : "",
@@ -1509,7 +1509,7 @@
    },
    "START_AT_EARTH" : {
       "description" : "",
-      "message" : "Start at Earth"
+      "message" : "Start on Earth"
    },
    "START_AT_EARTH_DESC": {
 	  "description" : "",
@@ -1517,7 +1517,7 @@
    },
    "START_AT_NEW_HOPE" : {
       "description" : "New Hope is an in game location",
-      "message" : "Start at New Hope"
+      "message" : "Start on New Hope"
    },
    "START_AT_NEW_HOPE_DESC": {
 	  "description" : "",
@@ -1533,7 +1533,7 @@
    },
    "STATION_ORBIT" : {
       "description" : "Information shown in the station loby",
-      "message" : "We are in a {orbit_period} day period orbit around {parent_body}."
+      "message" : "We are in a {orbit_period}-day period orbit around {parent_body}."
    },
    "STATUS" : {
       "description" : "",
@@ -1541,7 +1541,7 @@
    },
    "TECH_CERTIFIED" : {
       "description" : "Lobby screen shows the tech level (an integer number) of the station",
-      "message" : "This station holds a level {tech_level} technology certificate."
+      "message" : "This station holds a Level {tech_level} technology certificate."
    },
    "TECH_CERTIFIED_MILITARY" : {
       "description" : "Lobby screen shows the tech level of the station",
@@ -1701,7 +1701,7 @@
    },
    "YOU_HAVE_X_UNITS_IN_YOUR_CARGOHOLD" : {
       "description" : "",
-      "message" : "You have {units} units in your cargohold"
+      "message" : "You have {units} units in your cargo hold"
    },
    "YOU_MUST_FIRST_SELECT_A_COMBAT_TARGET_COMMANDER" : {
       "description" : "",
