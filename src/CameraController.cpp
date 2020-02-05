@@ -17,7 +17,8 @@ CameraController::CameraController(RefCountedPtr<CameraContext> camera, const Sh
 	m_camera(camera),
 	m_ship(ship),
 	m_pos(0.0),
-	m_orient(matrix3x3d::Identity())
+	m_orient(matrix3x3d::Identity()),
+	m_mouse_sensitivity(45.0f)
 {
 }
 
@@ -343,7 +344,7 @@ void FlyByCameraController::ZoomIn(float frameTime)
 
 void FlyByCameraController::ZoomOut(float frameTime)
 {
-	m_dist += 400 * frameTime;
+	m_dist += 400 * frameTime;   // maybe play with this? or any other * frameTime stuff?
 	m_dist = std::max(GetShip()->GetClipRadius(), m_dist);
 	m_distTo = m_dist;
 }

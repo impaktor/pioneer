@@ -123,6 +123,8 @@ private:
 	double m_rotX; //vertical rot
 	double m_rotY; //horizontal rot
 	matrix3x3d m_viewOrient;
+
+	float m_mouse_sensitivity;
 };
 
 // Zoomable, rotatable orbit camera, always looks at the ship
