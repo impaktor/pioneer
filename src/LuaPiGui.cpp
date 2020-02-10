@@ -423,6 +423,25 @@ static int l_pigui_begin(lua_State *l)
 	return 1;
 }
 
+/*
+ * Function: columns
+ *
+ * Initiates drawing of a table with n columns
+ *
+ * > local ui = require 'pigui'
+ * > ui.columns(n_columns, label, has_border)
+ * > ui.text("row 1, column 1")
+ * > ui.nextColumn()
+ * > ui.text("row 1, column 2")
+ * > ui.columns(1)
+ *
+ * Parameters:
+ *
+ *   n_columns - integer, the number of columns,
+ *   label - optional string, the label of the object
+ *   border - optional, bool, draw vertical column border or not (default)
+ *
+ */
 static int l_pigui_columns(lua_State *l)
 {
 	PROFILE_SCOPED()
@@ -476,6 +495,19 @@ static int l_pigui_progress_bar(lua_State *l)
 	return 0;
 }
 
+/*
+ * Function: nextColumn
+ *
+ * Moves drawing position to next column
+ *
+ * > local ui = require 'pigui'
+ * > ui.columns(n_columns, label, has_border)
+ * > ui.text("row 1, column 1")
+ * > ui.nextColumn()
+ * > ui.text("row 1, column 2")
+ * > ui.columns(1)
+ *
+ */
 static int l_pigui_next_column(lua_State *l)
 {
 	PROFILE_SCOPED()
