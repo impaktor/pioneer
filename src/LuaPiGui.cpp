@@ -439,7 +439,7 @@ static int l_pigui_begin(lua_State *l)
  *
  *   n_columns - integer, the number of columns,
  *   label - optional string, the label of the object
- *   border - optional, bool, draw vertical column border or not (default)
+ *   border - optional bool, draws a vertical border between columns. Defaults to false.
  *
  */
 static int l_pigui_columns(lua_State *l)
