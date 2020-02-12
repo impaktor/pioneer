@@ -1,2 +1,0 @@
-
-return import 'pigui.pigui'
