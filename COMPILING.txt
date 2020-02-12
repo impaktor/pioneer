@@ -217,7 +217,7 @@ pioneer source
 
 0. Install dependencies: naturaldocs
 
-1. Run make codedoc
+1. Run make -C build codedoc
 
 2. The html documentation can be found in the codedoc/ folder
 
