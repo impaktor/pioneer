@@ -738,6 +738,23 @@ static int l_pigui_text(lua_State *l)
 	return 0;
 }
 
+/*
+ * Function: button
+ *
+ * Create a button
+ *
+ * > clicked = ui.button(text, vec_size)
+ *
+ * Parameters:
+ *
+ *   text - string, text on button
+ *   vec_size - ImVec2, size of button
+ *
+ * Return:
+ *
+ *   clicked - bool, true if button was clicked
+ *
+ */
 static int l_pigui_button(lua_State *l)
 {
 	PROFILE_SCOPED()
@@ -1060,6 +1077,19 @@ static int l_pigui_add_triangle_filled(lua_State *l)
 	return 0;
 }
 
+/*
+ * Function: sameLine
+ *
+ * Draw the next command on the same line as previous
+ *
+ * > ui.sameLine(pos_x, spacing_w)
+ *
+ * Parameters:
+ *
+ *   pos_x - optional float, X position for next draw command
+ *   spacing_w - optional float, draw with spacing relative to previous
+ *
+ */
 static int l_pigui_same_line(lua_State *l)
 {
 	PROFILE_SCOPED()
