@@ -15,6 +15,12 @@ local Equipment = require 'Equipment'
 local ShipDef = require 'ShipDef'
 local Ship = require 'Ship'
 local utils = require 'utils'
+-- local ui = import 'pigui'
+-- local ui = import 'pigui/pigui.lua'
+-- local ui = require 'pigui/pigui.lua'
+-- local ui = require 'pigui'
+-- local ui = import 'pigui/themes/default.lua'
+
 
 local InfoFace = import("ui/InfoFace")
 local NavButton = import("ui/NavButton")
@@ -558,7 +564,7 @@ local makeAdvert = function (station)
 
 	local ref = station:AddAdvert({
 		description = ad.desc,
-		icon        = ad.urgency >=  0.8 and "haul_fast" or "haul",
+		icon        = ad.urgency >=  0.8 and ui.theme.icons.haul_urgent or ui.theme.icons.haul,
 		onChat      = onChat,
 		onDelete    = onDelete,
 		isEnabled   = isEnabled })
@@ -859,7 +865,7 @@ local onGameStart = function ()
 		for k,ad in pairs(loaded_data.ads) do
 			local ref = ad.station:AddAdvert({
 				description = ad.desc,
-				icon        = ad.urgency >=  0.8 and "haul_fast" or "haul",
+				icon        = ad.urgency >=  0.8 and ui.theme.icons.haul_fast or ui.theme.icons.haul,
 				onChat      = onChat,
 				onDelete    = onDelete,
 				isEnabled   = isEnabled })

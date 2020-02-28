@@ -18,6 +18,7 @@ local ShipDef = require 'ShipDef'
 local Ship = require 'Ship'
 local utils = require 'utils'
 
+local ui = require 'pigui'
 local InfoFace = import("ui/InfoFace")
 local NavButton = import("ui/NavButton")
 
@@ -207,7 +208,7 @@ local makeAdvert = function (station)
 	})
 	local ref = station:AddAdvert({
 		description = ad.desc,
-		icon        = "assassination",
+		icon        = ui.theme.icons.assassination,
 		onChat      = onChat,
 		onDelete    = onDelete,
 		isEnabled   = isEnabled})
@@ -462,7 +463,7 @@ local onGameStart = function ()
 	for k,ad in pairs(loaded_data.ads) do
 		local ref = ad.station:AddAdvert({
 			description = ad.desc,
-			icon        = "assassination",
+			icon        = ui.theme.icons.assassination,
 			onChat      = onChat,
 			onDelete    = onDelete,
 			isEnabled   = isEnabled})

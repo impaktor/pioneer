@@ -281,7 +281,7 @@ local onCreateBB = function (station)
 			})
 			ads[station:AddAdvert({
 						description = ad.flavour.clubname,
-						icon        = "fuel_club",
+						icon        = ui.theme.icons.fuel_club,
 						onChat      = onChat,
 						onDelete    = onDelete})] = ad
 		end
@@ -295,7 +295,7 @@ local onGameStart = function ()
 		for k,ad in pairs(loaded_data.ads) do
 			ads[ad.station:AddAdvert({
 				description = ad.flavour.clubname,
-				icon        = "fuel_club",
+				icon        = ui.theme.icons.fuel_club,
 				onChat      = onChat,
 				onDelete    = onDelete})] = ad
 		end

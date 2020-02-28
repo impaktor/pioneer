@@ -44,6 +44,7 @@ local utils = require 'utils'
 local Timer = require 'Timer'
 local Rand = require 'Rand'
 local ModelSkin = require 'SceneGraph.ModelSkin'
+local ui = require 'pigui/pigui.lua'
 local l = Lang.GetResource("module-searchrescue")
 
 local InfoFace = import("ui/InfoFace")
@@ -1377,7 +1378,7 @@ local makeAdvert = function (station, manualFlavour, closestplanets)
 
 	local ref = station:AddAdvert({
 			description = ad.desc,
-			icon        = "searchrescue",
+			icon        = ui.theme.icons.searchrescue,
 			onChat      = onChat,
 			onDelete    = onDelete,
 			isEnabled   = isEnabled })
@@ -2124,7 +2125,7 @@ local onGameStart = function ()
 	for _,ad in pairs(loaded_data.ads) do
 		local ref = Space.GetBody(ad.station_local.bodyIndex):AddAdvert({
 				description = ad.desc,
-				icon        = "searchrescue",
+				icon        = ui.theme.icons.searchrescue,
 				onChat      = onChat,
 				onDelete    = onDelete,
 				isEnabled   = isEnabled })

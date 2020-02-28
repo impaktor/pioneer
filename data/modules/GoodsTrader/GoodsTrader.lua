@@ -10,6 +10,7 @@ local Rand = require 'Rand'
 local Serializer = require 'Serializer'
 local Equipment = require 'Equipment'
 local Character = require 'Character'
+local ui = require 'pigui/pigui.lua'
 
 local l = Lang.GetResource("module-goodstrader")
 
@@ -162,7 +163,7 @@ local onCreateBB = function (station)
 
 			local ref = ad.station:AddAdvert({
 				description = ad.flavour,
-				icon        = "goods_trader",
+				icon        = ui.theme.icons.goods_trader,
 				onChat      = onChat,
 				onDelete    = onDelete})
 			ads[ref] = ad
@@ -180,7 +181,7 @@ local onGameStart = function ()
 	for k,ad in pairs(loaded_data.ads) do
 		local ref = ad.station:AddAdvert({
 			description = ad.flavour,
-			icon        = "goods_trader",
+			icon        = ui.theme.icons.goods_trader,
 			onChat      = onChat,
 			onDelete    = onDelete})
 		ads[ref] = ad

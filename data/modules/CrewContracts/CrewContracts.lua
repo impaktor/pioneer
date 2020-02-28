@@ -9,6 +9,7 @@ local Game = require 'Game'
 local Character = require 'Character'
 local Format = require 'Format'
 local Timer = require 'Timer'
+local ui = require 'pigui'
 
 -- This module allows the player to hire crew members through BB adverts
 -- on stations, and handles periodic events such as their wages.
@@ -383,7 +384,7 @@ local onCreateBB = function (station)
 	-- Only one crew hiring thingy per station
 	stationsWithAdverts[station:AddAdvert({
 		description = l.CREW_FOR_HIRE,
-		icon        = "crew_contracts",
+		icon        = ui.theme.icons.crew_contracts,
 		onChat      = onChat,
 		isEnabled   = isEnabled})] = station
 
@@ -428,7 +429,7 @@ Event.Register("onGameStart", function()
 		for k,station in pairs(loaded_data.stationsWithAdverts) do
 		stationsWithAdverts[station:AddAdvert({
 			description = l.CREW_FOR_HIRE,
-			icon        = "crew_contracts",
+			icon        = ui.theme.icons.crew_contracts,
 			onChat      = onChat,
 			isEnabled   = isEnabled})] = station
 		end

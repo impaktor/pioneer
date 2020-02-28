@@ -10,6 +10,7 @@ local Format = require 'Format'
 local Serializer = require 'Serializer'
 local Equipment = require 'Equipment'
 local Character = require 'Character'
+local ui = require 'pigui'
 
 local l = Lang.GetResource("module-secondhand")
 local l2 = Lang.GetResource("ui-core")
@@ -151,7 +152,7 @@ local makeAdvert = function (station)
     })
     local ref = station:AddAdvert({
         description = ad.desc,
-        icon        = "second_hand",
+        icon        = ui.theme.icons.cog,
         onChat      = onChat,
         onDelete    = onDelete})
     ads[ref] = ad
@@ -234,7 +235,7 @@ local onGameStart = function ()
     for k,ad in pairs(loaded_data.ads) do
         local ref = ad.station:AddAdvert({
             description = ad.desc,
-            icon        = "second_hand",
+            icon        = ui.theme.icons.cog,
             onChat      = onChat,
             onDelete    = onDelete,
         })

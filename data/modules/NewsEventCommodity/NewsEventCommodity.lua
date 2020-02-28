@@ -31,6 +31,7 @@ local Event = require 'Event'
 local Format = require 'Format'
 local Serializer = require 'Serializer'
 local Equipment = require 'Equipment'
+local ui = require 'pigui/pigui.lua'
 
 local l = Lang.GetResource("module-newseventcommodity")
 
@@ -282,7 +283,7 @@ local checkAdvertsAdd = function(station)
 		if not currentSystem:IsSameSystem(n.syspath) then
 			local ref = station:AddAdvert(
 				{description = n.description,
-				 icon = "news",
+				 icon = ui.theme.icons.news,
 				 onChat = onChat,
 				 onDelete = onDelete})
 			ads[ref] = {n=n, station=station}
@@ -385,7 +386,7 @@ local onGameStart = function ()
 	for k,ad in pairs(loadedData.ads) do
 		local ref = ad.station:AddAdvert(
 			{description = ad.n.description,
-			 icon = "news",
+			 icon = ui.theme.icons.news,
 			 onChat= onChat,
 			 onDelete = onDelete})
 		ads[ref] = ad
