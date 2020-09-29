@@ -1,5 +1,8 @@
 Table of Contents
 =================
+0 Get Source code
+  0.1 Dependencies
+  0.2 Configure repository
 1 How to compile Pioneer
   1.1 Linux - CMake
   1.2 Windows - MSVC
@@ -17,6 +20,36 @@ Table of Contents
   3.2 C++ source - Doxygen
 4 Faster startup
   4.1 precompile models
+
+
+0 Get Source code
+=================
+First you need a copy of pioneer source code. Either it can be downloaded as
+compressed archive. We recommend downloading it using git, as this allows fast
+and easy updates, and future contributions.
+
+0.1 Dependencies
+----------------
+
+1. Install git and git-lfs. From the folder you want to download the source
+   to, run:
+
+     git clone https://github.com/pioneerspacesim/pioneer.git
+
+2. Tell the repository to activate large file support, by executing
+
+     cd pioneer/
+     git lfs install
+
+
+0.2 Configure repository
+------------------------
+
+1. Still, from inside the root pioneer repository folder, it's useful to add a
+   alias for pioneer's upstream source, in case you wish to contribute (if not
+   this can be skipped):
+
+     git remote add upstream git://github.com/pioneerspacesim/pioneer.git
 
 
 1 How to compile Pioneer
