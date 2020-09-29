@@ -39,7 +39,7 @@ questions are welcome anytime.
 
 
 1.1 Linux - CMake
----------
+-----------------
 
 1. Install the following libraries (with development headers) for your system.
    If your system is not Debian/Ubuntu based, they may have different names.
@@ -127,7 +127,7 @@ questions are welcome anytime.
 
 6. Buid the project (Build->Build All).
 
-7. Pioneer can be run and debugged by selecting 'pioneer.exe' on the 
+7. Pioneer can be run and debugged by selecting 'pioneer.exe' on the
    'Select Startup Item' toolbar button, and then clicking run.
 
 
