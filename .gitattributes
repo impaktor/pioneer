@@ -1,6 +1,16 @@
 * text=auto
-
 *.dae -text
 *.DAE -text
 *.obj -text
 *.OBJ -text
+data/music/core/docked filter=lfs diff=lfs merge=lfs -text
+data/music/core/near-planet filter=lfs diff=lfs merge=lfs -text
+data/music/core/near-spacestation filter=lfs diff=lfs merge=lfs -text
+data/music/core/ship-destroyed filter=lfs diff=lfs merge=lfs -text
+data/music/core/ship-nearby filter=lfs diff=lfs merge=lfs -text
+data/music/core/space filter=lfs diff=lfs merge=lfs -text
+data/music/core/unexplored filter=lfs diff=lfs merge=lfs -text
+data/music/core/discovery filter=lfs diff=lfs merge=lfs -text
+data/music/core/player-destroyed filter=lfs diff=lfs merge=lfs -text
+data/music/core/ship-firing filter=lfs diff=lfs merge=lfs -text
+data/music/core/undocked filter=lfs diff=lfs merge=lfs -text
