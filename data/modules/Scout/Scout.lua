@@ -1,23 +1,32 @@
 -- Copyright © 2008-2014 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local Lang       = import("Lang")
-local Engine     = import("Engine")
-local Game       = import("Game")
-local StarSystem = import("StarSystem")
-local Space      = import("Space")
-local Comms      = import("Comms")
-local Event      = import("Event")
-local Mission    = import("Mission")
-local NameGen    = import("NameGen")
-local Format     = import("Format")
-local Serializer = import("Serializer")
-local Character  = import("Character")
-local InfoFace   = import("ui/InfoFace")
-local Timer      = import("Timer")
-local Eq         = import("Equipment")
+local Lang       = require "Lang"
+local Engine     = require "Engine"
+local Game       = require "Game"
+local StarSystem = require "StarSystem"
+local Space      = require "Space"
+local Comms      = require "Comms"
+local Event      = require "Event"
+local Mission    = require "Mission"
+local NameGen    = require "NameGen"
+local Format     = require "Format"
+local Serializer = require "Serializer"
+local Character  = require "Character"
+local Timer      = require "Timer"
+local Eq         = require "Equipment"
+local utils      = require 'utils'
 
 local l = Lang.GetResource("module-scout")
+local lc = Lang.GetResource("core")
+local luc = Lang.GetResource("ui-core")
+
+-- TODO:
+-- * days / flat deadline, always e.g. 3 months (depending on contractor?)
+-- * adjust deadline for each flavour
+-- * ...thus remove "why so much" line
+-- * have propper progress bar for surface scanner
+-- * look over each flavour's deadline, rewards and difficulty
 
  -- don't produce missions for further than this many light years away
 local max_scout_dist = 30
@@ -27,8 +36,6 @@ local scan_time = 600  -- uuu
 
 -- CallEvery(xTimeUp,....
 local xTimeUp = 10     -- uuu
-local radius_min = 1.5
-local radius_max = 1.6
 
 -- minimum $350 reward in local missions
 local local_reward = 350
@@ -36,52 +43,57 @@ local local_reward = 350
 -- Get the UI class
 local ui = Engine.ui
 
+
 local flavours = {
+	-- localscout: if in same system or not
+	-- days: simply the hard deadline for this type of contract
+	-- difficulty: used to set altitude in scanner
+	-- reward: used as multiplier in reward calculation
 	{                          -- flavour 1
 		localscout = false,    -- is in same system?
-		urgency    = 0.0,      -- deadline, [0,1]
+		days       = 60,       -- days until deadline, from accepting it
 		difficulty = 0,        -- altitude, [0,1]
 		reward     = 1,        -- reward multiplier, 1=none. (unrelated to "urgency")
 	}, {
-		localscout = false,    -- 2
-		urgency    = 0.0,
-		difficulty = 1,        -- low altitude flying
+		localscout = false,    -- 2 Galactic Geographic Society
+		days       = 60,
+		difficulty = 2,        -- low altitude flying
 		reward     = 1,
 	}, {
-		localscout = false,    -- 3
-		urgency    = 0.1,
+		localscout = false,    -- 3 rich pirate hiring
+		days       = 30,
 		difficulty = 1,
-		reward     = 1.2,      -- rich pirate hiring
+		reward     = 1.5,
 	}, {
-		localscout = false,    -- 4
-		urgency    = 1.0,
-		difficulty = 2,
+		localscout = false,    -- 4 phd student, short time, stressed
+		days       = 30,
+		difficulty = 1,
 		reward     = 1,
 	}, {
-		localscout = false,    -- 5
-		urgency    = 0.4,
+		localscout = false,    -- 5 Neutral / standard
+		days       = 60,
 		difficulty = 0,
 		reward     = 1,
 	}, {
-		localscout = true,     -- 6
-		urgency    = 0.1,
+		localscout = true,     -- 6 local system admin
+		days       = 60,
 		difficulty = 0,
 		reward     = 1.5,      -- government pays well
 	}, {
-		localscout = true,     -- 7
-		urgency    = 1,        -- urgent
+		localscout = true,     -- 7 family in need of new land
+		days       = 25,       -- urgent!
 		difficulty = 0,
-		reward     = 0.5,      -- because local
+		reward     = 2,        -- because urgent
 	}, {
-		localscout = true,     -- 8
-		urgency    = 0,
-		difficulty = 0,
-		reward     = 0.5,      -- because local
+		localscout = true,     -- 8 geographical society
+		days       = 80,
+		difficulty = 2,
+		reward     = 2,
 	}, {
-		localscout = false,    -- 9
-		urgency    = 0.9,
+		localscout = false,    -- 9 Family in race to a claim
+		days       = 30,	   -- should be short
 		difficulty = 0,
-		reward     = 1,
+		reward     = 3,
 	}
 }
 
@@ -102,7 +114,6 @@ local missions = {}
 local onChat = function (form, ref, option)
 	local ad          = ads[ref]
 	local backstation = Game.player:GetDockedWith().path
-	local faction     = Game.system.faction
 	form:Clear()
 	if option == -1 then
 		form:Close()
@@ -117,8 +128,7 @@ local onChat = function (form, ref, option)
 
 		local introtext = string.interp(flavours[ad.flavour].introtext, {
 			name       = ad.client.name,
---			police     = faction.policeName,  -- add a new flavour when faction police name is translated
-			cash       = Format.Money(ad.reward),
+			cash       = Format.Money(Format.RoundClosest(ad.reward, 50)),
 			systembody = sbody.name,
 			system     = sys.name,
 			sectorx    = ad.location.sectorX,
@@ -140,16 +150,14 @@ local onChat = function (form, ref, option)
 	elseif option == 3 then
 
 		-- använd något annat!
-		if Game.player:CountEquip(Eq.misc.radar_mapper) == 0 then
-			form:SetMessage(l.YOU_NEED_RADAR_MAPPER)
-			return
-		end
+		-- if Game.player:CountEquip(Eq.misc.radar_mapper) == 0 then
+		-- 	form:SetMessage(l.YOU_NEED_RADAR_MAPPER)
+		-- 	return
+		-- end
 		form:RemoveAdvertOnClose()
 		ads[ref] = nil
 		local mission = {
 			type        = "Scout",
-			faction     = faction.name,
-			police      = faction.policeName,  -- bortkommenterad tidigare?
 			backstation = backstation,
 			client      = ad.client,
 			location    = ad.location,
@@ -186,9 +194,8 @@ local makeAdvert = function (station)
 	local location						  -- mission body
 	local client = Character.New()
 	local flavour = Engine.rand:Integer(1,#flavours)
-	local urgency = flavours[flavour].urgency
+	local days = flavours[flavour].days
 	local difficulty = flavours[flavour].difficulty
-	local faction = Game.system.faction   -- xxx
 
 	if flavours[flavour].localscout then  -- local system
 
@@ -208,8 +215,9 @@ local makeAdvert = function (station)
 		local dist = station:DistanceTo(Space.GetBody(location.bodyIndex))
 		if dist < 1000 then return end
 
-		reward = local_reward + (math.sqrt(dist) / 15000) * (1.5+urgency) * (1+Game.system.lawlessness)
-		due = Game.time + ((4*24*60*60) * (Engine.rand:Number(1.5,3.5) - urgency))
+		reward = local_reward + (math.sqrt(dist) / 15000)
+		due = Game.time + (86400 * days)
+		due = 1e8 --- just for testing
 	else                                   -- remote system
 		if nearbysystems == nil then       -- only uninhabited systems
 			nearbysystems =	Game.system:GetNearbySystems(max_scout_dist,
@@ -232,13 +240,9 @@ local makeAdvert = function (station)
 
 		-- Compute reward for mission
 		local multiplier = Engine.rand:Number(1.5,1.6)
-		if Game.system.faction ~= location:GetStarSystem().faction then
-			multiplier = multiplier * Engine.rand:Number(1.3,1.5)
-		end
---		reward = tariff(dist,difficulty,urgency,location)*2*multiplier
-		reward = 100  -- todo xxx
---		due = Game.time + ((2 * dist * 86400)/(1 + urgency))
-		due = 1e8 -- todo xxx
+		reward = 100*multiplier  -- todo xxx
+		due = Game.time + (86400 * days)
+		due = 1e8 --- just for testing
 	end
 
 	local ad = {
@@ -249,7 +253,7 @@ local makeAdvert = function (station)
 		dist       = Game.system:DistanceTo(location),
 		due        = due,
 		difficulty = difficulty,
-		urgency    = urgency,
+		days    = days,
 		reward     = reward,
 		isfemale   = isfemale,
 		faceseed   = Engine.rand:Integer(),
@@ -274,6 +278,7 @@ end
 
 local onCreateBB = function (station)
 	local num = Engine.rand:Integer(math.ceil(Game.system.population)) / 2
+	num = 10 -- uuu force creation of adverts
 	for i = 1,num do
 		makeAdvert(station)
 	end
@@ -311,8 +316,8 @@ end
 local mapped = function(body)
 	local CurBody = Game.player.frameBody or body
 	if not CurBody then return end
-	local faction = Game.system.faction -- xxx
-	local mission
+	local mission, radius_min, radius_max
+
 	for ref,mission in pairs(missions) do
 		if Game.time > mission.due then mission.status = "FAILED" end
 		if Game.system == mission.location:GetStarSystem() then
@@ -321,8 +326,12 @@ local mapped = function(body)
 
 			local PhysBody = CurBody.path:GetSystemBody()
 			if PhysBody and CurBody.path == mission.location then
+				print("CORRECT BODY")
 				local TimeUp = 0
-				if DangerLevel == 2 then
+				if mission.difficulty == 2 then
+					radius_min = 1.1
+					radius_max = 1.2
+				elseif mission.difficulty == 1 then
 					radius_min = 1.3
 					radius_max = 1.4
 				else
@@ -363,11 +372,7 @@ local mapped = function(body)
 							--- or is it a "hack" that a delivery location might not be there?
 							--- I know I can always return to the same station, as where I picked up the mission, right.
 							local newlocation = mission.backstation
-							if not flavours[mission.flavour].localscout
-								and (((mission.faction == faction.name)
-								and Engine.rand:Integer(2) > 1)
-								or Engine.rand:Integer(2) > 1)
-							then
+							if not flavours[mission.flavour].localscout then
 								-- XXX-TODO GetNearbyStationPaths triggers bug in Gliese 190 mission. Empty system!
 								local nearbystations =
 									StarSystem:GetNearbyStationPaths(Engine.rand:Integer(10,20), nil, function (s) return
@@ -390,6 +395,7 @@ local mapped = function(body)
 end
 
 
+-- Is this called if the mission is to current frame? xxx
 local onFrameChanged = function (body)
 	if not body:isa("Ship") or not body:IsPlayer() then return end
 	if body.frameBody == nil then return end
@@ -460,177 +466,57 @@ local onGameStart = function ()
 end
 
 
-local onClick = function (mission)
-	local dist = Game.system and string.format("%.2f", Game.system:DistanceTo(mission.location)) or "zzz"
+local buildMissionDescription = function (mission)
+	local ui = require 'pigui'
+	local desc = {}
+	local dist = Game.system and string.format("%.2f", Game.system:DistanceTo(mission.location)) or "???"
 
-	local danger
-	if mission.difficulty == 0 then
-		---danger = (l["MessageRisk3_" .. Engine.rand:Integer(1,2)])
-	end
+	-- Map to altitude, or 'low' / 'medium' / 'high'
+	local danger = mission.difficulty
 
-	if mission.status =="ACTIVE" or mission.status =="MAPPING" then
-		return ui:Grid(2,1)
-		:SetColumn(0,{ui:VBox(10):PackEnd({ui:MultiLineText((flavours[mission.flavour].introtext):interp(
-						{
-							name       = mission.client.name,
-							faction    = mission.faction,
-							police     = mission.police,
-							systembody = mission.location:GetSystemBody().name,
-							system     = mission.location:GetStarSystem().name,
-							sectorx    = mission.location.sectorX,
-							sectory    = mission.location.sectorY,
-							sectorz    = mission.location.sectorZ,
-							dist       = dist,
-							cash       = Format.Money(mission.reward),
-						})
-					),
-					"",
-						ui:Grid(2,1)
-							:SetColumn(0,{
-								ui:VBox():PackEnd({
-													ui:Label(l.Objective)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:MultiLineText(mission.location:GetSystemBody().name)
-												})
-											}),
-										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.System)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:MultiLineText(mission.location:GetStarSystem().name.." ("..mission.location.sectorX..","..mission.location.sectorY..","..mission.location.sectorZ..")")
-												})
-											}),
-										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.Deadline)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:Label(Format.Date(mission.due))
-												})
-											}),
-										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.Danger)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:MultiLineText(danger)
-												})
-											}),
-										"",
-										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.Distance)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:Label(dist.." ly")
-												})
-											}),
-		})})
-		:SetColumn(1, {
-			ui:VBox(10):PackEnd(InfoFace.New(mission.client))
-		})
-	elseif mission.status =="COMPLETED" then
-		return ui:Grid(2,1)
-		:SetColumn(0,{ui:VBox(10):PackEnd({ui:MultiLineText((flavours[mission.flavour].introtext2):interp(
-						{
-							name       = mission.client.name,
-							faction    = mission.faction,
-							police     = mission.police,
-							systembody = mission.location:GetSystemBody().name,
-							system     = mission.location:GetStarSystem().name,
-							sectorx    = mission.location.sectorX,
-							sectory    = mission.location.sectorY,
-							sectorz    = mission.location.sectorZ,
-							cash       = Format.Money(mission.reward),
-							dist       = dist})
-					),
-					"",
-						ui:Grid(2,1)
-							:SetColumn(0,{
-								ui:VBox():PackEnd({
-													ui:Label(l.Station)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:MultiLineText(mission.location:GetSystemBody().name)
-												})
-											}),
-										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.System)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:MultiLineText(mission.location:GetStarSystem().name.." ("..mission.location.sectorX..","..mission.location.sectorY..","..mission.location.sectorZ..")")
-												})
-											}),
-										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.Deadline)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:Label(Format.Date(mission.due))
-												})
-											}),
---[[										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.Danger)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:MultiLineText(danger)
-												})
-											}),
-										"",--]]
-										ui:Grid(2,1)
-											:SetColumn(0, {
-												ui:VBox():PackEnd({
-													ui:Label(l.Distance)
-												})
-											})
-											:SetColumn(1, {
-												ui:VBox():PackEnd({
-													ui:Label(dist.." ly")
-												})
-											}),
-		})})
-		:SetColumn(1, {
-			ui:VBox(10):PackEnd(InfoFace.New(mission.client))
-		})
-	elseif mission.status =="SUSPENDED" then
-		return ui:Grid(2,1):SetColumn(0,{ui:VBox(10)
-			:PackEnd({ui:MultiLineText(l.suspended_mission)})})
-	elseif mission.status =="FAILED" then
-		return ui:Grid(2,1):SetColumn(0,{ui:VBox(10)
-			:PackEnd({ui:MultiLineText(l.failed_mission)})})
-	else
-		return ui:Grid(2,1):SetColumn(0,{ui:VBox(10)
-			:PackEnd({ui:Label("ERROR")})})
-	end
+	-- Main body intro text (should be different if completed mission?)
+	desc.description =
+		flavours[mission.flavour].introtext:interp(
+			{
+				name       = mission.client.name,
+				systembody = mission.location:GetSystemBody().name,
+				system     = mission.location:GetStarSystem().name,
+				sectorx    = mission.location.sectorX,
+				sectory    = mission.location.sectorY,
+				sectorz    = mission.location.sectorZ,
+				dist       = dist,
+				cash       = Format.Money(mission.reward),
+			})
+
+	desc.location = mission.location
+	desc.client = mission.client
+
+	local coordinates = "("..mission.location.sectorX..","
+		..mission.location.sectorY..","
+		..mission.location.sectorZ..")"
+
+	-- TODO: don't show danger, instead, show min/max altitude for scanning
+	-- station is shown for return station, after mission is completed
+	-- mission status should be translated
+
+	--if mission.status == "ACTIVE" or mission.status == "MAPPING" then
+	desc.details = {
+		"Mapping",
+		{lc.SYSTEM,       mission.location:GetStarSystem().name.." "..coordinates},
+		{luc.STATION,     mission.location:GetSystemBody().name},
+		-- {l.OBJECTIVE,     mission.location:GetSystemBody().name},
+		{l.DISTANCE,      dist .. lc.UNIT_LY},
+		{l.DEADLINE,      Format.Date(mission.due)},
+		{l.DANGER,        danger},
+		{luc.STATUS,      mission.status},
+		--{lc.STATUS,       l[mission.status]},
+	}
+
+	-- elseif mission.status =="COMPLETED" then
+	-- elseif mission.status =="SUSPENDED" then
+	-- elseif mission.status =="FAILED" then
+	-- 	return "ERROR"
+	return desc
 end
 
 
@@ -656,6 +542,6 @@ Event.Register("onFrameChanged", onFrameChanged)
 Event.Register("onShipDocked", onShipDocked)
 Event.Register("onGameStart", onGameStart)
 
-Mission.RegisterType('Scout', l.SCOUT, onClick)
+Mission.RegisterType('Scout', l.MAPPING, buildMissionDescription)
 
 Serializer:Register("Scout", serialize, unserialize)

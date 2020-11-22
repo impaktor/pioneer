@@ -57,7 +57,7 @@
    },
    "ADTEXT_3_WHYSOMUCH" : {
       "description" : "",
-      "message" : "I'm expecting high yield on this investment, if I find what I'm looking for."
+      "message" : "I'm expecting high yield on this investment, if I find what I'm looking for, which is why I need you to fly extra low."
    },
    "ADTEXT_4" : {
       "description" : "",
@@ -65,7 +65,7 @@
    },
    "ADTEXT_4_INTRO" : {
       "description" : "",
-      "message" : "Hi! My name is {name}, and I'm doing some research on the {system} system ({sectorx}, {sectory}, {sectorz}), {dist} ly from here. I need to get some additional data for {systembody} in form of updated maps. I will pay {cash} to any pilot that can deliver this information to me in time."
+      "message" : "Hi! My name is {name}, and I'm doing some research for my PhD on the {system} system ({sectorx}, {sectory}, {sectorz}), {dist} ly from here. I need to get some additional data for {systembody} in form of updated maps, or my supervisor will kill me. I will pay {cash} to any pilot that can deliver this information to me in time, preferably yesterday, as I'm stressed out of my mind."
    },
    "ADTEXT_4_SUCCESSMSG" : {
       "description" : "",
@@ -73,11 +73,11 @@
    },
    "ADTEXT_4_FAILMSG" : {
       "description" : "",
-      "message" : "There's no way I'll ever get my PhD now! Thanks a lot for ruining my research."
+      "message" : "There's no way I'll ever get my PhD now! Thanks a lot for ruining my life!"
    },
    "ADTEXT_4_WHYSOMUCH" : {
-      "description" : "high impact journals is a recognized term for journals like Nature and Science, yielding many citations.",
-      "message" : "I'm hoping this new data will really get my article published in some high impact journal."
+      "description" : "'High impact journals' is a recognized term for journals like Nature and Science, yielding many citations.",
+      "message" : "I'm hoping this new data, with pretty pictures and maps, will increase my chanses of getting my article published in some high impact journal."
    },
    "ADTEXT_5" : {
       "description" : "",
@@ -101,7 +101,7 @@
    },
    "ADTEXT_6" : {
       "description" : "",
-      "message" : "MAP UPDATE: Our administration needs help to update maps for {systembody}"
+      "message" : "MAP UPDATE: Our system administration needs help to update maps for {systembody}"
    },
    "ADTEXT_6_INTRO" : {
       "description" : "",
@@ -125,11 +125,11 @@
    },
    "ADTEXT_7_INTRO" : {
       "description" : "",
-      "message" : "Hello! I am {name}, and my family is in urgent need to find more land. We will pay {cash} for good survey data on {systembody}."
+      "message" : "Hello! I am {name}, and my family is in urgent need to find more land, before we're kicked out of our current prospecting territory. We will pay {cash} for good survey data on {systembody}."
    },
    "ADTEXT_7_SUCCESSMSG" : {
       "description" : "",
-      "message" : "We appreciate the quick work, pilot. Their money has been transferred."
+      "message" : "We appreciate the quick work, pilot. The money has been transferred."
    },
    "ADTEXT_7_FAILMSG" : {
       "description" : "",
@@ -145,7 +145,7 @@
    },
    "ADTEXT_8_INTRO" : {
       "description" : "",
-      "message" : "Hi! I'm with the geographical society, and we need to update our maps of {systembody}. We are willing to pay {cash} for such an endeavour."
+      "message" : "Hi! I'm with the geographical society, and we need to update our maps of {systembody}. We are willing to pay {cash} for a pilot willing to fly lower than our previous."
    },
    "ADTEXT_8_SUCCESSMSG" : {
       "description" : "",
@@ -157,7 +157,7 @@
    },
    "ADTEXT_8_WHYSOMUCH" : {
       "description" : "",
-      "message" : "The worlds must be documented and mapped."
+      "message" : "The worlds must be documented and mapped, in finer and better detail."
    },
    "ADTEXT_9" : {
       "description" : "",
@@ -183,15 +183,15 @@
       "description" : "",
       "message" : "MAPPING COMPLETED. Data saved."
    },
-   "Danger" : {
+   "DANGER" : {
       "description" : "",
       "message" : "Danger:"
    },
-   "Deadline" : {
+   "DEADLINE" : {
       "description" : "",
       "message" : "Deadline:"
    },
-   "Distance" : {
+   "DISTANCE" : {
       "description" : "",
       "message" : "Distance:"
    },
@@ -248,14 +248,14 @@
       "message" : "Please have the data back before {date}"
    },
    "MAPPING" : {
-      "description" : "",
+      "description" : "As in cartogrophy",
       "message" : "Mapping"
    },
    "MAPPING_INTERRUPTED" : {
       "description" : "",
       "message" : "MAPPING INTERRUPTED. Orbit correction needed."
    },
-   "Objective" : {
+   "OBJECTIVE" : {
       "description" : "",
       "message" : "Objective:"
    },
@@ -275,14 +275,6 @@
       "description" : "",
       "message" : "Scout"
     },
-   "Station" : {
-      "description" : "",
-      "message" : "Station:"
-   },
-   "System" : {
-      "description" : "",
-      "message" : "System:"
-   },
    "WHEN_DO_YOU_NEED_THE_DATA" : {
       "description" : "",
       "message" : "When do you need the data?"
@@ -306,10 +298,6 @@
    "COMPUTER" : {
       "description" : "The ship on board computer",
       "message" : "Computer"
-   },
-   "ly" : {
-      "description" : "Abbreviation for light year",
-      "message" : "ly"
    },
    "minutes" : {
       "description" : "",
