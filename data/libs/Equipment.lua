@@ -179,8 +179,8 @@ misc.trade_computer = EquipType.New({
 	capabilities={mass=0, trade_computer=1}, purchasable=true, tech_level=9
 })
 misc.planetscanner = BodyScannerType.New({
-	l10n_key = 'PLANETSCANNER', slots="sensor", price=15000,
-	capabilities={mass=1,sensor=1}, purchasable=false, tech_level=1,
+	l10n_key = 'PLANETSCANNER', slots="sensor", price=15,
+	capabilities={mass=1,sensor=1}, purchasable=true, tech_level=1,
 	icon_on_name="body_scanner_on", icon_off_name="body_scanner_off",
 	max_range=100000000, target_altitude=0, state="HALTED", progress=0,
 	bodyscanner_stats={scan_speed=3, scan_tolerance=0.05}

@@ -385,7 +385,7 @@ function SensorType:GetLastResults()
 end
 
 -- gets called from C++ to set the MeterBar value
--- must return a number
+-- must return a number FIX ME! No longer in C++!
 function SensorType:GetProgress()
 	if type(self.progress) == "number" then
 		return self.progress
