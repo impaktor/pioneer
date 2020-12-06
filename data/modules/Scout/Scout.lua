@@ -27,6 +27,8 @@ local luc = Lang.GetResource("ui-core")
 -- * ...thus remove "why so much" line
 -- * have propper progress bar for surface scanner
 -- * look over each flavour's deadline, rewards and difficulty
+-- * round reward utils.round()
+-- * use svg icon instead of png, remove png
 
  -- don't produce missions for further than this many light years away
 local max_scout_dist = 30
