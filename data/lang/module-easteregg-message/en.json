@@ -23,4 +23,12 @@
     "description": "A very rare Easter egg, and reference to a line from a famous song.",
     "message": "NEED SOMEONE TO TURN TO?"
   }
+  "FLAVOUR_2_BODY": {
+    "description": "A very rare easter egg, referencing a online myth from 90s centered around online posts by a man claiming to be from the future",
+    "message": ""
+  },
+  "FLAVOUR_2_TITLE": {
+    "description": "A very rare Easter egg, and reference to a line from a famous song.",
+    "message": "People of the past, be wary of the GREAT CALAMITY!"
+  }
 }
