@@ -94,6 +94,7 @@ local ads = {}
 local missions = {}
 
 local isQualifiedFor = function(reputation, ad)
+	-- use character dice roll!
 	return
 		reputation >= 8 or
 		ad.localdelivery or
