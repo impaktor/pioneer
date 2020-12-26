@@ -143,8 +143,10 @@ StationView:registerView({
 	icon = ui.theme.icons.shield_other,
 	showView = true,
 	draw = function()
+		if Game.system.lawlessness < 1 then -- untested
 		ui.child("StationPolice", Vector2(0, ui.getContentRegion().y
 			- StationView.style.height), {}, drawPolice)
+		end
 		StationView:shipSummary()
 	end,
 	refresh = function()
