@@ -1,7 +1,14 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local male={
+local CultureName = require './common'
+
+local French = CultureName:New()
+
+French.name = "French"
+French.code = "fr"
+
+French.male = {
 	'Adrien',
 	'André',
 	'Anselme',
@@ -125,7 +132,7 @@ local male={
 	'Èmerick',
 }
 
-local female={
+French.female = {
 	'Adéle',
 	'Agathe',
 	'Aimée',
@@ -245,7 +252,7 @@ local female={
 	'Èmilie',
 }
 
-local surname={
+French.surname = {
 	'Adam',
 	'Andre',
 	'Arnaud',
@@ -365,3 +372,5 @@ local surname={
 	'Vidal',
 	'Vincent',
 }
+
+return French

@@ -1,7 +1,14 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local male={
+local CultureName = require './common'
+
+local Hungarian = CultureName:New()
+
+Hungarian.name = "Hungarian"
+Hungarian.code = "hu"
+
+Hungarian.male={
 	'Ábel',
 	'Ádám',
 	'Adrián',
@@ -91,7 +98,7 @@ local male={
 	'Zsombor'
 }
 
-local female={
+Hungarian.female={
 	'Adrienn',
 	'Andrea',
 	'Anett',
@@ -180,7 +187,7 @@ local female={
 	'Éva'
 }
 
-local surname={
+Hungarian.surname={
 	'Antal',
 	'Bakos',
 	'Balassa',
@@ -292,3 +299,5 @@ local surname={
 	'Váradi',
 	'Vörös'
 }
+
+return Hungarian

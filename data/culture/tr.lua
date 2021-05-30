@@ -3,7 +3,14 @@
 
 -- From WKFO
 
-local male = {
+local CultureName = require './common'
+
+local Turkish = CultureName:New()
+
+Turkish.name = "Turkish"
+Turkish.code = "tr"
+
+Turkish.male = {
 	"Ahmet",
 	"Akif",
 	"Ali",
@@ -107,7 +114,7 @@ local male = {
 }
 
 
-local female = {
+Turkish.female = {
 	"Ada",
 	"Adile",
 	"Asli",
@@ -211,7 +218,7 @@ local female = {
 }
 
 
-local surname = {
+Turkish.surname = {
 	"Acar",
 	"Akac",
 	"Aksoy",
@@ -315,3 +322,5 @@ local surname = {
 	"Yilmaz",
 	"Zaman"
 }
+
+return Turkish

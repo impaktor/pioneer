@@ -1,7 +1,15 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local male={
+local utils = require 'utils'
+local CultureName = require './common'
+
+local Russian = CultureName:New()
+
+Russian.name = "Russian"
+Russian.code = "ru"
+
+Russian.male = {
 	'Afanasy',
 	'Alexander',
 	'Alexey',
@@ -54,7 +62,7 @@ local male={
 	'Yaroslav'
 }
 
-local female={
+Russian.female = {
 	'Alexandra',
 	'Alina',
 	'Alla',
@@ -107,7 +115,7 @@ local female={
 	'Zoya'
 }
 
-local surname={
+Russian.surname = {
 	'Abramtsev',
 	'Aleksandrov',
 	'Baranov',
@@ -159,3 +167,13 @@ local surname={
 	'Zakharov',
 	'Zhuravlev'
 }
+
+-- Russian surnames are gender specific
+function Russian:Surname (isFemale, rand)
+	local lastname = utils.chooseEqual(self.surname, rand)
+
+	-- Append "a" to end of surname
+	return isFemale and lastname .. "a" or lastname
+end
+
+return Russian

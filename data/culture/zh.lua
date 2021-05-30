@@ -1,7 +1,14 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local male={
+local CultureName = require './common'
+
+local Chinese = CultureName:New()
+
+Chinese.name = "Chinese"
+Chinese.code = "zh"
+
+Chinese.male = {
 	'Aiguo',
 	'Bai',
 	'Bingwen',
@@ -144,7 +151,7 @@ local male={
 	'Zongmeng'
 }
 
-local female={
+Chinese.female = {
 	'Baozhai',
 	'Biyu',
 	'Changchang',
@@ -287,7 +294,7 @@ local female={
 	'Zongying'
 }
 
-local surname={
+Chinese.surname = {
 	'Ang',
 	'Au-Yong',
 	'Bui',
@@ -428,3 +435,5 @@ local surname={
 	'Zhong',
 	'Zhou'
 }
+
+return Chinese

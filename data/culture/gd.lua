@@ -1,9 +1,18 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- source: http://pioneerspacesim.net/forum/viewtopic.php?f=3&t=466
 
-local male={
+local CultureName = require './common'
+
+local Gaelic = CultureName:New()
+
+Gaelic.name = "Gaelic"
+Gaelic.code = "gd"
+
+-- {'È', 'À', 'ò', 'Ò', 'à', 'Ù', 'è', 'ì', 'Ì', 'ù'}
+
+Gaelic.male = {
 	'Aaron',
 	'Adaidh',
 	'Àdhamh',
@@ -289,7 +298,7 @@ local male={
 	'Ùspaig'
 }
 
-local female={
+Gaelic.female = {
 	'Aigneas',
 	'Ailean',
 	'Aileas',
@@ -405,8 +414,7 @@ local female={
 	'Ùna'
 }
 
--- male surnames
-local surname={
+Gaelic.surname = {
 	'à Monadh Teith',
 	'Abarach',
 	'Achadh Leac',
@@ -757,3 +765,5 @@ local surname={
 	'Sutharlanach',
 	'Urchardain'
 }
+
+return Gaelic

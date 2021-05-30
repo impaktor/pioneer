@@ -3,7 +3,14 @@
 
 -- Source: From pioneer music contributor franzopow[m] on IRC.
 
-local male={
+local CultureName = require './common'
+
+local Italian = CultureName:New()
+
+Italian.name = "Italian"
+Italian.code = "it"
+
+Italian.male={
 	'Alberto',
 	'Alessandro',
 	'Alessio',
@@ -111,7 +118,7 @@ local male={
 	'Vittorio',
 }
 
-local female={
+Italian.female={
 	'Agnella',
 	'Agnese',
 	'Alba',
@@ -215,7 +222,7 @@ local female={
 	'Veronica'
 }
 
-local surname={
+Italian.surname={
 	'Abbate',
 	'Agnelli',
 	'Albano',
@@ -326,3 +333,5 @@ local surname={
 	'Visconti',
 	'Zingaretti',
 }
+
+return Italian

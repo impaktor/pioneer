@@ -1,9 +1,16 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- source http://www.studentsoftheworld.info/penpals/stats.php3?Pays=ESP
 
-local male={
+local CultureName = require './common'
+
+local Spanish = CultureName:New()
+
+Spanish.name = "Spanish"
+Spanish.code = "es"
+
+Spanish.male={
 	"Adrian",
 	"Aitor",
 	"Albert",
@@ -106,7 +113,7 @@ local male={
 	"Óscar"
 }
 
-local female={
+Spanish.female={
 	"Aida",
 	"Aina",
 	"Ainhoa",
@@ -208,7 +215,7 @@ local female={
 	"Yaiza"
 }
 
-local surname={
+Spanish.surname={
 	"Aguilar",
 	"Alonso",
 	"Alvarez",
@@ -310,3 +317,5 @@ local surname={
 	"Vidal",
 	"Vila"
 }
+
+return Spanish

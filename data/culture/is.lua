@@ -1,15 +1,72 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- Data source
 -- https://forebears.io/iceland/forenames
 -- https://forebears.io/iceland/surnames
+-- https://www.nordicnames.de/wiki/List_of_approved_Icelandic_male_names
+-- https://www.nordicnames.de/wiki/Category:Icelandic_Female_Names
 
-local male = {}
+-- used:
+-- https://adventures.is/blog/icelandic-names/
 
-local female = {}
 
-local surname = {
+local CultureName = require './common'
+
+local Islandic = CultureName:New()
+
+Islandic.name = "Icelandic"
+Islandic.code = "is"
+
+-- {'é', 'Þ', 'ó', 'ö', 'Ó', 'í', 'ð', 'ú', 'á', 'Á'}
+
+Islandic.male = {
+    "Jón",
+    "Sigurður",
+    "Guðmundur",
+    "Gunnar",
+    "Ólafur",
+    "Einar",
+    "Kristján",
+    "Magnús",
+    "Stefán",
+    "Jóhann",
+    "Björn",
+    "Arnar",
+    "Árni",
+    "Bjarni",
+    "Helgi",
+    "Halldór",
+    "Pétur",
+    "Daníel",
+    "Kristinn",
+    "Ragnar",
+}
+
+Islandic.female = {
+    "Guðrún",
+    "Anna",
+    "Kristín",
+    "Sigríður",
+    "Margrét",
+    "Helga",
+    "Sigrún",
+    "Ingibjörg",
+    "María",
+    "Jóhanna",
+    "Elín",
+    "Katrín",
+    "Hildur",
+    "Eva",
+    "Lilja",
+    "Ragnheiður",
+    "Ásta",
+    "Guðbjörg",
+    "Elísabet",
+    "Erla",
+}
+
+Islandic.surname = {
 	"Jónsdóttir",
 	"Jónsson",
 	"Sigurðardóttir",
@@ -111,3 +168,5 @@ local surname = {
 	"Aðalsteinsdóttir",
 	"Þórisdóttir"
 }
+
+return Islandic

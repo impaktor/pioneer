@@ -1,7 +1,16 @@
 -- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local male = {
+local utils = require 'utils'
+local CultureName = require './common'
+
+local Greek = CultureName:New()
+
+Greek.name = "Greek"
+Greek.code = "el"
+Greek.surname = nil  -- not using this for Greek
+
+Greek.male = {
 	"Achaeus",
 	"Adeimantus",
 	"Agapetus",
@@ -115,7 +124,7 @@ local male = {
 	"Zenobios"}
 
 
-local female = {
+Greek.female = {
 	"Agariste",
 	"Agatha",
 	"Agne",
@@ -228,7 +237,7 @@ local female = {
 }
 
 
-local female_surnames = {
+Greek.female_surname = {
 	"Afroudaki",
 	"Agathangelou",
 	"Aggeloniti",
@@ -458,7 +467,7 @@ local female_surnames = {
 	"Zografaki",
 }
 
-local male_surname = {
+Greek.male_surname = {
 	"Achilleos",
 	"Afroudakis",
 	"Aggelonitis",
@@ -818,3 +827,12 @@ local male_surname = {
 	"Zografakis",
 	"Zografos"
 }
+
+-- Greek surnames are gender specific
+function Greek:Surname (isFemale, rand)
+	-- print("OVERLOADED", self.name) xxx
+	local array = isFemale and self.female_surname or self.male_surname
+	return utils.chooseEqual(array, rand)
+end
+
+return Greek

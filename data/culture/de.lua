@@ -1,7 +1,14 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
-local male={
+local CultureName = require './common'
+
+local German = CultureName:New()
+
+German.name = "German"
+German.code = "de"
+
+German.male = {
 	'Adrian',
 	'Albert',
 	'Alexander',
@@ -211,7 +218,7 @@ local male={
 	'Zacharias'
 }
 
-local female={
+German.female = {
 	'Agnes',
 	'Alessa',
 	'Alexa',
@@ -434,7 +441,7 @@ local female={
 	'Yvonne'
 }
 
-local surname={
+German.surname = {
 	'Albrecht',
 	'Althaus',
 	'Altmann',
@@ -581,3 +588,5 @@ local surname={
 	'Ziegler',
 	'Zimmermann'
 }
+
+return German

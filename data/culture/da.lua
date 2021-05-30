@@ -3,7 +3,14 @@
 
 -- https://www.dst.dk/da/Statistik/emner/befolkning-og-valg/navne/navne-i-hele-befolkningen
 
-local male = {
+local CultureName = require './common'
+
+local Danish = CultureName:New()
+
+Danish.name = "Danish"
+Danish.code = "da"
+
+Danish.male = {
 	"Peter",
 	"Michael",
 	"Jens",
@@ -26,7 +33,7 @@ local male = {
 	"Ole"
 }
 
-local female = {
+Danish.female = {
 	"Anne",
 	"Kirsten",
 	"Mette",
@@ -49,7 +56,7 @@ local female = {
 	"Karen"
 }
 
-local surnames = {
+Danish.surname = {
 	"Nielsen",
 	"Jensen",
 	"Hansen",
@@ -69,5 +76,7 @@ local surnames = {
 	"Poulsen",
 	"Johansen",
 	"Møller",
-	"Mortensen",
+	"Mortensen"
 }
+
+return Danish

@@ -1,10 +1,17 @@
--- Copyright © 2008-2017 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- source: http://vrk.fi/sv/namntjanst, specifically:
 -- http://verkkopalvelu.vrk.fi/Nimipalvelu/default.asp?L=2
 
-local male={
+local CultureName = require './common'
+
+local Finish = CultureName:New()
+
+Finish.name = "Finnish"
+Finish.code = "fi"
+
+Finish.male = {
 	"Juhani",
 	"Olavi",
 	"Antero",
@@ -208,7 +215,7 @@ local male={
 	"Aarre"
 }
 
-local female={
+Finish.female = {
 	"Maria",
 	"Helena",
 	"Anneli",
@@ -409,10 +416,10 @@ local female={
 	"Tuuli",
 	"Juulia",
 	"Iina",
-	"Marie",
+	"Marie"
 }
 
-local surname={
+Finish.surname = {
 	"Korhonen",
 	"Virtanen",
 	"Mäkinen",
@@ -615,3 +622,5 @@ local surname={
 	"Huotari",
 	"Riikonen"
 }
+
+return Finish

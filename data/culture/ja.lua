@@ -1,11 +1,18 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- Source surnames: http://www.japantimes.co.jp/life/2009/10/11/lifestyle/japans-top-100-most-common-family-names/
 -- Source (fe)male: http://www.studentsoftheworld.info/penpals/stats.php3?Pays=JAP
 -- Note: female and male names Looks suspiciously much like being mixed.
 
-local male={
+local CultureName = require './common'
+
+local Japanese = CultureName:New()
+
+Japanese.name = "Japanese"
+Japanese.code = "ja"
+
+Japanese.male = {
 	'Aki',
 	'Akira',
 	'Alex',
@@ -108,7 +115,7 @@ local male={
 	'Yuuki'
 }
 
-local female={
+Japanese.female = {
 	'Ai',
 	'Aika',
 	'Airi',
@@ -211,7 +218,7 @@ local female={
 	'Yuri'
 }
 
-local surname={
+Japanese.surname = {
 	'Abe',
 	'Ando',
 	'Aoki',
@@ -313,3 +320,5 @@ local surname={
 	'Yokoyama',
 	'Yoshida'
 }
+
+return Japanese

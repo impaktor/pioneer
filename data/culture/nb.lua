@@ -1,4 +1,4 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- Sources:
@@ -8,8 +8,14 @@
 -- https://www.ssb.no/a/navn/historisk-utvikling-av-guttenavn/
 -- https://www.ssb.no/a/navn/historisk-utvikling-av-jentenavn/
 
+local CultureName = require './common'
 
-local male={
+local Norwegian = CultureName:New()
+
+Norwegian.name = "Norwegian"
+Norwegian.code = "nb"
+
+Norwegian.male = {
 	'Adrian',
 	'Aksel',
 	'Alexander',
@@ -83,7 +89,7 @@ local male={
 	'Øyvind',
 }
 
-local female={
+Norwegian.female = {
 	'Anette',
 	'Anita',
 	'Ann',
@@ -172,7 +178,7 @@ local female={
 	'Åse',
 }
 
-local surname={
+Norwegian.surname = {
 	'Aamodt',
 	'Aas',
 	'Aase',
@@ -374,3 +380,5 @@ local surname={
 	'Øien',
 	'Østby',
 }
+
+return Norwegian

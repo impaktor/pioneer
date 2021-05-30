@@ -1,8 +1,10 @@
--- Copyright © 2008-2016 Pioneer Developers. See AUTHORS.txt for details
+-- Copyright © 2008-2021 Pioneer Developers. See AUTHORS.txt for details
 -- Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
 
 -- Data from 2014.
 -- http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Befolkning/Amnesovergripande-statistik/Namnstatistik/
+
+local CultureName = require './common'
 
 local male={
 	'Adam',
@@ -309,3 +311,14 @@ local surname={
 	'Åström',
 	'Öberg',
 }
+
+
+local Swedish = CultureName:New()
+
+Swedish.name = "Swedish"
+Swedish.code = "sv"
+Swedish.male = male
+Swedish.female = female
+Swedish.surname = surname
+
+return Swedish
