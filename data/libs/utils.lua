@@ -395,14 +395,16 @@ end
 --
 --   array - an array of hashtables with an arbitrary real number in
 --           the weight key
+--   rand  - optional, Engine.rand object
 --
 -- Returns:
 --
 --   a random element of the array, with the probability specified in the weight key
 --
-utils.chooseNormalized = function(array)
-	local choice = Engine.rand:Number(1.0)
-	sum = 0
+utils.chooseNormalized = function(array, rand)
+	if not rand then rand = Engine.rand end
+	local choice = rand:Number(1.0)
+	local sum = 0
 	for _, option in ipairs(array) do
 		sum = sum + option.weight
 		if choice <= sum then return option end
@@ -422,13 +424,15 @@ end
 -- Parameters:
 --
 --   array - an array of hashtables
+--   rand  - optional, Engine.rand object
 --
 -- Returns:
 --
 --   a random element of the array, with the with equal probability for any element
 --
-utils.chooseEqual = function(array)
-	return array[Engine.rand:Integer(1, #array)]
+utils.chooseEqual = function(array, rand)
+	if not rand then rand = Engine.rand end
+	return array[rand:Integer(1, #array)]
 end
 
 return utils
