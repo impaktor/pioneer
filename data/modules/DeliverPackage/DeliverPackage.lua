@@ -91,21 +91,22 @@ end
 local ads = {}
 local missions = {}
 
-local isQualifiedFor = function(reputation, ad)
+local isQualifiedFor = function(ad)
+	local character = Character.persistent.player
 	return
-		reputation >= 8 or
+		character:SafeRoll('reputation', 12) or
 		ad.localdelivery or
 		(ad.risk <  0.1 and ad.urgency <= 0.1) or
-		(ad.risk <  0.5 and ad.urgency <= 0.5 and reputation >= 4) or
+		(ad.risk <  0.5 and ad.urgency <= 0.5 and character.reputation >= 4) or
 		false
 end
 
--- Those are the jobs that can be done without reputation
+-- Those are the jobs that can be done at player's reputation
 local easyJobs = {}
 local easyLocalJobs = {}
 local easyNonLocalJobs = {}
 for i = 1,#flavours do
-	if isQualifiedFor(-1000, flavours[i]) then
+	if isQualifiedFor(flavours[i]) then
 		table.insert(easyJobs, i)
 		if flavours[i].localdelivery then
 			table.insert(easyLocalJobs, i)
@@ -139,7 +140,7 @@ local onChat = function (form, ref, option)
 		return
 	end
 
-	local qualified = isQualifiedFor(Character.persistent.player.reputation, ad)
+	local qualified = isQualifiedFor(ad)
 
 	form:SetFace(ad.client)
 
@@ -211,7 +212,7 @@ local onDelete = function (ref)
 end
 
 local isEnabled = function (ref)
-	return ads[ref] ~= nil and isQualifiedFor(Character.persistent.player.reputation, ads[ref])
+	return ads[ref] ~= nil and isQualifiedFor(ads[ref])
 end
 
 local nearbysystems
@@ -315,12 +316,11 @@ local onCreateBB = function (station)
 	local nearbystations = findNearbyStations(station, 1000, 1.4960e11 * 20)
 	local num = Engine.rand:Integer(0, math.ceil(Game.system.population))
 	local numAchievableJobs = 0
-	local reputation = Character.persistent.player.reputation
 	local canHyperspace = Game.player.maxHyperspaceRange > 0
 
 	for i = 1,num do
 		local ad = makeAdvert(station, nil, nearbystations)
-		if ad and isQualifiedFor(reputation, ad) and (ad.localdelivery or canHyperspace) then
+		if ad and isQualifiedFor(ad) and (ad.localdelivery or canHyperspace) then
 			numAchievableJobs = numAchievableJobs + 1
 		end
 	end
@@ -439,8 +439,8 @@ local onShipDocked = function (player, station)
 				player:AddMoney(mission.reward)
 				Character.persistent.player.reputation = Character.persistent.player.reputation + reward
 			end
-			Event.Queue("onReputationChanged", oldReputation, Character.persistent.player.killcount,
-				Character.persistent.player.reputation, Character.persistent.player.killcount)
+			-- Event.Queue("onReputationChanged", oldReputation, Character.persistent.player.killcount,
+			--	Character.persistent.player.reputation, Character.persistent.player.killcount)
 
 			mission:Remove()
 			missions[ref] = nil
@@ -452,14 +452,14 @@ local onShipDocked = function (player, station)
 	end
 end
 
-local onReputationChanged = function (oldRep, oldKills, newRep, newKills)
-	for ref,ad in pairs(ads) do
-		local oldQualified = isQualifiedFor(oldRep, ad)
-		if isQualifiedFor(newRep, ad) ~= oldQualified then
-			Event.Queue("onAdvertChanged", ad.station, ref);
-		end
-	end
-end
+-- local onReputationChanged = function (oldRep, oldKills, newRep, newKills)
+--	for ref,ad in pairs(ads) do
+--		local oldQualified = isQualifiedFor(oldRep, ad)
+--		if isQualifiedFor(newRep, ad) ~= oldQualified then
+--			Event.Queue("onAdvertChanged", ad.station, ref);
+--		end
+--	end
+-- end
 
 local loaded_data
 
@@ -527,7 +527,7 @@ Event.Register("onLeaveSystem", onLeaveSystem)
 Event.Register("onShipDocked", onShipDocked)
 Event.Register("onGameStart", onGameStart)
 Event.Register("onGameEnd", onGameEnd)
-Event.Register("onReputationChanged", onReputationChanged)
+--Event.Register("onReputationChanged", onReputationChanged)
 
 Mission.RegisterType('Delivery', l.DELIVERY, buildMissionDescription)
 
