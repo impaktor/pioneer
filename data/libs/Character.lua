@@ -589,7 +589,7 @@ Character = {
 --
 -- Return:
 --
---   roll - Integer value between 4 and 265 (inclusive), most likely 34
+--   roll - Integer value between 4 and 64 (inclusive), most likely 34
 --
 -- Example:
 --
