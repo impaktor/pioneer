@@ -41,7 +41,7 @@ end
 
 debugView.registerTab("RPG-debug-view", function()
 	if Game.player == nil then return end
-    if not ui.beginTabItem("RPG") then return end
+	if not ui.beginTabItem("RPG") then return end
 		ui.text("State: " .. Game.player:GetFlightState())
 
 		-- Reputation

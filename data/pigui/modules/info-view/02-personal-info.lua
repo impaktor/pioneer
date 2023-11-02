@@ -24,7 +24,7 @@ local itemSpacing = ui.rescaleUI(Vector2(6, 12), Vector2(1920, 1200))
 local face = nil
 
 local function drawPlayerInfo()
-    local player = Character.persistent.player
+	local player = Character.persistent.player
 
 	textTable.withHeading(l.COMBAT, orbiteer.heading, {
 		{ l.RATING, l[player:GetCombatRating()] },
@@ -51,18 +51,18 @@ local function drawPlayerInfo()
 end
 
 InfoView:registerView({
-    id = "personalInfo",
-    name = l.PERSONAL_INFORMATION,
-    icon = icons.personal_info,
-    showView = true,
+	id = "personalInfo",
+	name = l.PERSONAL_INFORMATION,
+	icon = icons.personal_info,
+	showView = true,
 	draw = function()
 		local spacing = InfoView.windowPadding.x * 2.0
-        local info_column_width = (ui.getColumnWidth() - spacing) / 2
+		local info_column_width = (ui.getColumnWidth() - spacing) / 2
 
-        ui.withStyleVars({ItemSpacing = itemSpacing}, function()
-            ui.withFont(pionillium.heading, function()
+		ui.withStyleVars({ItemSpacing = itemSpacing}, function()
+			ui.withFont(pionillium.heading, function()
 
-                ui.child("PlayerInfoDetails", Vector2(info_column_width, 0), drawPlayerInfo)
+				ui.child("PlayerInfoDetails", Vector2(info_column_width, 0), drawPlayerInfo)
 
 				ui.sameLine(0, spacing)
 				ui.dummy(Vector2(info_column_width * 0.15), 0)
@@ -73,10 +73,10 @@ InfoView:registerView({
 					face:render()
 				end)
 
-            end)
-        end)
-    end,
-    refresh = function() end,
+			end)
+		end)
+	end,
+	refresh = function() end,
 	debugReload = function()
 		package.reimport('pigui.libs.face')
 		package.reimport()
@@ -84,5 +84,5 @@ InfoView:registerView({
 })
 
 Event.Register("onGameEnd", function ()
-    face = nil
+	face = nil
 end)

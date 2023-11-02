@@ -819,7 +819,7 @@ Character = {
 					if NPC == self then return i end
 				end
 				table.insert(Character.persistent,self)
-        		return #Character.persistent
+				return #Character.persistent
 			end
 		end
 		error('Cannot save character')
@@ -1144,8 +1144,8 @@ Character = {
 		{ 'RANK_ADMIRAL'       , 20736 },
 	},
 
-	medals = {
-	},
+	-- List of medals (translated?), Each module is responsible for pushing name of medals when appropriate
+	medals = {},
 
 	GetMilitaryRank = function (self)
 		return utils.getFromIntervals(self.ranks, self.rank)
@@ -1213,7 +1213,7 @@ local onGameStart = function ()
 end
 
 local serialize = function ()
-    return { PersistentCharacters = Character.persistent}
+	return { PersistentCharacters = Character.persistent}
 end
 
 local function onGameEnd ()
@@ -1221,7 +1221,7 @@ local function onGameEnd ()
 end
 
 local unserialize = function (data)
-    loaded_data = data
+	loaded_data = data
 end
 
 --
