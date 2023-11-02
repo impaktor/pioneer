@@ -39,14 +39,6 @@
     "description": "",
     "message": "HABER DEFENCE AUTHORITY: Serve to uphold Haber's space dominion."
   },
-  "MSG_FAILURE": {
-    "description": "",
-    "message": "You have failed to meet the mission criteria."
-  },
-  "MSG_SUCCESS": {
-    "description": "",
-    "message": "Delivery successfully completed."
-  },
   "NOT_ANY_MORE_THAN_USUAL": {
     "description": "",
     "message": "Not any more than usual."
