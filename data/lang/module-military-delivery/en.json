@@ -1,0 +1,90 @@
+{
+  "DELIVERY": {
+    "description": "",
+    "message": "Military Delivery"
+  },
+  "EXCELLENT_ACCEPT": {
+    "description": "",
+    "message": "Excellent. {cash} will be paid on arrival at {system} system."
+  },
+  "FLAVOUR_ADTEXT": {
+    "description": "",
+    "message": "Service required for delivery mission to {system} system."
+  },
+  "FLAVOUR_ADTITLE": {
+    "description": "",
+    "message": "FEDERAL FLEET"
+  },
+  "FLAVOUR_0_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver a message to"
+  },
+  "FLAVOUR_1_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver some documents to"
+  },
+  "FLAVOUR_2_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver paperwork to"
+  },
+  "FLAVOUR_3_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver some medals to"
+  },
+  "FLAVOUR_4_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver requisition forms to"
+  },
+  "FLAVOUR_5_INTROTEXT_FIRST": {
+    "description": "(Office space reference)",
+    "message": "Deliver TPS reports to"
+  },
+  "FLAVOUR_6_INTROTEXT_FIRST": {
+    "description": "(Brazil reference)",
+    "message": "Deliver 27B/6 forms to"
+  },
+  "FLAVOUR_7_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver blank military data cards to"
+  },
+  "FLAVOUR_8_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver military grade components to"
+  },
+  "FLAVOUR_9_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver some superconductors to"
+  },
+  "FLAVOUR_10_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver gravitic detonators to"
+  },
+  "FLAVOUR_11_INTROTEXT_FIRST": {
+    "description": "",
+    "message": "Deliver secret orders to"
+  },
+  "FLAVOUR_INTROTEXT_REST": {
+    "description": "NOTE: starts with space",
+    "message": " {system} ({sectorx}, {sectory}, {sectorz}), system, {dist} ly, by {date} {starport}. You will be paid {cash}."
+  },
+  "IT_MUST_BE_DELIVERED_BY": {
+    "description": "",
+    "message": "It must be delivered by "
+  },
+  "MEDAL_0_FED": {
+    "description": "Medal for first successful important delivery for federation",
+    "message": "Certificate of Valour"
+  },
+  "MEDAL_1_FED": {
+    "description": "Medal for first successful secret order delivery for federation",
+    "message": "Starburst"
+  },
+  "MEDAL_0_CONFED": {
+    "description": "Medal for first successful important delivery for confederacy",
+    "message": "Crimson Brassard"
+  },
+  "MEDAL_1_CONFED": {
+    "description": "Medal for first successful secret order delivery for confederacy",
+    "message": "Black Polygon"
+  }
+}

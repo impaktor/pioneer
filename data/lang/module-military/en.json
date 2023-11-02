@@ -1,0 +1,78 @@
+{
+  "COULD_YOU_REPEAT_THE_ORIGINAL_REQUEST": {
+    "description": "",
+    "message": "Could you repeat the original request?"
+  },
+  "DEADLINE": {
+    "description": "",
+    "message": "Deadline:"
+  },
+  "DELIVERY": {
+    "description": "",
+    "message": "Delivery"
+  },
+  "DISTANCE": {
+    "description": "",
+    "message": "Distance:"
+  },
+  "MILITARY_CONFED": {
+    "description": "",
+    "message": "CONFEDERATE NAVY"
+  },
+  "MILITARY_FED": {
+    "description": "",
+    "message": "FEDERAL FLEET"
+  },
+  "MILITARY_HABER": {
+    "description": "",
+    "message": "HABER DEFENCE AUTHORITY"
+  },
+  "FACTION_RECRUITMENT_CONFED": {
+    "description": "",
+    "message": "CONFEDERATE NAVY: Do your part in the glory of the empire. Contact us if you dare!"
+  },
+  "FACTION_RECRUITMENT_FED": {
+    "description": "",
+    "message": "FEDERAL FLEET: We want YOU for ADVENTURES unlimited."
+  },
+  "FACTION_RECRUITMENT_HABER": {
+    "description": "",
+    "message": "HABER DEFENCE AUTHORITY: Serve to uphold Haber's space dominion."
+  },
+  "MSG_FAILURE": {
+    "description": "",
+    "message": "You have failed to meet the mission criteria."
+  },
+  "MSG_SUCCESS": {
+    "description": "",
+    "message": "Delivery successfully completed."
+  },
+  "NOT_ANY_MORE_THAN_USUAL": {
+    "description": "",
+    "message": "Not any more than usual."
+  },
+  "OK_AGREED": {
+    "description": "",
+      "message": "Agreed, I'll do it Sir."
+  },
+  "SPACEPORT": {
+    "description": "",
+    "message": "Spaceport:"
+  },
+  "SYSTEM": {
+    "description": "",
+    "message": "System:"
+  },
+  "WHAT_IF_FAIL_Q": {
+    "description": "Referring to not finishing accepted mission before deadline",
+    "message": "What happens if I don't finish in time?"
+  },
+  "WHAT_IF_FAIL_A": {
+    "description": "",
+    "message": "Only start missions you can complete, but it's better to finish late than not at all. You will not be paid, and it may affect future missions and promotions."
+  },
+  "WILL_I_BE_IN_ANY_DANGER": {
+    "description": "",
+    "message": "Will I be in any danger?"
+  }
+}

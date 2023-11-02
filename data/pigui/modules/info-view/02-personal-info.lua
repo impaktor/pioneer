@@ -40,6 +40,12 @@ local function drawPlayerInfo()
 	textTable.withHeading(l.FINANCE, orbiteer.heading, {
 		{ l.CASH .. ":", ui.Format.Money(PlayerState.GetMoney()) }
 	})
+
+	ui.newLine()
+
+	textTable.withHeading(l.MILITARY, orbiteer.heading, {
+		{ l.RANK,  l[player:GetMilitaryRank()]}
+	})
 end
 
 InfoView:registerView({
