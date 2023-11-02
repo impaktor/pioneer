@@ -40,6 +40,7 @@ local get_commodities = function()
 	end
 end
 
+
 local equipment = {}
 local selected_equip = 0
 
@@ -56,6 +57,10 @@ debugView.registerTab("debug-player", {
 	label = "Player Debug",
 	show = function() return Game.player ~= nil end,
 	draw = function()
+
+	-- xxx probably safe to remove leftover from rebase / bitrot
+	-- if not ui.beginTabItem("RPG") then return end
+
 		ui.text("State: " .. Game.player:GetFlightState())
 
 		-- Reputation
