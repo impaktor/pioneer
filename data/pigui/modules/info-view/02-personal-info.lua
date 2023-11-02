@@ -48,6 +48,13 @@ local function drawPlayerInfo()
 	textTable.withHeading(l.MILITARY, orbiteer.heading, {
 		{ l.RANK,  l[player:GetMilitaryRank()]}
 	})
+
+	ui.newLine()
+
+	textTable.withHeading(l.MEDALS, orbiteer.heading, {
+		player.medals
+	})
+
 end
 
 InfoView:registerView({

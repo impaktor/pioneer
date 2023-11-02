@@ -1383,6 +1383,10 @@
     "description": "",
     "message": "Maximum crew"
   },
+  "MEDALS": {
+    "description": "Military ordnances (plural)",
+    "message": "Medals"
+  },
   "MEDIUM": {
     "description": "Game settings option: graphics resolution",
     "message": "Medium"

@@ -77,11 +77,11 @@ local flavours = {
 -- add strings to flavours
 for i = 1,#flavours do
 	local f = flavours[i]
-	f.adtitle       = ld["FLAVOUR_ADTITLE"]
+	f.adtitle       = lm["MILITARY_FED"] .. ": " .. ld["FLAVOUR_ADTITLE"]
 	f.adtext        = ld["FLAVOUR_ADTEXT"]
 	f.introtext     = ld["FLAVOUR_" .. i-1 .. "_INTROTEXT_FIRST"] .. ld["FLAVOUR_INTROTEXT_REST"]
-	f.successmsg    = lm["MSG_SUCCESS"]
-	f.failuremsg    = lm["MSG_FAILURE"]
+	f.successmsg    = ld["MSG_SUCCESS"]
+	f.failuremsg    = ld["MSG_FAILURE"]
 end
 
 local ads = {}
@@ -106,15 +106,12 @@ local onChat = function (form, ref, option)
 
 	form:AddNavButton(ad.location)
 
+	local sys   = ad.location:GetStarSystem()
+
 	if option == 0 then
 
-		local sys   = ad.location:GetStarSystem()
-		local sbody = ad.location:GetSystemBody()
-
 		local introtext = string.interp(flavours[ad.flavour].introtext, {
-			type     = "FOO",
 			cash     = Format.Money(ad.reward,false),
-			starport = sbody.name,
 			system   = sys.name,
 			sectorx  = ad.location.sectorX,
 			sectory  = ad.location.sectorY,
@@ -140,7 +137,7 @@ local onChat = function (form, ref, option)
 			client	 = ad.client,
 			location = ad.location,
 			reward	 = ad.reward,
-			due	 = ad.due,
+			due		 = ad.due,
 			flavour	 = ad.flavour
 		}
 

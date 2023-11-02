@@ -26,6 +26,7 @@ local commodities = {}
 local commodities_name = {}
 local selected_commodity = 0
 local cargo_amount = 0
+local medal_iterator = 0
 
 local get_commodities = function()
 	for _, commodity in pairs(Commodities) do
@@ -70,11 +71,17 @@ debugView.registerTab("RPG-debug-view", function()
 		end
 		ui.separator()
 
-		-- check military rank
 		Character.persistent.player.rank = ui.sliderInt("Military Rank", Character.persistent.player.rank, 0, 20736)
 		local rank = Character.persistent.player:GetMilitaryRank()
+		-- support many factions
 		ui.text(rank)
 		ui.text(l[rank])
+
+		if ui.button("Add medal ".. medal_iterator) then
+			medal_iterator = medal_iterator + 1
+			print(type(Character.persistent.player.medals))
+			table.insert(Character.persistent.player.medals, "Medal of order"..medal_iterator)
+		end
 
 		local rows = 10
 		if ui.collapsingHeader("Crime", {}) then

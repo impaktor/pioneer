@@ -13,7 +13,7 @@
   },
   "FLAVOUR_ADTITLE": {
     "description": "",
-    "message": "FEDERAL FLEET"
+    "message": "We want YOU for ADVENTURES unlimited."
   },
   "FLAVOUR_0_INTROTEXT_FIRST": {
     "description": "",
@@ -41,7 +41,7 @@
   },
   "FLAVOUR_6_INTROTEXT_FIRST": {
     "description": "(Brazil reference)",
-    "message": "Deliver 27B/6 forms to"
+    "message": "Deliver 27B-6 forms from Central Services to"
   },
   "FLAVOUR_7_INTROTEXT_FIRST": {
     "description": "",
@@ -86,5 +86,13 @@
   "MEDAL_1_CONFED": {
     "description": "Medal for first successful secret order delivery for confederacy",
     "message": "Black Polygon"
+  },
+  "MSG_FAILURE": {
+    "description": "",
+    "message": "We're displeased with your late arrival. It's been noted on your record."
+  },
+  "MSG_SUCCESS": {
+    "description": "",
+    "message": "Your delivery has been successfully completed, thank you."
   }
 }
