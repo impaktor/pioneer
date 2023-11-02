@@ -70,6 +70,12 @@ debugView.registerTab("RPG-debug-view", function()
 		end
 		ui.separator()
 
+		-- check military rank
+		Character.persistent.player.rank = ui.sliderInt("Military Rank", Character.persistent.player.rank, 0, 20736)
+		local rank = Character.persistent.player:GetMilitaryRank()
+		ui.text(rank)
+		ui.text(l[rank])
+
 		local rows = 10
 		if ui.collapsingHeader("Crime", {}) then
 

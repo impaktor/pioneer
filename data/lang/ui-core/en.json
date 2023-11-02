@@ -1804,8 +1804,60 @@
     "message": "Random"
   },
   "RANK": {
-    "description": "",
+    "description": "Military rank",
     "message": "Rank:"
+  },
+  "RANK_NONE": {
+    "description": "Military rank",
+    "message": "None"
+  },
+  "RANK_PRIVATE": {
+    "description": "Military rank",
+    "message": "Private"
+  },
+  "RANK_CORPORAL": {
+    "description": "Military rank",
+    "message": "Corporal"
+  },
+  "RANK_SERGEANT": {
+    "description": "Military rank",
+    "message": "Sergeant"
+  },
+  "RANK_SGT_MAJOR": {
+    "description": "Military rank",
+    "message": "Sgt Major"
+  },
+  "RANK_MAJOR": {
+    "description": "Military rank",
+    "message": "Major"
+  },
+  "RANK_COLONEL": {
+    "description": "Military rank",
+    "message": "Colonel"
+  },
+  "RANK_LIEUTENANT": {
+    "description": "Military rank",
+    "message": "Lieutenant"
+  },
+  "RANK_LT_COMMANDER": {
+    "description": "Military rank",
+    "message": "Lt. Commander"
+  },
+  "RANK_CAPTAIN": {
+    "description": "Military rank",
+    "message": "Captain"
+  },
+  "RANK_COMMODORE": {
+    "description": "Military rank",
+    "message": "Commodore"
+  },
+  "RANK_REAR_ADMIRAL": {
+    "description": "Military rank",
+    "message": "Rear Admiral"
+  },
+  "RANK_ADMIRAL": {
+    "description": "Military rank",
+    "message": "Admiral"
   },
   "RATING": {
     "description": "",

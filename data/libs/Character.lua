@@ -458,6 +458,23 @@ Character = {
 	reputation = 0,
 
 --
+-- Attribute: rank
+--
+-- xxx EVENTUALLY: Table of key-value pairs; key being the faction, value being an integer
+-- reflecting the rank. It should be reduced for failed missions, and
+-- increased for successful missions.
+--
+-- Availability:
+--
+--   November 2023
+--
+-- Status:
+--
+--   experimental
+--
+	rank = 0,
+
+--
 -- Group: Methods
 --
 
@@ -1109,6 +1126,29 @@ Character = {
 --
 	GetReputationRating = function (self)
 		return utils.getFromIntervals(self.reputations, self.reputation)
+	end,
+
+	ranks = {
+		{ 'RANK_NONE'          , 0     },
+		{ 'RANK_PRIVATE'       , 1     },
+		{ 'RANK_CORPORAL'      , 16    },
+		{ 'RANK_SERGEANT'      , 81    },
+		{ 'RANK_SGT_MAJOR'     , 256   },
+		{ 'RANK_MAJOR'         , 625   },
+		{ 'RANK_COLONEL'       , 1296  },
+		{ 'RANK_LIEUTENANT'    , 2401  },
+		{ 'RANK_LT_COMMANDER'  , 4096  },
+		{ 'RANK_CAPTAIN'       , 6561  },
+		{ 'RANK_COMMODORE'     , 10000 },
+		{ 'RANK_REAR_ADMIRAL'  , 14641 },
+		{ 'RANK_ADMIRAL'       , 20736 },
+	},
+
+	medals = {
+	},
+
+	GetMilitaryRank = function (self)
+		return utils.getFromIntervals(self.ranks, self.rank)
 	end,
 
 	-- Debug function

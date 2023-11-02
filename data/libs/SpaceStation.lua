@@ -42,10 +42,27 @@ function SpaceStation.GetTechLevel(systemBody)
 	return techLevel;
 end
 
+function SpaceStation.GetMilitaryLevel(systemBody)
+
+	local rand = Rand.New(systemBody.seed .. '-militaryLevel')
+	local techLevel = rand:Integer(0, 4) + rand:Integer(0,4)
+	print(rand:Integer(0, 4), techLevel)
+	local system = systemBody.path:GetStarSystem()
+
+	if system.faction ~= nil and system.faction.hasHomeworld and system.faction.homeworld == systemBody.parent.path then
+		techLevel = math.max(techLevel, 6) -- bump it upto at least 6 if it's a homeworld like Earth
+	end
+	-- cap the techlevel lower end based on the planets population
+	techLevel = math.max(techLevel, math.min(math.floor(systemBody.parent.population * 0.5), 11))
+	return techLevel;
+end
+
 function SpaceStation:Constructor()
 	local techLevel = SpaceStation.GetTechLevel(self.path:GetSystemBody())
+	local militaryLevel = SpaceStation.GetMilitaryLevel(self.path:GetSystemBody())
 
 	self:setprop("techLevel", techLevel)
+	self:setprop("militaryLevel", militaryLevel)
 end
 
 -- visited keeps track of which stations we have docked with and have had
@@ -1008,7 +1025,7 @@ Event.Register("onGameStart", function ()
 
 		visited = loaded_data.visited or {}
 		police = loaded_data.police
-		
+
 		for station,_ in pairs(visited) do
 			createCommodityStock(station)
 		end
