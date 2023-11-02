@@ -1804,60 +1804,112 @@
     "message": "Random"
   },
   "RANK": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Rank:"
   },
   "RANK_NONE": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "None"
   },
   "RANK_PRIVATE": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Private"
   },
   "RANK_CORPORAL": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Corporal"
   },
   "RANK_SERGEANT": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Sergeant"
   },
   "RANK_SGT_MAJOR": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Sgt Major"
   },
   "RANK_MAJOR": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Major"
   },
   "RANK_COLONEL": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Colonel"
   },
   "RANK_LIEUTENANT": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Lieutenant"
   },
   "RANK_LT_COMMANDER": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Lt. Commander"
   },
   "RANK_CAPTAIN": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Captain"
   },
   "RANK_COMMODORE": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Commodore"
   },
   "RANK_REAR_ADMIRAL": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Rear Admiral"
   },
   "RANK_ADMIRAL": {
-    "description": "Military rank",
+    "description": "Military rank (Fed)",
     "message": "Admiral"
+  },
+  "RANK_OUTSIDER": {
+   "description": "Military rank (Confed)",
+   "message": "Outsider"
+  },
+  "RANK_SERF": {
+    "description": "Military rank (Confed)",
+    "message": "Serf"
+  },
+  "RANK_MASTER": {
+    "description": "Military rank (Confed)",
+    "message": "Master"
+  },
+  "RANK_SIR": {
+    "description": "Military rank (Confed)",
+    "message": "Sir"
+  },
+  "RANK_SQUIRE": {
+    "description": "Military rank (Confed)",
+    "message": "Squire"
+  },
+  "RANK_LORD": {
+    "description": "Military rank (Confed)",
+    "message": "Lord"
+  },
+  "RANK_BARON": {
+    "description": "Military rank (Confed)",
+    "message": "Baron"
+  },
+  "RANK_VISCOUNT": {
+    "description": "Military rank (Confed)",
+    "message": "Viscount"
+  },
+  "RANK_COUNT": {
+    "description": "Military rank (Confed)",
+    "message": "Count"
+  },
+  "RANK_EARL": {
+    "description": "Military rank (Confed)",
+    "message": "Earl"
+  },
+  "RANK_MARQUIS": {
+    "description": "Military rank (Confed)",
+    "message": "Marquis"
+  },
+  "RANK_DUKE": {
+    "description": "Military rank (Confed)",
+    "message": "Duke"
+  },
+  "RANK_PRINCE": {
+    "description": "Military rank (Confed)",
+    "message": "Prince"
   },
   "RATING": {
     "description": "",
