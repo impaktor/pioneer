@@ -3,11 +3,11 @@
 
 local f = Faction:new('Commonwealth of Independent Worlds')
 	:description_short('Socially democratic grouping of independent Star Systems')
-	:description('Socially democratic grouping of independent Star Systems, I dunno, added them because they seem hard coded into the politics.')
+	:description('Socially democratic grouping of independent Star Systems.')
 	:homeworld(1,-1,-1,0,3)
 	:foundingDate(3125)
 	:expansionRate(1)
-	:military_name('Confederation Fleet')
+	:military_name('Confederate Navy')
 	:police_name('Confederal Police')
 	:police_ship('pumpkinseed_police')
 	:colour(0.4,1,0.4)

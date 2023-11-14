@@ -7,7 +7,7 @@ local f = Faction:new('Solar Federation')
 	:homeworld(0,0,0,0,16) --Mars
 	:foundingDate(3050)
 	:expansionRate(1)
-	:military_name('SolFed Military')
+	:military_name('SolFed Fleet')
 	:police_name('SolFed Police Force')
 	:police_ship('kanara')
 	:colour(0.4,0.4,1)
