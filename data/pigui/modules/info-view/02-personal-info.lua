@@ -23,6 +23,16 @@ local itemSpacing = ui.rescaleUI(Vector2(6, 12), Vector2(1920, 1200))
 
 local face = nil
 
+local function GetRanks(player)
+	local r = {}
+
+	for faction_name, faction_rank_score in player.rank do
+		local rank_name = player:GetMilitaryRank(faction_name)
+		table.insert(r, {faction_name, l[rank_name]})
+	end
+	return r
+end
+
 local function drawPlayerInfo()
 	local player = Character.persistent.player
 
@@ -45,15 +55,21 @@ local function drawPlayerInfo()
 
 	ui.newLine()
 
-	textTable.withHeading(l.MILITARY, orbiteer.heading, {
-		{ l.RANK,  l[player:GetMilitaryRank()]}
+	textTable.withHeading("TEST", orbiteer.heading, {
+							  {"A", "B"},
+							  {"C", "D"}
 	})
 
 	ui.newLine()
 
-	textTable.withHeading(l.MEDALS, orbiteer.heading, {
-		player.medals
-	})
+	textTable.withHeading(l.MILITARY, orbiteer.heading,
+							  GetRanks(player)
+							  -- { l.RANK,  l[player:GetMilitaryRank()] }
+	)
+
+	-- textTable.withHeading(l.MEDALS, orbiteer.heading, {
+	--						  player.medals
+	-- })
 
 end
 
