@@ -138,6 +138,7 @@ local onChat = function (form, ref, option)
 			location = ad.location,
 			reward	 = ad.reward,
 			due		 = ad.due,
+			faction  = sys.faction.name,
 			flavour	 = ad.flavour
 		}
 
@@ -292,16 +293,32 @@ local onShipDocked = function (player, station)
 	if not player:IsPlayer() then return end
 
 	for ref,mission in pairs(missions) do
+		local faction = mission.faction
+		print("FACTION", faction)
 
 		if mission.location == station.path then
-			local oldRank = Character.persistent.player.rank
+			local oldRank = Character.persistent.player.rank[faction]
 			if Game.time > mission.due then
 				Comms.ImportantMessage(flavours[mission.flavour].failuremsg, mission.client.name)
-				Character.persistent.player.rank = oldRank - 1
+				Character.persistent.player.rank[faction] = oldRank - 1
 			else
 				Comms.ImportantMessage(flavours[mission.flavour].successmsg, mission.client.name)
 				player:AddMoney(mission.reward)
-				Character.persistent.player.rank = oldRank + 1
+				Character.persistent.player.rank[faction] = oldRank + 1
+
+				if flavours[mission.flavour].medal then
+					-- TODO check faction
+					local medal = ld["MEDAL_" .. flavours[mission.flavour].medal .. faction]
+
+					-- TODO check if already have medal else:
+					if nil then
+						local pass = false
+					else
+						table.insert(Character.persistent.medals, medal)
+						print("ADDED MEDAL: " .. medal)
+						-- Comms.ImportantMessage(flavours[mission.flavour].medal_awarded, "Local Imperial HQ")
+					end
+				end
 			end
 
 			mission:Remove()
