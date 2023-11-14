@@ -71,17 +71,30 @@ debugView.registerTab("RPG-debug-view", function()
 		end
 		ui.separator()
 
-		Character.persistent.player.rank = ui.sliderInt("Military Rank", Character.persistent.player.rank, 0, 20736)
-		local rank = Character.persistent.player:GetMilitaryRank()
-		-- support many factions
-		ui.text(rank)
-		ui.text(l[rank])
+
+		if ui.collapsingHeader("Military", {"DefaultOpen"}) then
+			for faction_name, faction_rank in pairs(Character.persistent.player.rank) do
+				ui.text(faction_name)
+				ui.sameLine()
+
+				local rank = Character.persistent.player:GetMilitaryRank(faction_name)
+				ui.text(rank)
+				ui.sameLine()
+
+				ui.text(l[rank])
+
+				local label = "Military rank##" .. faction_name
+				Character.persistent.player.rank[faction_name] = ui.sliderInt(label, Character.persistent.player.rank[faction_name], 0, 20736)
+			end
+		end
 
 		if ui.button("Add medal ".. medal_iterator) then
 			medal_iterator = medal_iterator + 1
-			print(type(Character.persistent.player.medals))
-			table.insert(Character.persistent.player.medals, "Medal of order"..medal_iterator)
+			local medal = "Medal of order-"..medal_iterator
+
+			table.insert(Character.persistent.player.medals, medal)
 		end
+
 
 		local rows = 10
 		if ui.collapsingHeader("Crime", {}) then
