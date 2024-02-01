@@ -44,6 +44,9 @@ bool SectorCustomSystemsGenerator::Apply(Random &rng, RefCountedPtr<Galaxy> gala
 		s.m_seed = cs->seed;
 
 		if (cs->want_rand_explored) {
+
+// GALAXY_EXPLORED_MIN = 65 sectors
+// GALAXY_EXPLORED_MAX = 90 sectors
 			/*
 			 * 0 - ~500ly from sol: explored
 			 * ~500ly - ~700ly (65-90 sectors): gradual
