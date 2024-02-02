@@ -14,6 +14,8 @@
 
 #define Square(x) ((x) * (x))
 
+GalaxyConfig *SectorCustomSystemsGenerator::galaxyConfig;
+
 bool SectorCustomSystemsGenerator::Apply(Random &rng, RefCountedPtr<Galaxy> galaxy, RefCountedPtr<Sector> sector, GalaxyGenerator::SectorConfig *config)
 {
 	const int sx = sector->sx;
@@ -45,14 +47,14 @@ bool SectorCustomSystemsGenerator::Apply(Random &rng, RefCountedPtr<Galaxy> gala
 
 		if (cs->want_rand_explored) {
 
-// GALAXY_EXPLORED_MIN = 65 sectors
-// GALAXY_EXPLORED_MAX = 90 sectors
+			int GalaxyExploredMax = (SectorCustomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMax"));
+			int GalaxyExploredMin = (SectorCustomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMin"));
 			/*
 			 * 0 - ~500ly from sol: explored
 			 * ~500ly - ~700ly (65-90 sectors): gradual
 			 * ~700ly+: unexplored
 			 */
-			if (((dist <= Square(90)) && (dist <= Square(65) || rng.Int32(dist) <= Square(40))) || galaxy->GetFactions()->IsHomeSystem(SystemPath(sx, sy, sz, sysIdx)))
+			if (((dist <= Square(GalaxyExploredMax)) && (dist <= Square(GalaxyExploredMin) || rng.Int32(dist) <= Square(40))) || galaxy->GetFactions()->IsHomeSystem(SystemPath(sx, sy, sz, sysIdx)))
 				s.m_explored = StarSystem::eEXPLORED_AT_START;
 			else
 				s.m_explored = StarSystem::eUNEXPLORED;
