@@ -4,6 +4,7 @@
 #ifndef SECTORGENERATOR_H
 #define SECTORGENERATOR_H
 
+#include "GalaxyConfig.h"
 #include "GalaxyGenerator.h"
 #include "Random.h"
 #include "RefCounted.h"
@@ -13,15 +14,21 @@
 class SectorCustomSystemsGenerator : public SectorGeneratorStage {
 public:
 	SectorCustomSystemsGenerator(int customOnlyRadius) :
-		m_customOnlyRadius(customOnlyRadius) {}
+		m_customOnlyRadius(customOnlyRadius) {
+		SectorCustomSystemsGenerator::galaxyConfig = new GalaxyConfig();
+	}
 	virtual bool Apply(Random &rng, RefCountedPtr<Galaxy> galaxy, RefCountedPtr<Sector> sector, GalaxyGenerator::SectorConfig *config);
 
 private:
 	int m_customOnlyRadius;
+	static GalaxyConfig *galaxyConfig;
 };
 
 class SectorRandomSystemsGenerator : public SectorGeneratorStage {
 public:
+	SectorRandomSystemsGenerator(){
+		SectorRandomSystemsGenerator::galaxyConfig = new GalaxyConfig();
+	}
 	virtual bool Apply(Random &rng, RefCountedPtr<Galaxy> galaxy, RefCountedPtr<Sector> sector, GalaxyGenerator::SectorConfig *config);
 
 private:
