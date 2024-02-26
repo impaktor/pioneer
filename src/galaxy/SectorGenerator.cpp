@@ -15,6 +15,7 @@
 #define Square(x) ((x) * (x))
 
 GalaxyConfig *SectorCustomSystemsGenerator::galaxyConfig;
+GalaxyConfig *SectorRandomSystemsGenerator::galaxyConfig;
 
 bool SectorCustomSystemsGenerator::Apply(Random &rng, RefCountedPtr<Galaxy> galaxy, RefCountedPtr<Sector> sector, GalaxyGenerator::SectorConfig *config)
 {
@@ -170,6 +171,9 @@ bool SectorRandomSystemsGenerator::Apply(Random &rng, RefCountedPtr<Galaxy> gala
 		s.m_pos.x = rng.Double(Sector::SIZE);
 		s.m_pos.y = rng.Double(Sector::SIZE);
 		s.m_pos.z = rng.Double(Sector::SIZE);
+
+		int GalaxyExploredMax = (SectorRandomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMax"));
+		int GalaxyExploredMin = (SectorRandomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMin"));
 
 		/*
 		 * 0 - ~500ly from sol: explored
