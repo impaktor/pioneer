@@ -3,15 +3,13 @@
 
 #include "GalaxyConfig.h"
 #include "FileSystem.h"
-#include "core/OS.h"
 
 GalaxyConfig::GalaxyConfig()
 {
 	// set defaults
 	std::map<std::string, std::string> &map = m_map[""];
-	map["Lang"] = OS::GetUserLangCode();
-	map["GalaxyExploredMin"] = "65";
 	map["GalaxyExploredMax"] = "90";
+	map["GalaxyExploredMin"] = "65";
 
 	Read(FileSystem::userFiles, "galaxy.ini");
 
