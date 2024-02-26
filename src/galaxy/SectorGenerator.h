@@ -30,6 +30,7 @@ public:
 
 private:
 	const std::string GenName(RefCountedPtr<Galaxy> galaxy, const Sector &sec, Sector::System &sys, int si, Random &rand);
+	static GalaxyConfig *galaxyConfig;
 };
 
 class SectorPersistenceGenerator : public SectorGeneratorStage {
