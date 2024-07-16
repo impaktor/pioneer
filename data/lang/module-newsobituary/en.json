@@ -1,0 +1,110 @@
+{
+    "NEWS_1_BODYTEXT": {
+        "description": "The 'Meat' of the news article",
+        "message": "On {date} a pilot met his unfortunate end as he entered into a thick atmosphere planet at high speed. Manufacturers of Atmospheric Shielding urge for policies mandating all ships must fit their equipment, 'for the good of all pilots' they say."
+    },
+    "NEWS_1_DESCRIPTION": {
+        "description": "The secondary level title shown on the BBS",
+        "message": "Another pilot disintegrated upon too hot reentry"
+    },
+    "NEWS_1_HEADLINE": {
+        "description": "The primary level title shown on the BBS",
+        "message": "Pilot meets with fiery death"
+    },
+    "NEWS_2_BODYTEXT": {
+        "description": "Point to carry across: If pilot has too high delta-V to break in time, they can hyperjump / enter hyperspace. There's a minimum 10 km altitude limit on when it's legal to enter hyperspace.",
+        "message": "Yesterday morning residents in the administration district woke by the shock wave of a low altitude hyper cloud opening shattered windows and the stillness of the morning summer. Minutes before alarms sounded as a pilot was observed coming in at break-neck speed, unable to loose sufficient delta-V to prevent a rapid unscheduled disassembly by lithobreaking. The reckless pilot resorted to enter hyperspace, defying our minimum 10 km altitude hyperjump ban. Authorities are investigating the incident."
+    },
+    "NEWS_2_DESCRIPTION": {
+        "description": "",
+        "message": "Windows shattered and smell of electricity in the air"
+    },
+    "NEWS_2_HEADLINE": {
+        "description": "",
+        "message": "A rude awakening as loud bang shatters morning calm"
+    },
+    "NEWS_3_BODYTEXT": {
+        "description": "",
+        "message": "Relatives mourn the loss of there beloved as the frontier claims another pilot's life. It was on {date} that a daring pioneer ventured into uninhabited space and resorted to scooping fuel from the hydrogen rich atmosphere of a gas giant, that she was last heard from. With the help of radar and spectroscope measurements the rescue team were able to pinpoint the crushed and scattered remnants deep bellow the 60 atmosphere crushing limit. Expert says the accident like these could have been avoidable with proper atmospheric shielding"
+    },
+    "NEWS_3_DESCRIPTION": {
+        "description": "Beloved aunt and devoted mother lost in the depth of a gas giant",
+        "message": ""
+    },
+    "NEWS_3_HEADLINE": {
+        "description": "",
+        "message": "Pilot dies as in way over her head"
+    },
+    "NEWS_4_BODYTEXT": {
+        "description": "",
+        "message": "TODO"
+    },
+    "NEWS_4_DESCRIPTION": {
+        "description": "",
+        "message": "Space is unforgiving"
+    },
+    "NEWS_4_HEADLINE": {
+        "description": "",
+        "message": "Another month, another stranded pilot meets his early demise"
+    },
+    "NEWS_5_BODYTEXT": {
+        "description": "",
+        "message": "Every Saturday, the two old high school friends, Howard and Edgar, would call each other to stay in touch. They had chosen different career paths in life: Howard became a filing clerk, while Edgar sought his fortune in the stars, as a interstellar long haul pilot. However, last Saturday no call was made. Howard tried getting in contact with his friend. After a missing person report was filed, the investigation showed Edgar's ship had not had it's hyper drive serviced in over a year. Police believes he likely suffered an engine failure and must have been stranded in an uninhabited system 'Neglect engine maintenance at your own peril' investigative police say."
+    },
+    "NEWS_5_DESCRIPTION": {
+        "description": "",
+        "message": "Negligence is likely the cause, the investigative police say"
+    },
+    "NEWS_5_HEADLINE": {
+        "description": "",
+        "message": "Pilot gone without a trace, but a theory emerge"
+    },
+    "NEWS_6_BODYTEXT": {
+        "description": "",
+        "message": "A shipment of pastries and cream have gone sour as is took a detour to the wrong system coordinates, but the right system name. \n'- We will not be working with him again', says representative for 'Cookies R' us'.\nThe captain of the ship wows to donate to a good charity, in desperate attempt to recuperate lost reputation"
+    },
+    "NEWS_6_DESCRIPTION": {
+        "description": "",
+        "message": "Rookie mistake by pilot to blame, says administration"
+    },
+    "NEWS_6_HEADLINE": {
+        "description": "",
+        "message": "Large shipment of pastries spoiled as delivery delayed."
+    },
+    "NEWS_7_BODYTEXT": {
+        "description": "",
+        "message": "Last night Cydonia residents became spectators to a blinding light show, as atmospheric forces disintegrated a courier ship that was coming in at hyper sonic speeds with landing gears deployed. The interior of the wheel houses could not withstand the heat. \nCharred chunks of debris were discovered scattered around the outskirts of the settlement in the aftermath of the explosion. Whether this was a pilot error or malfunction is still being investigated. While Cydonia traffic control states that the pilot hasn't declared an emergency prior to the accident, Federal Spaceflight Administration warns all pilots to check their landing gears before any critical manoeuvres."
+    },
+    "NEWS_7_DESCRIPTION": {
+        "description": "",
+        "message": "Rapid unscheduled disassembly of incoming ship to the port"
+    },
+    "NEWS_7_HEADLINE": {
+        "description": "",
+        "message": "A blinding light show over port Cydonia"
+    },
+    "NEWS_8_BODYTEXT": {
+        "description": "",
+        "message": "Rescue services scour through the debris of the ship, that crashed into the hard rock surface yesterday, in a desperate attempt to find any further clue as to why the sudden lithobreaking occurred. Could this simply be a wildly inexperienced pilot trying to break using only the retro-thrusters, rather than turn 180 and use the stronger main thrusters. We have reached Icarus pilot school for a comment: \n'These young inexperienced pilots think they know everything think they know everything, but they don't even realize the retro thrusters are inherently weaker.' the flight instructor said."
+    },
+    "NEWS_8_DESCRIPTION": {
+        "description": "Basically: pilot only used forward facing thrusters",
+        "message": "Pilot error suspected, as only retro-thrusters were seen engaged."
+    },
+    "NEWS_8_HEADLINE": {
+        "description": "",
+        "message": "Ship slammed into surface at high speed, no survivors"
+    },
+    "NEWS_9_BODYTEXT": {
+        "description": "",
+        "message": "Scientist Dr. Kuhn, stipulates we might be living in a simulation: -'This would explain reports of observed artificial looking seams in the terrain, and fantastic tales of pilots seemingly glitching through planet surfaces' the eminent doctor says. In light of this, the statement 'The world isn't perfect' takes on a new meaning, namely: it is merely the simulation that is imperfect. Furthermore, the doctor thinks the theory might also explain the observed structure of scientific revolutions, which typically occur in leaps: -'It might be we only make new discoveries as new features are implemented into our universe'.\n\nFrom the rate of observed progress, Dr. Kuhn believes we can infer the size of the extra-universal development team to be small, leading to long periods of stagnation, or alternatively: a large team but hampered by programming in COBOL.\n\nThe controversial theory has also gained traction among leading economists: 'Of course! our theories are perfect, it's reality itself that is wrong!'\n\nBut the simulation-theory is not without controversy: 'it's a fudge-factor where any discrepancy between stipulated theory and observed reality can be explained away and blamed on some invisible mysterious entity, making the theory itself non-falsifiable and thus not scientific', critics say, fearing the 'imperfect simulation'-theory is painting us into a corner by having a 'demon' to blame any error we can not otherwise explain through present day science."
+    },
+    "NEWS_9_DESCRIPTION": {
+        "description": "",
+        "message": "New theory emerges that explains the rumoured glitches observed by some pilots"
+    },
+    "NEWS_9_HEADLINE": {
+        "description": "Wording is a Shakespeare reference 'All the world's a stage'",
+        "message": "All the world's a simulation?"
+    }
+}
