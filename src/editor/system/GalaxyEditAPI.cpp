@@ -1,7 +1,7 @@
 // Copyright © 2008-2024 Pioneer Developers. See AUTHORS.txt for details
 // Licensed under the terms of the GPL v3. See licenses/GPL-3.txt
-#include "GalaxyEditAPI.h"
 
+#include "GalaxyEditAPI.h"
 
 #include "EditorIcons.h"
 #include "SystemEditorHelpers.h"
@@ -11,10 +11,10 @@
 #include "editor/UndoStepType.h"
 #include "editor/EditorDraw.h"
 
-#include "EnumStrings.h"
-#include "galaxy/Sector.h"
+#include "galaxy/Factions.h"
 #include "galaxy/Galaxy.h"
 #include "galaxy/NameGenerator.h"
+#include "galaxy/Sector.h"
 #include "galaxy/StarSystemGenerator.h"
 
 #include "imgui/imgui.h"
@@ -216,6 +216,34 @@ void StarSystem::EditorAPI::SortBodyHierarchy(StarSystem *system, UndoSystem *un
 	});
 
 	undo->AddUndoStep<SystemEditorUndo::SortStarSystemBodies>(system, true);
+}
+
+void StarSystem::EditorAPI::GenerateStarList(StarSystem *system)
+{
+	system->m_stars.clear();
+	system->m_numStars = 0;
+	std::vector<std::pair<SystemBody *, size_t>> searchList {
+		{ system->GetRootBody().Get(), 0 }
+	};
+
+	while (!searchList.empty()) {
+		auto &pair = searchList.back();
+		SystemBody *body = pair.first;
+
+		if (pair.second == 0) {
+			if (body->GetSuperType() == SystemBodyType::SUPERTYPE_STAR) {
+				system->m_stars.push_back(body);
+				system->m_numStars++;
+			}
+		}
+
+		if (pair.second < body->GetNumChildren()) {
+			searchList.push_back({ body->GetChildren()[pair.second++], 0 });
+		} else {
+			searchList.pop_back();
+		}
+	}
+
 }
 
 void StarSystem::EditorAPI::EditName(StarSystem *system, Random &rng, UndoSystem *undo)

@@ -214,6 +214,8 @@ public:
 	void SetLabel(const std::string &label) override;
 	void SetShipName(const std::string &shipName);
 
+	const std::string &GetShipName() const { return m_shipName; }
+
 	float GetAtmosphericPressureLimit() const;
 	float GetPercentShields() const;
 	float GetPercentHull() const;
@@ -276,6 +278,7 @@ protected:
 
 	Propulsion *m_propulsion;
 	FixedGuns *m_fixedGuns;
+	Shields *m_shields;
 
 private:
 	float GetECMRechargeTime();
@@ -285,6 +288,7 @@ private:
 	void UpdateAlertState();
 	void UpdateFuel(float timeStep);
 	void SetShipId(const ShipType::Id &shipId);
+	void SetupShields();
 	void EnterHyperspace();
 	void InitMaterials();
 	void InitEquipSet();
@@ -298,6 +302,8 @@ private:
 	shipstats_t m_stats;
 	const ShipType *m_type;
 	SceneGraph::ModelSkin m_skin;
+
+	std::unique_ptr<SceneGraph::Model> m_shieldModel;
 
 	Sound::Event m_beamLaser[2];
 

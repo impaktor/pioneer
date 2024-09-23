@@ -41,7 +41,7 @@ local buttonState = {
 	[false]       = ui.theme.buttonColors.transparent
 }
 
-local settings = 
+local settings =
 {
 	draw_vertical_lines=false,
 	draw_out_range_labels=false,
@@ -75,7 +75,7 @@ local onGameStart = function ()
 	hyperspaceDetailsCache = {}
 
 	-- apply any data loaded earlier
-	if loaded_data then	
+	if loaded_data then
 		if loaded_data.jump_targets then
 			local targets = loaded_data.jump_targets
 			for _, target in pairs( loaded_data.jump_targets) do
@@ -161,7 +161,7 @@ function Windows.systemInfo:Show()
 		if not sectorView:GetMap():IsCenteredOn(systempath) then
 			-- add button to center on the object
 			ui.sameLine()
-			if ui.iconButton(icons.maneuver, Vector2(ui.getTextLineHeight()), lui.CENTER_ON_SYSTEM, ui.theme.buttonColors.transparent) then
+			if ui.inlineIconButton("center", icons.maneuver, lui.CENTER_ON_SYSTEM, ui.theme.buttonColors.transparent) then
 				sectorView:GetMap():GotoSystemPath(systempath)
 			end
 		end
@@ -172,7 +172,8 @@ function Windows.systemInfo:Show()
 			starsystem.numberOfStars == 1 and starsystem.rootSystemBody.astroDescription or "",
 			lc.BINARY_SYSTEM,
 			lc.TRIPLE_SYSTEM,
-			lc.QUADRUPLE_SYSTEM
+			lc.QUADRUPLE_SYSTEM,
+			[0] = lui.AN_ERROR_HAS_OCCURRED
 		}
 
 		-- description

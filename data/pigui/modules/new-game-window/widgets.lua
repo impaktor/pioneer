@@ -103,13 +103,15 @@ Widgets.inputText = function(lock, valid, id, text, randomFnc)
 			end)
 		else
 			if randomFnc then
-				local size = ui.getFrameHeight()
 				local wholeWidth = ui.calcItemWidth()
-				ui.nextItemWidth(wholeWidth - size - Defs.gap.x)
+				ui.nextItemWidth(wholeWidth - ui.getFrameHeight() - Defs.gap.x)
 				local txt, changed = ui.inputText(id, text)
 				ui.sameLine()
-				if ui.iconButton(ui.theme.icons.random, Vector2(size, size), tostring(id) .. "_random_button") then
-					randomFnc()
+				if ui.iconButton(id .. "_random", ui.theme.icons.random) then
+					local newtxt = randomFnc()
+					if newtxt and newtxt ~= txt then
+						txt, changed = newtxt, true
+					end
 				end
 				return txt, changed
 			else

@@ -576,11 +576,12 @@ local function addRandomShipAdvert(station, num)
 		local def = avail[Engine.rand:Integer(1,#avail)]
 		local model = Engine.GetModel(def.modelName)
 		local pattern = model.numPatterns ~= 0 and Engine.rand:Integer(1,model.numPatterns) or nil
+		local label = Ship.MakeRandomLabel()
 		addShipOnSale(station, {
 			def     = def,
-			skin    = ModelSkin.New():SetRandomColors(Engine.rand):SetDecal(def.manufacturer),
+			skin    = ModelSkin.New():SetRandomColors(Engine.rand):SetDecal(def.manufacturer):SetLabel(label),
 			pattern = pattern,
-			label   = Ship.MakeRandomLabel(),
+			label   = label,
 		})
 	end
 end
@@ -900,6 +901,7 @@ end
 local function updateAdverts (station)
 	if not SpaceStation.adverts[station] then
 		logWarning("SpaceStation.lua: updateAdverts called for station that hasn't been visited")
+		Event.Queue("onCreateBB", station)
 	else
 		Event.Queue("onUpdateBB", station)
 	end
