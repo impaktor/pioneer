@@ -10,6 +10,7 @@ GalaxyConfig::GalaxyConfig()
 	std::map<std::string, std::string> &map = m_map[""];
 	map["GalaxyExploredMax"] = "90";
 	map["GalaxyExploredMin"] = "65";
+	map["GalaxyExploredMix"] = "40";
 
 	Read(FileSystem::userFiles, "galaxy.ini");
 

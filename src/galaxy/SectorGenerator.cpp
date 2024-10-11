@@ -50,12 +50,13 @@ bool SectorCustomSystemsGenerator::Apply(Random &rng, RefCountedPtr<Galaxy> gala
 
 			int GalaxyExploredMax = (SectorCustomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMax"));
 			int GalaxyExploredMin = (SectorCustomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMin"));
+			int GalaxyExploredMix = (SectorCustomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMix"));
 			/*
 			 * 0 - ~500ly from sol: explored
 			 * ~500ly - ~700ly (65-90 sectors): gradual
 			 * ~700ly+: unexplored
 			 */
-			if (((dist <= Square(GalaxyExploredMax)) && (dist <= Square(GalaxyExploredMin) || rng.Int32(dist) <= Square(40))) || galaxy->GetFactions()->IsHomeSystem(SystemPath(sx, sy, sz, sysIdx)))
+			if (((dist <= Square(GalaxyExploredMax)) && (dist <= Square(GalaxyExploredMin) || rng.Int32(dist) <= Square(GalaxyExploredMix))) || galaxy->GetFactions()->IsHomeSystem(SystemPath(sx, sy, sz, sysIdx)))
 				s.m_explored = StarSystem::eEXPLORED_AT_START;
 			else
 				s.m_explored = StarSystem::eUNEXPLORED;
@@ -174,13 +175,14 @@ bool SectorRandomSystemsGenerator::Apply(Random &rng, RefCountedPtr<Galaxy> gala
 
 		int GalaxyExploredMax = (SectorRandomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMax"));
 		int GalaxyExploredMin = (SectorRandomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMin"));
+		int GalaxyExploredMix = (SectorRandomSystemsGenerator::galaxyConfig->Int("GalaxyExploredMix"));
 
 		/*
 		 * 0 - ~500ly from sol: explored
 		 * ~500ly - ~700ly (65-90 sectors): gradual
 		 * ~700ly+: unexplored
 		 */
-		if (((dist <= Square(90)) && (dist <= Square(65) || rng.Int32(dist) <= Square(40))) || galaxy->GetFactions()->IsHomeSystem(SystemPath(sx, sy, sz, customCount + i)))
+		if (((dist <= Square(GalaxyExploredMax)) && (dist <= Square(GalaxyExploredMin) || rng.Int32(dist) <= Square(GalaxyExploredMix))) || galaxy->GetFactions()->IsHomeSystem(SystemPath(sx, sy, sz, customCount + i)))
 			s.m_explored = StarSystem::eEXPLORED_AT_START;
 		else
 			s.m_explored = StarSystem::eUNEXPLORED;
