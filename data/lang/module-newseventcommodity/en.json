@@ -1,20 +1,4 @@
 {
-  "ADTITLE_0": {
-    "description": "",
-    "message": "FRESH REPORT"
-  },
-  "ADTITLE_1": {
-    "description": "",
-    "message": "NEWS BULLETIN"
-  },
-  "ADTITLE_2": {
-    "description": "",
-    "message": "GALACTIC REPORT"
-  },
-  "ADTITLE_3": {
-    "description": "",
-    "message": "LOCAL GAZETTE"
-  },
   "FLAVOUR_0_HEADLINE": {
     "description": "",
     "message": "NEWS {date}: System wide plague in the {system} system. Death toll rises."
@@ -230,81 +214,5 @@
   "GRATEFUL_GREETING_5": {
     "description": "",
     "message": "Welcome! Your shipment of {cargo} will sell out fast here."
-  },
-  "NEWSPAPER_CIW": {
-    "description": "",
-    "message": "The Commonwealth Chronicle"
-  },
-  "NEWSPAPER_FED": {
-    "description": "",
-    "message": "The Federal Times"
-  },
-  "NEWSPAPER_IMP": {
-    "description": "",
-    "message": "The Imperial Herald"
-  },
-  "NEWSPAPER_IND_0": {
-    "description": "",
-    "message": "The Pioneer Courier"
-  },
-  "NEWSPAPER_IND_1": {
-    "description": "",
-    "message": "The Independent Tribune"
-  },
-  "NEWSPAPER_IND_10": {
-    "description": "",
-    "message": "The Orbital Observer"
-  },
-  "NEWSPAPER_IND_2": {
-    "description": "",
-    "message": "The Galactic Post"
-  },
-  "NEWSPAPER_IND_3": {
-    "description": "",
-    "message": "The Universal Sun"
-  },
-  "NEWSPAPER_IND_4": {
-    "description": "",
-    "message": "The Planetary Press"
-  },
-  "NEWSPAPER_IND_5": {
-    "description": "",
-    "message": "The Royal Gazette"
-  },
-  "NEWSPAPER_IND_6": {
-    "description": "",
-    "message": "The Universal Mail"
-  },
-  "NEWSPAPER_IND_7": {
-    "description": "",
-    "message": "The Daily Express"
-  },
-  "NEWSPAPER_IND_8": {
-    "description": "",
-    "message": "The Tellurian Telegraph"
-  },
-  "NEWSPAPER_IND_9": {
-    "description": "",
-    "message": "The Satellite Journal"
-  },
-  "TITLE_0": {
-    "description": "",
-    "message": "Fresh report from {newspaper}"
-  },
-  "TITLE_1": {
-    "description": "",
-    "message": "News from {newspaper}"
-  },
-  "TITLE_2": {
-    "description": "",
-    "message": "Report from {newspaper}"
-  },
-  "TITLE_3": {
-    "description": "",
-    "message": "The latest from {newspaper}"
-  },
-  "TITLE_4": {
-    "description": "",
-    "message": "Notes from {newspaper}"
   }
 }

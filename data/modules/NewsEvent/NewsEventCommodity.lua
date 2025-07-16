@@ -26,6 +26,7 @@ local Event = require 'Event'
 local Format = require 'Format'
 local Serializer = require 'Serializer'
 local Commodities = require 'Commodities'
+local News = require 'modules.NewsEvent.NewsEvent'
 
 local l = Lang.GetResource("module-newseventcommodity")
 
@@ -39,9 +40,6 @@ local eventProbability = 1/20
 local maxNumberNews = 3
 
 -- max index of flavoured variants
-local maxIndexOfIndNewspapers = 10
-local maxIndexOfAdTitles = 3
-local maxIndexOfTitles = 4
 local maxIndexOfGreetings = 5
 
 local flavours = {
@@ -137,27 +135,16 @@ local news = {}
 -- print ad to BBS
 local onChat = function (form, ref, option)
 	local ad = ads[ref]
-
+	print("--1")
 	form:Clear()
 
 	local faction = ad.n.syspath:GetStarSystem().faction.name
-
-	local newspaper
-	if faction == "Solar Federation" then
-		newspaper = l.NEWSPAPER_FED
-	elseif faction == "Commonwealth of Independent Worlds" then
-		newspaper = l.NEWSPAPER_CIW
-	elseif faction == "Empire" then
-		newspaper = l.NEWSPAPER_IMP
-	else
-		newspaper = l["NEWSPAPER_IND_"..Engine.rand:Integer(0,maxIndexOfIndNewspapers)]
-	end
-
-	local title = string.interp(l["TITLE_"..Engine.rand:Integer(0,maxIndexOfTitles)] , {
-		newspaper = newspaper,
-	})
+	print("--2", faction)
+	local title = News:get_title(faction)
+	print("--2.5", title)
 
 	form:SetTitle(title)
+	print("--3")
 
 	local newsbody = string.interp(flavours[ad.n.flavour].newsbody, {
 		system   = ad.n.syspath:GetStarSystem().name,
@@ -165,7 +152,7 @@ local onChat = function (form, ref, option)
 		sectory  = ad.n.syspath.sectorY,
 		sectorz  = ad.n.syspath.sectorZ,
 	})
-
+	print("--4")
 	form:SetMessage(newsbody)
 end
 
@@ -250,25 +237,6 @@ local createNewsEvent = function (timeInHyper)
 end
 
 
--- go through news table and remove any expired entry
-local checkOldNews = function ()
-	for i,n in pairs(news) do
-		if n.expires < Game.time then
-			table.remove(news, i)
-		end
-	end
-end
-
-
--- check if we should remove any ads
-local checkAdvertsRemove = function(station)
-	for ref,ad in pairs(ads) do
-		if ad.n.expires < Game.time then
-			ad.station:RemoveAdvert(ref)
-		end
-	end
-end
-
 -- check if we should add any ads to the BBS of the station
 local checkAdvertsAdd = function(station)
 
@@ -280,7 +248,7 @@ local checkAdvertsAdd = function(station)
 		-- don't place ad if we're in the system of the event
 		if not currentSystem:IsSameSystem(n.syspath) then
 			local ref = station:AddAdvert({
-				title       = l["ADTITLE_"..Engine.rand:Integer(0,maxIndexOfAdTitles)],
+				title       = News:get_headline(),
 				description = n.description,
 				icon        = "news",
 				onChat      = onChat,
@@ -305,7 +273,8 @@ local timeInHyperspace
 
 local onEnterSystem = function (player)
 	-- remove old news before making new
-	checkOldNews()
+	print("--, news1:", news)
+	News:checkOldNews(news)
 
 	timeInHyperspace = Game.time - timeInHyperspace
 
@@ -329,10 +298,10 @@ local cache = nil
 local onPlayerDocked = function (ship, station)
 
 	-- remove expired news from the news table
-	checkOldNews()
+	News:checkOldNews(news)
 
 	-- remove ads for news that have expired
-	checkAdvertsRemove(station)
+	News:checkAdvertsRemove(ads)
 
 	local currentSystem = Game.system.path
 
@@ -421,7 +390,7 @@ local onGameStart = function ()
 
 	for k,ad in pairs(loadedData.ads) do
 		local ref = ad.station:AddAdvert({
-			title       = l["ADTITLE_" .. Engine.rand:Integer(maxIndexOfAdTitles)],
+			title       = News:get_headline(),
 			description = ad.n.description,
 			icon        = "news",
 			onChat      = onChat,
