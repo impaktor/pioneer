@@ -12,8 +12,8 @@
         "message": "Pilot meets with fiery death"
     },
     "NEWS_2_BODYTEXT": {
-        "description": "Point to carry across: If pilot has too high delta-V to break in time, they can hyperjump / enter hyperspace. There's a minimum 10 km altitude limit on when it's legal to enter hyperspace.",
-        "message": "Yesterday morning residents in the administration district woke by the shockwave of a low altitude hyper cloud opening shattered windows and the stillness of the morning summer. Minutes before alarms sounded as a pilot was observed coming in at break-neck speed, unable to loose sufficient delta-V to prevent a rapid unscheduled disassembly by lithobreaking. The reckless pilot resorted to enter hyperspace, defying our minimum 10 km altitude hyperjump ban. Authorities are investigating the incident."
+        "description": "Point to carry across: If pilot has too high velocity to break in time, they can hyperjump / enter hyperspace. There's a minimum 10 km altitude limit on when it's legal to enter hyperspace.",
+        "message": "Yesterday morning residents in the administration district woke by the shockwave of a low altitude hyper cloud opening shattered windows and the stillness of the morning summer. Minutes before alarms sounded as a pilot was observed coming in at break-neck speed, unable to loose sufficient velocity to prevent a rapid unscheduled disassembly by lithobreaking. The reckless pilot resorted to enter hyperspace, defying our minimum 10 km altitude hyperjump ban. Authorities are investigating the incident."
     },
     "NEWS_2_DESCRIPTION": {
         "description": "",
