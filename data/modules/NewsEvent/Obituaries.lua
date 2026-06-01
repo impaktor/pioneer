@@ -172,7 +172,7 @@ debugView.registerTab("Obituary", {
 	draw = function ()
 		ui.text("BBS Obituary debug")
 
-		ui.text("#falvour: ".. #flavours)
+		ui.text("#flavour: ".. #flavours)
 		ui.text("#ads: " .. #ads)                   -- 0 ?
 		ui.text("#news: " .. #news)                 -- 0 ?
 		ui.text("#interacted: ".. #interacted)
