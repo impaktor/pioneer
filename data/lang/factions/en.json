@@ -1,0 +1,278 @@
+{
+  "FACTION_RECRUITMENT_CIW": {
+    "description": "",
+    "message": "Offering ADVENTURES unlimited."
+  },
+  "FACTION_RECRUITMENT_FED": {
+    "description": "",
+    "message": "Contact us if you dare!"
+  },
+  "FACTION_RECRUITMENT_HABER": {
+    "description": "",
+    "message": "Serve for space dominion"
+  },
+  "FACTION_RECRUITMENT_TOLAN": {
+    "description": "",
+    "message": "Do your part for the glory of the king"
+  },
+  "MEDALS": {
+    "description": "Military ordinances (plural)",
+    "message": "Medals"
+  },
+  "MILITARY_NAME_CIW": {
+    "description": "Name of the faction's military",
+    "message": "Confederate Space Guard"
+  },
+  "MILITARY_NAME_FED": {
+    "description": "Name of the faction's military",
+    "message": "Federal Fleet"
+  },
+  "MILITARY_NAME_HABER": {
+    "description": "Name of the faction's military",
+    "message": "Haber Fleet Division"
+  },
+  "MILITARY_NAME_TOLAN": {
+    "description": "Name of the faction's military",
+    "message": "Tolan Royal Fleet"
+  },
+  "MILITARY_PROMOTION_CIW": {
+    "description": "",
+    "message": "Congratulations to your promotion in the Confederacy"
+  },
+  "MILITARY_PROMOTION_FED": {
+    "description": "",
+    "message": "You have earned a promotion"
+  },
+  "MILITARY_PROMOTION_HABER": {
+    "description": "",
+    "message": "We have updated our records with your new rank"
+  },
+  "MILITARY_PROMOTION_TOLAN": {
+      "description": "Note: royal tolan navy should match MILITARY_NAME_TOLAN key",
+    "message": "Congratulations to your new title in the Tolan Royal Navy"
+  },
+  "MILITARY_RANK_LEVEL_0_CIW": {
+    "description": "Military rank",
+    "message": "None"
+  },
+  "MILITARY_RANK_LEVEL_1_CIW": {
+    "description": "Military rank",
+    "message": "Soldat"
+  },
+  "MILITARY_RANK_LEVEL_2_CIW": {
+    "description": "Military rank",
+    "message": "Senior Soldat"
+  },
+  "MILITARY_RANK_LEVEL_3_CIW": {
+    "description": "Military rank",
+    "message": "Candidate"
+  },
+  "MILITARY_RANK_LEVEL_4_CIW": {
+    "description": "Military rank",
+    "message": "Officer Candidate"
+  },
+  "MILITARY_RANK_LEVEL_5_CIW": {
+    "description": "Military rank",
+    "message": "Lance Corporal"
+  },
+  "MILITARY_RANK_LEVEL_6_CIW": {
+    "description": "Military rank",
+    "message": "Ensign"
+  },
+  "MILITARY_RANK_LEVEL_7_CIW": {
+    "description": "Military rank",
+    "message": "Field Ensign"
+  },
+  "MILITARY_RANK_LEVEL_8_CIW": {
+    "description": "Military rank",
+    "message": "Marshal"
+  },
+  "MILITARY_RANK_LEVEL_9_CIW": {
+    "description": "Military rank",
+    "message": "Flight Marshal"
+  },
+  "MILITARY_RANK_LEVEL_10_CIW": {
+    "description": "Military rank",
+    "message": "Commander"
+  },
+  "MILITARY_RANK_LEVEL_11_CIW": {
+    "description": "Military rank",
+    "message": "Master"
+  },
+  "MILITARY_RANK_LEVEL_12_CIW": {
+    "description": "Military rank",
+    "message": "Warmaster"
+  },
+  "MILITARY_RANK_LEVEL_0_FED": {
+    "description": "Military rank",
+    "message": "None"
+  },
+  "MILITARY_RANK_LEVEL_1_FED": {
+    "description": "Military rank",
+    "message": "Private"
+  },
+  "MILITARY_RANK_LEVEL_2_FED": {
+    "description": "Military rank",
+    "message": "Corporal"
+  },
+  "MILITARY_RANK_LEVEL_3_FED": {
+    "description": "Military rank",
+    "message": "Sergeant"
+  },
+  "MILITARY_RANK_LEVEL_4_FED": {
+    "description": "Military rank",
+    "message": "Sgt Major"
+  },
+  "MILITARY_RANK_LEVEL_5_FED": {
+    "description": "Military rank",
+    "message": "Major"
+  },
+  "MILITARY_RANK_LEVEL_6_FED": {
+    "description": "Military rank",
+    "message": "Colonel"
+  },
+  "MILITARY_RANK_LEVEL_7_FED": {
+    "description": "Military rank",
+    "message": "Lieutenant"
+  },
+  "MILITARY_RANK_LEVEL_8_FED": {
+    "description": "Military rank",
+    "message": "Lt. Commander"
+  },
+  "MILITARY_RANK_LEVEL_9_FED": {
+    "description": "Military rank",
+    "message": "Captain"
+  },
+  "MILITARY_RANK_LEVEL_10_FED": {
+    "description": "Military rank",
+    "message": "Commodore"
+  },
+  "MILITARY_RANK_LEVEL_11_FED": {
+    "description": "Military rank",
+    "message": "Rear Admiral"
+  },
+  "MILITARY_RANK_LEVEL_12_FED": {
+    "description": "Military rank",
+    "message": "Solar Admiral"
+  },
+  "MILITARY_RANK_LEVEL_0_HABER": {
+    "description": "Military rank",
+    "message": "Indentured worker"
+  },
+  "MILITARY_RANK_LEVEL_1_HABER": {
+    "description": "Military rank",
+    "message": "Rank 1"
+  },
+  "MILITARY_RANK_LEVEL_2_HABER": {
+    "description": "Military rank",
+    "message": "Rank 2"
+  },
+  "MILITARY_RANK_LEVEL_3_HABER": {
+    "description": "Military rank",
+    "message": "Rank 3"
+  },
+  "MILITARY_RANK_LEVEL_4_HABER": {
+    "description": "Military rank",
+    "message": "Rank 4"
+  },
+  "MILITARY_RANK_LEVEL_5_HABER": {
+    "description": "Military rank",
+    "message": "Rank 5"
+  },
+  "MILITARY_RANK_LEVEL_6_HABER": {
+    "description": "Military rank",
+    "message": "Rank 6"
+  },
+  "MILITARY_RANK_LEVEL_7_HABER": {
+    "description": "Military rank",
+    "message": "Rank 7"
+  },
+  "MILITARY_RANK_LEVEL_8_HABER": {
+    "description": "Military rank",
+    "message": "Rank 8"
+  },
+  "MILITARY_RANK_LEVEL_9_HABER": {
+    "description": "Military rank",
+    "message": "Rank 9"
+  },
+  "MILITARY_RANK_LEVEL_10_HABER": {
+    "description": "Military rank",
+    "message": "Rank 10"
+  },
+  "MILITARY_RANK_LEVEL_11_HABER": {
+    "description": "Military rank",
+    "message": "Rank 11"
+  },
+  "MILITARY_RANK_LEVEL_12_HABER": {
+    "description": "Military rank",
+    "message": "Rank 12"
+  },
+  "MILITARY_RANK_LEVEL_0_TOLAN": {
+   "description": "Military rank",
+   "message": "Outsider"
+  },
+  "MILITARY_RANK_LEVEL_1_TOLAN": {
+    "description": "Military rank",
+    "message": "Serf"
+  },
+  "MILITARY_RANK_LEVEL_2_TOLAN": {
+    "description": "Military rank",
+    "message": "Master"
+  },
+  "MILITARY_RANK_LEVEL_3_TOLAN": {
+    "description": "Military rank",
+    "message": "Sir"
+  },
+  "MILITARY_RANK_LEVEL_4_TOLAN": {
+    "description": "Military rank",
+    "message": "Squire"
+  },
+  "MILITARY_RANK_LEVEL_5_TOLAN": {
+    "description": "Military rank",
+    "message": "Lord"
+  },
+  "MILITARY_RANK_LEVEL_6_TOLAN": {
+    "description": "Military rank",
+    "message": "Baron"
+  },
+  "MILITARY_RANK_LEVEL_7_TOLAN": {
+    "description": "Military rank",
+    "message": "Viscount"
+  },
+  "MILITARY_RANK_LEVEL_8_TOLAN": {
+    "description": "Military rank",
+    "message": "Count"
+  },
+  "MILITARY_RANK_LEVEL_9_TOLAN": {
+    "description": "Military rank",
+    "message": "Earl"
+  },
+  "MILITARY_RANK_LEVEL_10_TOLAN": {
+    "description": "Military rank",
+    "message": "Marquis"
+  },
+  "MILITARY_RANK_LEVEL_11_TOLAN": {
+    "description": "Military rank",
+    "message": "Duke"
+  },
+  "MILITARY_RANK_LEVEL_12_TOLAN": {
+    "description": "Military rank",
+    "message": "Prince"
+  },
+  "MILITARY_RANK_NAME_CIW": {
+    "description": "",
+    "message": "Confederate standing"
+  },
+  "MILITARY_RANK_NAME_FED": {
+    "description": "",
+    "message": "Federal rank"
+  },
+  "MILITARY_RANK_NAME_HABER": {
+    "description": "",
+    "message": "Haber military level"
+  },
+  "MILITARY_RANK_NAME_TOLAN": {
+    "description": "",
+    "message": "Tolan title"
+  }
+}

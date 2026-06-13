@@ -16,6 +16,7 @@ local icons = ui.theme.icons
 local textTable = require 'pigui.libs.text-table'
 
 local l = Lang.GetResource("ui-core")
+local lf = Lang.GetResource("factions")
 
 local itemSpacing = ui.rescaleUI(Vector2(6, 12), Vector2(1920, 1200))
 
@@ -24,9 +25,11 @@ local face = nil
 local function GetRanks(player)
 	local r = {}
 
-	for faction_name, faction_rank_score in player.rank do
+	for faction_name, faction_rank_score in pairs(player.rank) do
 		local rank_name = player:GetMilitaryRank(faction_name)
-		table.insert(r, {faction_name, l[rank_name]})
+		local title = lf['MILITARY_RANK_NAME_' .. faction_name]
+		print("rank_name", rank_name, faction_name)
+		table.insert(r, {title, lf["MILITARY_" .. rank_name .. "_" .. faction_name]})
 	end
 	return r
 end
@@ -53,21 +56,25 @@ local function drawPlayerInfo()
 
 	ui.newLine()
 
-	textTable.withHeading("TEST", orbiteer.heading, {
-							  {"A", "B"},
-							  {"C", "D"}
-	})
-
-	ui.newLine()
+	-- textTable.withHeading("TEST", orbiteer.heading, {
+	--						  {"A", "B"},
+	--						  {"C", "D"}
+	-- })
+	-- ui.newLine()
 
 	textTable.withHeading(l.MILITARY, orbiteer.heading,
 							  GetRanks(player)
-							  -- { l.RANK,  l[player:GetMilitaryRank()] }
 	)
 
-	-- textTable.withHeading(l.MEDALS, orbiteer.heading, {
-	--						  player.medals
-	-- })
+	ui.newLine()
+
+	ui.withFont(orbiteer.heading.name, orbiteer.heading.size, function()
+					ui.text(lf.MEDALS)
+	end)
+	-- medal names are keys (translated strings) in table medals (value: true)
+	for name, _ in pairs(player.medals) do
+		ui.text(name)
+	end
 
 end
 

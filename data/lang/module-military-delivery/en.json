@@ -11,10 +11,6 @@
     "description": "",
     "message": "Service required for delivery mission to {system} system."
   },
-  "FLAVOUR_ADTITLE": {
-    "description": "",
-    "message": "We want YOU for ADVENTURES unlimited."
-  },
   "FLAVOUR_0_INTROTEXT_FIRST": {
     "description": "",
     "message": "Deliver a message to"
@@ -65,7 +61,7 @@
   },
   "FLAVOUR_INTROTEXT_REST": {
     "description": "NOTE: starts with space",
-    "message": " {system} ({sectorx}, {sectory}, {sectorz}), system, {dist} ly, by {date} {starport}. You will be paid {cash}."
+      "message": " {starport} in {system} ({sectorx}, {sectory}, {sectorz}) system, {dist} ly distant, by {date}. You will be paid {cash}."
   },
   "IT_MUST_BE_DELIVERED_BY": {
     "description": "",
@@ -79,13 +75,25 @@
     "description": "Medal for first successful secret order delivery for federation",
     "message": "Starburst"
   },
-  "MEDAL_0_CONFED": {
+  "MEDAL_0_CIW": {
     "description": "Medal for first successful important delivery for confederacy",
     "message": "Crimson Brassard"
   },
-  "MEDAL_1_CONFED": {
+  "MEDAL_1_CIW": {
     "description": "Medal for first successful secret order delivery for confederacy",
     "message": "Black Polygon"
+  },
+  "MEDAL_AWARDED_FED": {
+    "description": "Message for when receiving a medal",
+    "message": "You have been awarded a medal for prominent service to the Federation"
+  },
+  "MEDAL_AWARDED_CIW": {
+    "description": "Message for when receiving a medal",
+    "message": "You have been awarded a medal for venerable service to the Confederacy"
+  },
+  "MEDAL_AWARDED_TOLAN": {
+    "description": "Message for when receiving a medal",
+    "message": "You have been awarded a medal for distinguished service to the throne"
   },
   "MSG_FAILURE": {
     "description": "",

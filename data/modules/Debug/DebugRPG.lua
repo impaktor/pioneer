@@ -106,15 +106,12 @@ debugView.registerTab("debug-player", {
 			end
 		end
 
-		if ui.button("Add medal ".. medal_iterator) then
+		if ui.button("Test adding generic medal ".. medal_iterator) then
 			medal_iterator = medal_iterator + 1
 			local medal = "Medal of order-"..medal_iterator
 
-			table.insert(Character.persistent.player.medals, medal)
+			Character.persistent.player.medals[medal] = true
 		end
-
-
-		local rows = 10
 
 		if ui.collapsingHeader("Crime", {}) then
 

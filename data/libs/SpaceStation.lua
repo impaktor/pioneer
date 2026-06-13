@@ -48,7 +48,7 @@ function SpaceStation.GetMilitaryLevel(systemBody)
 
 	local rand = Rand.New(systemBody.seed .. '-militaryLevel')
 	local techLevel = rand:Integer(0, 4) + rand:Integer(0,4)
-	print(rand:Integer(0, 4), techLevel)
+	print("military level:", rand:Integer(0, 4), techLevel)
 	local system = systemBody.path:GetStarSystem()
 
 	if system.faction ~= nil and system.faction.hasHomeworld and system.faction.homeworld == systemBody.parent.path then

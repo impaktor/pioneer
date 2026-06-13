@@ -15,37 +15,17 @@
     "description": "",
     "message": "Distance:"
   },
-  "MILITARY_CONFED": {
-    "description": "",
-    "message": "CONFEDERATE NAVY"
-  },
-  "MILITARY_FED": {
-    "description": "",
-    "message": "FEDERAL FLEET"
-  },
-  "MILITARY_HABER": {
-    "description": "",
-    "message": "HABER DEFENCE AUTHORITY"
-  },
-  "FACTION_RECRUITMENT_CONFED": {
-    "description": "",
-    "message": "CONFEDERATE NAVY: Do your part in the glory of the empire. Contact us if you dare!"
-  },
-  "FACTION_RECRUITMENT_FED": {
-    "description": "",
-    "message": "FEDERAL FLEET: We want YOU for ADVENTURES unlimited."
-  },
-  "FACTION_RECRUITMENT_HABER": {
-    "description": "",
-    "message": "HABER DEFENCE AUTHORITY: Serve to uphold Haber's space dominion."
-  },
   "NOT_ANY_MORE_THAN_USUAL": {
     "description": "",
     "message": "Not any more than usual."
   },
-  "OK_AGREED": {
+  "OK_AGREED_SIR": {
     "description": "",
-      "message": "Agreed, I'll do it Sir."
+      "message": "I'll do it Sir!"
+  },
+  "OK_AGREED_MADAM": {
+    "description": "",
+      "message": "I'll do it Ma'am!"
   },
   "SPACEPORT": {
     "description": "",

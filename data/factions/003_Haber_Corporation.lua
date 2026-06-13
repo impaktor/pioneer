@@ -8,7 +8,7 @@ local f = Faction:new('Haber Corporation')
 	:foundingDate(3150)
 	:expansionRate(0.5)
 	:military_name('Haber Fleet Division')
-	:police_name('Haber Enforcement Division')
+	:police_name('Haber Law Enforcement Division')
 	:colour(1,0.4,0.4)
 
 f:govtype_weight('CORPORATE',		100)

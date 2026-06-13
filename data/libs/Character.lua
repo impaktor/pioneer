@@ -285,22 +285,15 @@ Character = {
 --
 -- Attribute: rank
 --
--- xxx EVENTUALLY: Table of key-value pairs; key being the faction, value being an integer
--- reflecting the rank. It should be reduced for failed missions, and
--- increased for successful missions.
---
--- Availability:
---
---   November 2023
---
--- Status:
---
---   experimental
+-- EVENTUALLY: Table of key-value pairs; key being the faction, value
+-- being an integer reflecting the rank. It should be reduced for
+-- failed missions, and increased for successful missions.
 --
 	rank = {
-		["Solar Federation"] = 0,
-		["Commonwealth of Independent Worlds"] = 0,
-		-- ["Haber Corporation"] = 0,
+		["CIW"] = 0,
+		["FED"] = 0,
+		["HABER"] = 0,
+		["TOLAN"] = 0,
 	},
 
 --
@@ -872,40 +865,78 @@ Character = {
 		return utils.getFromIntervals(self.reputations, self.reputation)
 	end,
 
+--
+-- Attribute: ranks
+--
+-- Available ranks in the universe
+--
 	ranks = {
-		["Solar Federation"] = {
-			{ 'RANK_NONE'          , 0     },  --  0**4
-			{ 'RANK_PRIVATE'       , 1     },  --  1**4
-			{ 'RANK_CORPORAL'      , 16    },  --  2**4
-			{ 'RANK_SERGEANT'      , 81    },  --  3**4
-			{ 'RANK_SGT_MAJOR'     , 256   },  --  4**4
-			{ 'RANK_MAJOR'         , 625   },  --  5**4
-			{ 'RANK_COLONEL'       , 1296  },  --  6**4
-			{ 'RANK_LIEUTENANT'    , 2401  },  --  7**4
-			{ 'RANK_LT_COMMANDER'  , 4096  },  --  8**4
-			{ 'RANK_CAPTAIN'       , 6561  },  --  9**4
-			{ 'RANK_COMMODORE'     , 10000 },  -- 10**4
-			{ 'RANK_REAR_ADMIRAL'  , 14641 },  -- 11**4
-			{ 'RANK_ADMIRAL'       , 20736 },  -- 12**4
+		["FED"] = {
+			{ 'RANK_LEVEL_0'        , 0     },  --  0**4
+			{ 'RANK_LEVEL_1'        , 1     },  --  1**4
+			{ 'RANK_LEVEL_2'        , 16    },  --  2**4
+			{ 'RANK_LEVEL_3'        , 81    },  --  3**4
+			{ 'RANK_LEVEL_4'        , 256   },  --  4**4
+			{ 'RANK_LEVEL_5'        , 625   },  --  5**4
+			{ 'RANK_LEVEL_6'        , 1296  },  --  6**4
+			{ 'RANK_LEVEL_7'        , 2401  },  --  7**4
+			{ 'RANK_LEVEL_8'        , 4096  },  --  8**4
+			{ 'RANK_LEVEL_9'        , 6561  },  --  9**4
+			{ 'RANK_LEVEL_10'       , 10000 },  -- 10**4
+			{ 'RANK_LEVEL_11'       , 14641 },  -- 11**4
+			{ 'RANK_LEVEL_12'       , 20736 },  -- 12**4
 		},
-		["Commonwealth of Independent Worlds"] = {
-			{ 'RANK_OUTSIDER'   , 0     },
-			{ 'RANK_SERF'		, 1     },
-			{ 'RANK_MASTER'		, 16    },
-			{ 'RANK_SIR'		, 81    },
-			{ 'RANK_SQUIRE'		, 256   },
-			{ 'RANK_LORD'		, 625   },
-			{ 'RANK_BARON'		, 1296  },
-			{ 'RANK_VISCOUNT'   , 2401  },
-			{ 'RANK_COUNT'		, 4096  },
-			{ 'RANK_EARL'		, 6561  },
-			{ 'RANK_MARQUIS'	, 10000 },
-			{ 'RANK_DUKE'		, 14641 },
-			{ 'RANK_PRINCE'		, 20736 },
+		["CIW"] = {
+			{ 'RANK_LEVEL_0'        , 0     },
+			{ 'RANK_LEVEL_1'		, 1     },
+			{ 'RANK_LEVEL_2'		, 16    },
+			{ 'RANK_LEVEL_3'		, 81    },
+			{ 'RANK_LEVEL_4'		, 256   },
+			{ 'RANK_LEVEL_5'		, 625   },
+			{ 'RANK_LEVEL_6'		, 1296  },
+			{ 'RANK_LEVEL_7'        , 2401  },
+			{ 'RANK_LEVEL_8'		, 4096  },
+			{ 'RANK_LEVEL_9'		, 6561  },
+			{ 'RANK_LEVEL_10'		, 10000 },
+			{ 'RANK_LEVEL_11'		, 14641 },
+			{ 'RANK_LEVEL_12'		, 20736 },
+		},
+		["TOLAN"] = {
+			{ 'RANK_LEVEL_0',  0     },
+			{ 'RANK_LEVEL_1',  1     },
+			{ 'RANK_LEVEL_2',  16    },
+			{ 'RANK_LEVEL_3',  81    },
+			{ 'RANK_LEVEL_4',  256   },
+			{ 'RANK_LEVEL_5',  625   },
+			{ 'RANK_LEVEL_6',  1296  },
+			{ 'RANK_LEVEL_7',  2401  },
+			{ 'RANK_LEVEL_8',  4096  },
+			{ 'RANK_LEVEL_9',  6561  },
+			{ 'RANK_LEVEL_10', 10000 },
+			{ 'RANK_LEVEL_11', 14641 },
+			{ 'RANK_LEVEL_12', 20736 },
+		},
+		["HABER"] = {
+			{ 'RANK_LEVEL_0',  0     },
+			{ 'RANK_LEVEL_1',  1     },
+			{ 'RANK_LEVEL_2',  16    },
+			{ 'RANK_LEVEL_3',  81    },
+			{ 'RANK_LEVEL_4',  256   },
+			{ 'RANK_LEVEL_5',  625   },
+			{ 'RANK_LEVEL_6',  1296  },
+			{ 'RANK_LEVEL_7',  2401  },
+			{ 'RANK_LEVEL_8',  4096  },
+			{ 'RANK_LEVEL_9',  6561  },
+			{ 'RANK_LEVEL_10', 10000 },
+			{ 'RANK_LEVEL_11', 14641 },
+			{ 'RANK_LEVEL_12', 20736 },
 		},
 	},
 
-	-- List of medals (translated?), Each module is responsible for pushing name of medals when appropriate
+--
+-- Attribute: rank
+--
+-- List of medals (translated?), Each module is responsible for pushing name of medals when appropriate
 	medals = {},
 	-- medals = {
 	--	["Solar Federation"]={},
@@ -913,9 +944,10 @@ Character = {
 	-- },
 
 	GetMilitaryRank = function (self, faction)
-		local fac = faction or Game.system.faction.name
+		local fac = faction
 		local rank = self.rank[fac] or 0
-		local ranks = self.ranks[fac] or {{"nOnE", 0}, {"NoNe", 20736}}
+		local ranks = self.ranks[fac]
+		print("rank, ranks", rank, ranks)
 		return utils.getFromIntervals(ranks, rank)
 	end,
 
